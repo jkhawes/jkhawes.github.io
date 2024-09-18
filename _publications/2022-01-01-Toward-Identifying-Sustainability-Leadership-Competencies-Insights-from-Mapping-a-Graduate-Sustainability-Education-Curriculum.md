@@ -1,6 +1,7 @@
 ---
 title: "Toward Identifying Sustainability Leadership Competencies: Insights from Mapping a Graduate Sustainability Education Curriculum"
 collection: publications
+category: manuscripts
 permalink: /publication/2022-01-01-Toward-Identifying-Sustainability-Leadership-Competencies-Insights-from-Mapping-a-Graduate-Sustainability-Education-Curriculum
 excerpt: 'Number: 10 Publisher: Multidisciplinary Digital Publishing Institute'
 date: 2022-01-01

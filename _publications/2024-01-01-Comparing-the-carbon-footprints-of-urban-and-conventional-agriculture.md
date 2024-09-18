@@ -1,6 +1,7 @@
 ---
 title: "Comparing the carbon footprints of urban and conventional agriculture"
 collection: publications
+category: manuscripts
 permalink: /publication/2024-01-01-Comparing-the-carbon-footprints-of-urban-and-conventional-agriculture
 excerpt: 'Publisher: Nature Publishing Group'
 date: 2024-01-01

@@ -1,6 +1,7 @@
 ---
 title: "Comparative Life Cycle Assessment of Water Disinfection Processes Applicable in Low-Income Settings"
 collection: publications
+category: manuscripts
 permalink: /publication/2022-11-01-Comparative-Life-Cycle-Assessment-of-Water-Disinfection-Processes-Applicable-in-Low-Income-Settings
 excerpt: 'Publisher: American Chemical Society'
 date: 2022-11-01

@@ -1,6 +1,7 @@
 ---
 title: "Farmer adaptation to reduced groundwater availability"
 collection: publications
+category: manuscripts
 permalink: /publication/2019-01-01-Farmer-adaptation-to-reduced-groundwater-availability
 date: 2019-01-01
 venue: 'Environmental Research Letters'

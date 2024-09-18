@@ -1,6 +1,7 @@
 ---
 title: "Applying the Food-Energy-Water Nexus approach to urban agriculture: from FEW to FEWP (Food-Energy-Water-People)"
 collection: publications
+category: manuscripts
 permalink: /publication/2020-12-01-Applying-the-Food-Energy-Water-Nexus-approach-to-urban-agriculture-from-FEW-to-FEWP-Food-Energy-Water-People
 excerpt: 'ZSCC: NoCitationData[s0]'
 date: 2020-12-01

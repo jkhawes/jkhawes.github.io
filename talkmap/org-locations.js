@@ -1,22 +1,27 @@
 var addressPoints = [
   [
-    "Berkeley CA, USA",
-    37.8708393,
-    -122.2728638
+    "Purdue University, West Lafayette, IN, USA.",
+    40.430028,
+    -86.92642114650494
   ],
   [
-    "London, UK",
-    51.5073219,
-    -0.1276473
+    "Indianapolis, IN, USA.",
+    39.7683331,
+    -86.1583502
   ],
   [
-    "San Francisco, California",
-    37.7792808,
-    -122.4192362
+    "University of Michigan, Ann Arbor, MI, USA. ",
+    42.2942142,
+    -83.71003893509601
   ],
   [
-    "Los Angeles, CA",
-    34.0543942,
-    -118.2439408
+    "University of California-Davis, Davis, CA, USA.  ",
+    38.533790350000004,
+    -121.79075439946112
+  ],
+  [
+    "University of Patras, Patras, Greece.",
+    38.2187045,
+    21.747894895431557
   ]
 ];

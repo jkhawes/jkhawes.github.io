@@ -1,6 +1,7 @@
 ---
 title: "Global Service-Learning: A Systematic Review of Principles and Practices"
 collection: publications
+category: manuscripts
 permalink: /publication/2021-12-01-Global-Service-Learning-A-Systematic-Review-of-Principles-and-Practices
 date: 2021-12-01
 venue: 'International Journal of Research on Service-Learning and Community Engagement'

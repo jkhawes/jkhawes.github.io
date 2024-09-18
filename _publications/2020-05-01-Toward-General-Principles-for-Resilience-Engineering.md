@@ -1,6 +1,7 @@
 ---
 title: "Toward General Principles for Resilience Engineering"
 collection: publications
+category: manuscripts
 permalink: /publication/2020-05-01-Toward-General-Principles-for-Resilience-Engineering
 date: 2020-05-01
 venue: 'Risk Analysis'

@@ -1,6 +1,7 @@
 ---
 title: "Predicting contaminated water removal from residential water heaters under various flushing scenarios"
 collection: publications
+category: manuscripts
 permalink: /publication/2017-01-01-Predicting-contaminated-water-removal-from-residential-water-heaters-under-various-flushing-scenarios
 date: 2017-01-01
 venue: 'Journal - American Water Works Association'

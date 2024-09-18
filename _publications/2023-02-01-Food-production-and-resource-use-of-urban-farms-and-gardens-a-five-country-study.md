@@ -1,6 +1,7 @@
 ---
 title: "Food production and resource use of urban farms and gardens: a five-country study"
 collection: publications
+category: manuscripts
 permalink: /publication/2023-02-01-Food-production-and-resource-use-of-urban-farms-and-gardens-a-five-country-study
 date: 2023-02-01
 venue: 'Agronomy for Sustainable Development'

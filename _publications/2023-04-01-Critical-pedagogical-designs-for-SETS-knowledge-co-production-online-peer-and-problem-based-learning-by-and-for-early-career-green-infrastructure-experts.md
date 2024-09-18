@@ -1,6 +1,7 @@
 ---
 title: "Critical pedagogical designs for SETS knowledge co-production: online peer- and problem-based learning by and for early career green infrastructure experts"
 collection: publications
+category: manuscripts
 permalink: /publication/2023-04-01-Critical-pedagogical-designs-for-SETS-knowledge-co-production-online-peer-and-problem-based-learning-by-and-for-early-career-green-infrastructure-experts
 date: 2023-04-01
 venue: 'Urban Transformations'

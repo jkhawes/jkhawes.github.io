@@ -1,6 +1,7 @@
 ---
 title: "Water Supply in Developing Countries: Student Experiences in the Dominican Republic"
 collection: publications
+category: manuscripts
 permalink: /publication/2017-01-01-Water-Supply-in-Developing-Countries-Student-Experiences-in-the-Dominican-Republic
 date: 2017-01-01
 venue: 'Purdue Journal of Service-Learning and International Engagement'

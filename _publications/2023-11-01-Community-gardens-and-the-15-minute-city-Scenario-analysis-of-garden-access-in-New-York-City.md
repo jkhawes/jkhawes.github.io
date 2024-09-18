@@ -1,6 +1,7 @@
 ---
 title: "Community gardens and the 15-minute city: Scenario analysis of garden access in New York City"
 collection: publications
+category: manuscripts
 permalink: /publication/2023-11-01-Community-gardens-and-the-15-minute-city-Scenario-analysis-of-garden-access-in-New-York-City
 date: 2023-11-01
 venue: 'Urban Forestry &amp; Urban Greening'

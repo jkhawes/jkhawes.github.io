@@ -1,6 +1,7 @@
 ---
 title: "The role of urban agriculture in food-energy-water nexus policies: Insights from Europe and the U.S"
 collection: publications
+category: manuscripts
 permalink: /publication/2023-11-01-The-role-of-urban-agriculture-in-food-energy-water-nexus-policies-Insights-from-Europe-and-the-US
 date: 2023-11-01
 venue: 'Landscape and Urban Planning'

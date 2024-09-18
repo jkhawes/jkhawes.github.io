@@ -1,6 +1,7 @@
 ---
 title: "Does urban agriculture lead to gentrification?"
 collection: publications
+category: manuscripts
 permalink: /publication/2022-09-01-Does-urban-agriculture-lead-to-gentrification
 date: 2022-09-01
 venue: 'Landscape and Urban Planning'
