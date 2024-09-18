@@ -5,6 +5,12 @@
 # prevent it from being included in the site.
 
 main:
+  - title: "Lab members"
+    url: /publications/
+  
+  - title: "Projects"
+    url: /publications/
+
   - title: "Publications"
     url: /publications/
 
@@ -14,14 +20,14 @@ main:
   - title: "Teaching"
     url: /teaching/    
     
-  - title: "Portfolio"
-    url: /portfolio/
+  # - title: "Portfolio"
+  #   url: /portfolio/
         
-  - title: "Blog Posts"
-    url: /year-archive/
+  - title: "Blog"
+    url: /blog-posts/
     
-  - title: "CV"
-    url: /cv/
+  # - title: "CV"
+  #   url: /cv/
     
-  - title: "Guide"
-    url: /markdown/
+  # - title: "Guide"
+  #   url: /markdown/
