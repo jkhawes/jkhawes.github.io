@@ -21,7 +21,7 @@ repository               : "jkhawes.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "profile.png"
+  avatar           : "../images/profile.jpg"
   name             : "Hawes Social-Environmental Systems Lab"
   pronouns         : 
   bio              : "The Hawes Lab studies sustainability, resilience, and justice in coupled natural-human systems."
