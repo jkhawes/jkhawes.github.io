@@ -8,7 +8,7 @@ redirect_from:
 ---
 <img src="../images/Sutton_clipped.jpg" alt="Raised bed in an urban garden" style="width:100%; height:auto;">
 
-**Let's build a more sustainable, resilient, and just future.**
+**Social-environmental systems science for a better future.**
 
 Welcome to the Hawes Research Group web page. This website is in development. Please feel free to explore to learn more about Jake's past work, and how it informs better modeling of coupled human-natural systems. Curious about the lab group? Want to learn more about the work we do? Email Jake @ jhawes@uwyo.edu. 
 
