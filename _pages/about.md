@@ -7,13 +7,38 @@ redirect_from:
   - /about.html
 ---
 
-<img src="../images/Sutton_clipped.jpg" alt="Raised bed in an urban garden" style="width:100%; height:auto; margin-bottom:1.5em;">
+<div style="position:relative; border-radius:10px; overflow:hidden; height:260px; background:#1a3a2a; margin-bottom:1.5em;">
+  <img src="/images/Sutton_clipped.jpg" alt="Raised bed in an urban garden" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:0.45;">
+  <div style="position:absolute; bottom:0; left:0; right:0; padding:24px 28px;">
+    <div style="font-size:11px; font-weight:600; color:#7dd9ab; letter-spacing:0.09em; text-transform:uppercase; margin-bottom:6px;">Hawes Research Group · University of Wyoming</div>
+    <div style="font-size:26px; font-weight:500; color:#ffffff; line-height:1.25;">Social-Environmental<br>Systems Science</div>
+    <div style="font-size:13px; color:rgba(255,255,255,0.7); margin-top:6px;">Sustainability · Resilience · Justice</div>
+  </div>
+</div>
+
+<div style="display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin-bottom:2em;">
+  <div style="background:#f5f5f3; border-radius:8px; padding:16px; border-top:3px solid #1d9e75;">
+    <div style="font-size:20px; margin-bottom:8px;">🌱</div>
+    <div style="font-size:13px; font-weight:600; margin-bottom:5px;">Urban Agriculture</div>
+    <div style="font-size:12px; color:#666; line-height:1.5;">Food-energy-water nexus in cities and community green spaces</div>
+  </div>
+  <div style="background:#f5f5f3; border-radius:8px; padding:16px; border-top:3px solid #378add;">
+    <div style="font-size:20px; margin-bottom:8px;">⚡</div>
+    <div style="font-size:13px; font-weight:600; margin-bottom:5px;">Infrastructure Resilience</div>
+    <div style="font-size:12px; color:#666; line-height:1.5;">Modeling critical systems under environmental and social stress</div>
+  </div>
+  <div style="background:#f5f5f3; border-radius:8px; padding:16px; border-top:3px solid #d85a30;">
+    <div style="font-size:20px; margin-bottom:8px;">🏘️</div>
+    <div style="font-size:13px; font-weight:600; margin-bottom:5px;">Natural Hazards</div>
+    <div style="font-size:12px; color:#666; line-height:1.5;">Community adaptive capacity and social vulnerability to hazards</div>
+  </div>
+</div>
 
 ## Welcome to the Hawes Lab
 
 The Hawes Social-Environmental Systems Research Group studies **sustainability, resilience, and justice** in coupled natural-human systems. We are based at the [University of Wyoming](https://www.uwyo.edu), where Jake Hawes is jointly appointed in the [School of Computing](https://www.uwyo.edu/cosc/) and the [Haub School of Environment and Natural Resources](https://www.uwyo.edu/haub/).
 
-Our work draws on planning, geography, and engineering to understand how built, natural, and social systems interact — and how thoughtful design and policy can promote more equitable and resilient outcomes. Current research focuses on **urban agriculture**, **critical infrastructure resilience**, and **community adaptive capacity to natural hazards**.
+Our work draws on planning, geography, and engineering to understand how built, natural, and social systems interact — and how thoughtful design and policy can promote more equitable and resilient outcomes.
 
 ---
 
