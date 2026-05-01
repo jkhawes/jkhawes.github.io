@@ -5,32 +5,143 @@ permalink: /publications/
 author_profile: true
 ---
 
-{% if site.author.googlescholar %}
-  <div class="wordwrap">You can also find Jake's articles on <a href="{{site.author.googlescholar}}">his Google Scholar profile</a>.</div>
-{% endif %}
+<style>
+.gs-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+.gs-scholar-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: #1a73e8;
+  font-size: 0.9rem;
+  text-decoration: none;
+  font-weight: 500;
+}
+.gs-scholar-link:hover { text-decoration: underline; }
+.gs-pub-count {
+  font-size: 0.85rem;
+  color: #777;
+}
+.gs-section-heading {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #202124;
+  margin: 1.5rem 0 0.5rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 2px solid #e8eaed;
+  letter-spacing: 0.01em;
+}
+.gs-pub-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.gs-pub-item {
+  display: grid;
+  grid-template-columns: 3rem 1fr;
+  gap: 0 0.75rem;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid #f1f3f4;
+}
+.gs-pub-item:last-child { border-bottom: none; }
+.gs-year {
+  font-size: 0.82rem;
+  color: #9aa0a6;
+  padding-top: 3px;
+  text-align: right;
+  font-weight: 500;
+}
+.gs-title {
+  font-size: 0.95rem;
+  font-weight: 500;
+  margin-bottom: 0.18rem;
+  line-height: 1.4;
+}
+.gs-title a {
+  color: #1a0dab;
+  text-decoration: none;
+}
+.gs-title a:hover { text-decoration: underline; }
+.gs-title span { color: #202124; }
+.gs-authors {
+  font-size: 0.83rem;
+  color: #5f6368;
+  margin-bottom: 0.12rem;
+  line-height: 1.4;
+}
+.gs-authors strong { color: #202124; font-weight: 600; }
+.gs-venue {
+  font-size: 0.83rem;
+  color: #188038;
+  font-style: italic;
+}
+</style>
 
-{% include base_path %}
+{% assign total_pubs = site.publications | size %}
 
-<!-- New style rendering if publication categories are defined -->
+<div class="gs-header">
+  {% if site.author.googlescholar %}
+  <a class="gs-scholar-link" href="{{ site.author.googlescholar }}" target="_blank">
+    View full profile on Google Scholar &rarr;
+  </a>
+  {% endif %}
+  <span class="gs-pub-count">{{ total_pubs }} publications</span>
+</div>
+
 {% if site.publication_category %}
-  {% for category in site.publication_category  %}
-    {% assign title_shown = false %}
-    {% for post in site.publications reversed %}
-      {% if post.category != category[0] %}
-        {% continue %}
-      {% endif %}
-      {% unless title_shown %}
-        <h2>{{ category[1].title }}</h2><hr />
-        {% assign title_shown = true %}
-      {% endunless %}
-      {% include archive-single.html %}
-    {% endfor %}
+  {% for category in site.publication_category %}
+    {% assign cat_pubs = site.publications | where: "category", category[0] | sort: "date" | reverse %}
+    {% if cat_pubs.size > 0 %}
+      <h2 class="gs-section-heading">{{ category[1].title }}</h2>
+      <ul class="gs-pub-list">
+        {% for post in cat_pubs %}
+          {% assign authors_raw = post.citation | split: ', &quot;' | first | strip %}
+          {% assign authors_highlighted = authors_raw | replace: "Jason Hawes", '<strong>Jason Hawes</strong>' | replace: "Jake Hawes", '<strong>Jake Hawes</strong>' %}
+          <li class="gs-pub-item">
+            <div class="gs-year">{{ post.date | date: "%Y" }}</div>
+            <div>
+              <div class="gs-title">
+                {% if post.paperurl %}<a href="{{ post.paperurl }}" target="_blank">{{ post.title }}</a>{% else %}<span>{{ post.title }}</span>{% endif %}
+              </div>
+              {% if authors_raw != "" %}
+              <div class="gs-authors">{{ authors_highlighted }}</div>
+              {% endif %}
+              {% if post.venue %}
+              <div class="gs-venue">{{ post.venue }}</div>
+              {% endif %}
+            </div>
+          </li>
+        {% endfor %}
+      </ul>
+    {% endif %}
   {% endfor %}
 {% else %}
-  {% for post in site.publications reversed %}
-    {% include archive-single.html %}
-  {% endfor %}
+  <ul class="gs-pub-list">
+    {% for post in site.publications reversed %}
+      {% assign authors_raw = post.citation | split: ', &quot;' | first | strip %}
+      {% assign authors_highlighted = authors_raw | replace: "Jason Hawes", '<strong>Jason Hawes</strong>' | replace: "Jake Hawes", '<strong>Jake Hawes</strong>' %}
+      <li class="gs-pub-item">
+        <div class="gs-year">{{ post.date | date: "%Y" }}</div>
+        <div>
+          <div class="gs-title">
+            {% if post.paperurl %}<a href="{{ post.paperurl }}" target="_blank">{{ post.title }}</a>{% else %}<span>{{ post.title }}</span>{% endif %}
+          </div>
+          {% if authors_raw != "" %}
+          <div class="gs-authors">{{ authors_highlighted }}</div>
+          {% endif %}
+          {% if post.venue %}
+          <div class="gs-venue">{{ post.venue }}</div>
+          {% endif %}
+        </div>
+      </li>
+    {% endfor %}
+  </ul>
 {% endif %}
-
-
-
