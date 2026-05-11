@@ -186,6 +186,9 @@ a.hes-research-card:hover .hes-research-card__title { color: #2a6e49; }
 </div>
 
 <!-- Research area cards -->
+<div class="hes-section" style="margin-bottom:1em;">
+<h2>Research Areas</h2>
+</div>
 <div class="hes-research-grid">
   <a href="/projects/smart-rural-places/" class="hes-research-card">
     <div class="hes-research-card__tag">Smart Communities</div>
@@ -219,7 +222,7 @@ a.hes-research-card:hover .hes-research-card__title { color: #2a6e49; }
 <!-- News -->
 <div class="hes-section">
 <h2>News &amp; Updates</h2>
-{% assign recent_posts = site.posts | limit: 3 %}
+{% assign recent_posts = site.posts | limit: 5 %}
 {% if recent_posts.size > 0 %}
 <ul class="hes-news">
   {% for post in recent_posts %}
@@ -230,6 +233,7 @@ a.hes-research-card:hover .hes-research-card__title { color: #2a6e49; }
   </li>
   {% endfor %}
 </ul>
+<p style="margin-top:1em; font-size:0.88rem;"><a href="/blog-posts/">View all posts &rarr;</a></p>
 {% else %}
 <p style="color:#888; font-style:italic; font-size:0.9rem;">No posts yet.</p>
 {% endif %}
