@@ -25,6 +25,52 @@
 <link rel="stylesheet" href="{{ base_path }}/assets/css/academicons.css"/>
 
 
+<!-- Inter font -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- Global style overrides -->
+<style>
+/* Typography */
+body, p, li, td, th, input, button, select, textarea {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+p { line-height: 1.75; color: #333; }
+
+/* Masthead */
+.masthead { background: #fff; border-bottom: 1px solid #e8e8e8; box-shadow: none; }
+.greedy-nav { background: #fff; }
+.greedy-nav a {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: #111;
+  letter-spacing: 0.01em;
+}
+.greedy-nav a:hover { color: #2a6e49; }
+.greedy-nav .visible-links a::before { background: #2a6e49; }
+.masthead__menu-item--lg a { font-weight: 700; font-size: 0.95rem; }
+
+/* Links */
+a { color: #2a6e49; }
+a:visited { color: #2a6e49; }
+a:hover { color: #1b4d34; }
+
+/* Page headings */
+.page__content h2 {
+  font-size: 1.3rem;
+  border-bottom: 2px solid #f0f0f0;
+  padding-bottom: 0.4em;
+  margin-top: 2.5em;
+}
+</style>
+
 <!-- Support for MatJax -->
 <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
