@@ -30,15 +30,18 @@ redirect_from:
   color: #6dd9a8 !important;
 }
 
+/* ── Unclip parent containers so full-bleed can escape ─── */
+#main, #main > article, #main .page__content {
+  overflow: visible !important;
+}
+
 /* ── Hero ──────────────────────────────────────────────── */
 .hes-hero {
   position: relative;
   left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
+  transform: translateX(-50%);
   width: 100vw;
-  min-height: 100vh;
+  height: 100vh;
   background: #0c1f16;
   display: flex;
   align-items: center;
@@ -47,7 +50,7 @@ redirect_from:
   margin-bottom: 3.5em;
 }
 @media (max-width: 768px) {
-  .hes-hero { min-height: 380px; }
+  .hes-hero { height: 80vh; }
 }
 .hes-hero__bg {
   position: absolute; inset: 0;
