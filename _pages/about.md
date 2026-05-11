@@ -222,10 +222,9 @@ a.hes-research-card:hover .hes-research-card__title { color: #2a6e49; }
 <!-- News -->
 <div class="hes-section">
 <h2>News &amp; Updates</h2>
-{% assign recent_posts = site.posts | limit: 5 %}
-{% if recent_posts.size > 0 %}
+{% if site.posts.size > 0 %}
 <ul class="hes-news">
-  {% for post in recent_posts %}
+  {% for post in site.posts limit:5 %}
   <li>
     <strong>{{ post.date | date: "%B %Y" }}</strong> &mdash;
     <a href="{{ post.url }}">{{ post.title }}</a>
