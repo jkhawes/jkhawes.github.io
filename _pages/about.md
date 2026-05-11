@@ -219,11 +219,20 @@ a.hes-research-card:hover .hes-research-card__title { color: #2a6e49; }
 <!-- News -->
 <div class="hes-section">
 <h2>News &amp; Updates</h2>
+{% assign recent_posts = site.posts | limit: 3 %}
+{% if recent_posts.size > 0 %}
 <ul class="hes-news">
-  <li><strong>Spring 2025</strong> &mdash; New paper published in <em>Nature Cities</em>: <a href="https://www.nature.com/articles/s44284-023-00023-3">Comparing the carbon footprints of urban and conventional agriculture</a></li>
-  <li><strong>Fall 2025</strong> &mdash; Jake begins teaching new courses at the intersection of computing and coupled natural-human systems at UW</li>
-  <li><strong>Now recruiting</strong> &mdash; The lab is actively seeking a postdoc. Send your CV and a brief statement of interests (&le;2 pages) to <a href="mailto:jhawes@uwyo.edu">jhawes@uwyo.edu</a></li>
+  {% for post in recent_posts %}
+  <li>
+    <strong>{{ post.date | date: "%B %Y" }}</strong> &mdash;
+    <a href="{{ post.url }}">{{ post.title }}</a>
+    {% if post.excerpt %}<br><span style="color:#777; font-size:0.85em;">{{ post.excerpt | strip_html | truncate: 140 }}</span>{% endif %}
+  </li>
+  {% endfor %}
 </ul>
+{% else %}
+<p style="color:#888; font-style:italic; font-size:0.9rem;">No posts yet.</p>
+{% endif %}
 </div>
 
 <hr style="border:none; border-top:1px solid #f0f0f0; margin:0 0 3em;">
