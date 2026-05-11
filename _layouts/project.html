@@ -4,35 +4,68 @@ layout: default
 
 {% include base_path %}
 
-{% if page.header.overlay_color or page.header.overlay_image or page.header.image %}
-  {% include page__hero.html %}
-{% endif %}
-
-{% if page.url != "/" and site.breadcrumbs %}
-  {% unless paginator %}
-    {% include breadcrumbs.html %}
-  {% endunless %}
+{% if page.header.overlay_image %}
+<div class="proj-hero" style="background-image: url('{{ page.header.overlay_image }}')">
+  <div class="proj-hero__dim"></div>
+  <div class="proj-hero__body">
+    <h1 class="proj-hero__title">{{ page.title }}</h1>
+    {% assign has_meta = false %}
+    {% if page.hes_contributors and page.hes_contributors.size > 0 %}{% assign has_meta = true %}{% endif %}
+    {% if page.collaborators and page.collaborators.size > 0 %}{% assign has_meta = true %}{% endif %}
+    {% if page.funders and page.funders.size > 0 %}{% assign has_meta = true %}{% endif %}
+    {% if has_meta %}
+    <div class="proj-hero__meta">
+      {% if page.hes_contributors and page.hes_contributors.size > 0 %}
+      <div class="proj-hero__meta-group">
+        <div class="proj-hero__meta-label">HES Lab</div>
+        {% for person in page.hes_contributors %}
+        <div class="proj-hero__meta-item">{{ person }}</div>
+        {% endfor %}
+      </div>
+      {% endif %}
+      {% if page.collaborators and page.collaborators.size > 0 %}
+      <div class="proj-hero__meta-group">
+        <div class="proj-hero__meta-label">Collaborators</div>
+        {% for collab in page.collaborators %}
+        <div class="proj-hero__meta-item">{{ collab.name }}</div>
+        {% endfor %}
+      </div>
+      {% endif %}
+      {% if page.funders and page.funders.size > 0 %}
+      <div class="proj-hero__meta-group">
+        <div class="proj-hero__meta-label">Funders</div>
+        {% for funder in page.funders %}
+        <div class="proj-hero__meta-item">{{ funder }}</div>
+        {% endfor %}
+      </div>
+      {% endif %}
+    </div>
+    {% endif %}
+  </div>
+</div>
 {% endif %}
 
 <div id="main" role="main">
-  {% include sidebar.html %}
-
   <article class="page" itemscope itemtype="http://schema.org/ResearchProject">
     {% if page.title %}<meta itemprop="name" content="{{ page.title | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
     {% if page.excerpt %}<meta itemprop="description" content="{{ page.excerpt | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
 
     <div class="page__inner-wrap">
+
+      {% unless page.header.overlay_image %}
       <header>
         {% if page.title %}<h1 class="page__title" itemprop="headline">{{ page.title | markdownify | remove: "<p>" | remove: "</p>" }}</h1>{% endif %}
       </header>
+      {% endunless %}
 
       <section class="page__content" itemprop="text">
         {{ content }}
       </section>
 
+      {% unless page.header.overlay_image %}
       <div class="page__meta" style="margin-top: 2em;">
 
-        {% if page.hes_contributors %}
+        {% if page.hes_contributors and page.hes_contributors.size > 0 %}
         <div style="margin-bottom: 1.5em;">
           <h3 class="page__meta-title">HES Lab Contributors</h3>
           <ul style="list-style: none; padding: 0; margin: 0.5em 0 0 0;">
@@ -43,24 +76,20 @@ layout: default
         </div>
         {% endif %}
 
-        {% if page.collaborators %}
+        {% if page.collaborators and page.collaborators.size > 0 %}
         <div style="margin-bottom: 1.5em;">
           <h3 class="page__meta-title">Collaborators</h3>
           <ul style="list-style: none; padding: 0; margin: 0.5em 0 0 0;">
             {% for collab in page.collaborators %}
             <li style="margin-bottom: 0.25em;">
-              {% if collab.url and collab.url != "" %}
-                <a href="{{ collab.url }}">{{ collab.name }}</a>
-              {% else %}
-                {{ collab.name }}
-              {% endif %}
+              {% if collab.url and collab.url != "" %}<a href="{{ collab.url }}">{{ collab.name }}</a>{% else %}{{ collab.name }}{% endif %}
             </li>
             {% endfor %}
           </ul>
         </div>
         {% endif %}
 
-        {% if page.funders %}
+        {% if page.funders and page.funders.size > 0 %}
         <div style="margin-bottom: 1.5em;">
           <h3 class="page__meta-title">Funders</h3>
           <ul style="list-style: none; padding: 0; margin: 0.5em 0 0 0;">
@@ -83,6 +112,7 @@ layout: default
         {% endif %}
 
       </div>
+      {% endunless %}
 
       {% assign project_pubs = site.publications | where: "project", page.slug %}
       {% if project_pubs.size > 0 %}

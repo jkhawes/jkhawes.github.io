@@ -112,4 +112,59 @@ a:hover { color: #1b4d34; }
 .masthead__submenu li a:hover { background: #f5f5f5; color: #000; }
 </style>
 
+<!-- Project hero -->
+<style>
+.proj-hero {
+  position: relative;
+  width: 100%;
+  height: 52vh;
+  min-height: 340px;
+  background-size: cover;
+  background-position: center;
+  background-color: #0c1f16;
+  margin-bottom: 0;
+}
+.proj-hero__dim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.18) 0%, rgba(0,0,0,0.72) 100%);
+}
+.proj-hero__body {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 2em 2.5em;
+}
+.proj-hero__title {
+  font-size: clamp(1.5rem, 3.5vw, 2.6rem);
+  font-weight: 800;
+  color: #fff;
+  margin: 0 0 1.1em;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+}
+.proj-hero__meta {
+  display: flex;
+  gap: 2.5em;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+.proj-hero__meta-group { min-width: 100px; }
+.proj-hero__meta-label {
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #6dd9a8;
+  margin-bottom: 0.3em;
+}
+.proj-hero__meta-item {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.88);
+  line-height: 1.55;
+}
+</style>
+
 <!-- end custom head snippets -->

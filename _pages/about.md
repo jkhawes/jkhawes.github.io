@@ -105,10 +105,16 @@ body { padding-top: 0 !important; }
   gap: 1.2em; margin-bottom: 3.5em;
 }
 @media (max-width: 640px) { .hes-research-grid { grid-template-columns: 1fr; } }
-.hes-research-card {
+a.hes-research-card {
+  display: block;
   padding: 1.5em 1.4em;
   border: 1px solid #e5e5e5; border-radius: 6px; background: #fff;
+  text-decoration: none; color: inherit;
 }
+a.hes-research-card:hover {
+  border-color: #2a6e49; background: #f6fbf8; text-decoration: none;
+}
+a.hes-research-card:hover .hes-research-card__title { color: #2a6e49; }
 .hes-research-card__tag {
   font-size: 0.64rem; font-weight: 700;
   letter-spacing: 0.12em; text-transform: uppercase;
@@ -172,40 +178,40 @@ body { padding-top: 0 !important; }
   </div>
 </div>
 
-<!-- Research areas -->
-<div class="hes-research-grid">
-  <div class="hes-research-card">
-    <div class="hes-research-card__tag">Research Area</div>
-    <div class="hes-research-card__title">Urban Agriculture</div>
-    <div class="hes-research-card__desc">Food-energy-water nexus in cities and community green spaces</div>
-  </div>
-  <div class="hes-research-card">
-    <div class="hes-research-card__tag">Research Area</div>
-    <div class="hes-research-card__title">Infrastructure Resilience</div>
-    <div class="hes-research-card__desc">Modeling critical systems under environmental and social stress</div>
-  </div>
-  <div class="hes-research-card">
-    <div class="hes-research-card__tag">Research Area</div>
-    <div class="hes-research-card__title">Natural Hazards</div>
-    <div class="hes-research-card__desc">Community adaptive capacity and social vulnerability to hazards</div>
-  </div>
-</div>
-
 <!-- About -->
 <div class="hes-section">
 <h2>Welcome to the Hawes Lab</h2>
 <p>The Hawes Social-Environmental Systems Research Group studies <strong>sustainability, resilience, and justice</strong> in coupled natural-human systems. We are based at the <a href="https://www.uwyo.edu">University of Wyoming</a>, where Jake Hawes is jointly appointed in the <a href="https://www.uwyo.edu/cosc/">School of Computing</a> and the <a href="https://www.uwyo.edu/haub/">Haub School of Environment and Natural Resources</a>.</p>
-<p>Our work draws on planning, geography, and engineering to understand how built, natural, and social systems interact — and how thoughtful design and policy can promote more equitable and resilient outcomes.</p>
+<p>Our work draws on planning, geography, and engineering to understand how built, natural, and social systems interact &mdash; and how thoughtful design and policy can promote more equitable and resilient outcomes. <a href="/lab-members/">Meet the team &rarr;</a></p>
 </div>
 
-<hr style="border:none; border-top:1px solid #f0f0f0; margin:0 0 3em;">
-
-<!-- About Jake -->
-<div class="hes-section">
-<h2>About Jake</h2>
-<p>Jake Hawes is an Assistant Professor co-appointed between the School of Computing and the Haub School of Environment and Natural Resources at the University of Wyoming. His research deploys mixed methods and interdisciplinary analysis to model coupled natural-human systems across scales — from individual farmers to regional food-energy-water systems.</p>
-<p>Jake earned his PhD from the University of Michigan School for Environment and Sustainability, and holds a BS in Environmental and Ecological Engineering and an MS in Natural Resources Social Science from Purdue University. His work has been supported by NSF, USDA, and Sea Grant, and has appeared in journals including <em>Nature Cities</em>, <em>Landscape and Urban Planning</em>, and <em>Environmental Science &amp; Technology</em>.</p>
-<p>Reach Jake at <a href="mailto:jhawes@uwyo.edu">jhawes@uwyo.edu</a></p>
+<!-- Research area cards -->
+<div class="hes-research-grid">
+  <a href="/projects/smart-rural-places/" class="hes-research-card">
+    <div class="hes-research-card__tag">Smart Communities</div>
+    <div class="hes-research-card__title">Smart Rural Places</div>
+    <div class="hes-research-card__desc">Exploring the role of smart systems and AI in rural places and small towns</div>
+  </a>
+  <a href="/projects/infrastructure-resilience/" class="hes-research-card">
+    <div class="hes-research-card__tag">Resilience</div>
+    <div class="hes-research-card__title">Infrastructure Resilience</div>
+    <div class="hes-research-card__desc">Resilient and sustainable infrastructure in rural and remote areas</div>
+  </a>
+  <a href="/projects/climes/" class="hes-research-card">
+    <div class="hes-research-card__tag">Hazards &amp; Modeling</div>
+    <div class="hes-research-card__title">CLIMES</div>
+    <div class="hes-research-card__desc">Collaborative modeling of hazard impacts on social-ecological-economic systems</div>
+  </a>
+  <a href="/projects/circular-economy/" class="hes-research-card">
+    <div class="hes-research-card__tag">Sustainability</div>
+    <div class="hes-research-card__title">Circular Economy</div>
+    <div class="hes-research-card__desc">Research on circular economy principles and their application to sustainable systems</div>
+  </a>
+  <a href="/projects/food-systems/" class="hes-research-card">
+    <div class="hes-research-card__tag">Food Security</div>
+    <div class="hes-research-card__title">Food Systems</div>
+    <div class="hes-research-card__desc">Research on sustainable and resilient food systems</div>
+  </a>
 </div>
 
 <hr style="border:none; border-top:1px solid #f0f0f0; margin:0 0 3em;">
@@ -214,9 +220,9 @@ body { padding-top: 0 !important; }
 <div class="hes-section">
 <h2>News &amp; Updates</h2>
 <ul class="hes-news">
-  <li><strong>Spring 2025</strong> — New paper published in <em>Nature Cities</em>: <a href="https://www.nature.com/articles/s44284-023-00023-3">Comparing the carbon footprints of urban and conventional agriculture</a></li>
-  <li><strong>Fall 2025</strong> — Jake begins teaching new courses at the intersection of computing and coupled natural-human systems at UW</li>
-  <li><strong>Now recruiting</strong> — The lab is actively seeking a postdoc. Send your CV and a brief statement of interests (&le;2 pages) to <a href="mailto:jhawes@uwyo.edu">jhawes@uwyo.edu</a></li>
+  <li><strong>Spring 2025</strong> &mdash; New paper published in <em>Nature Cities</em>: <a href="https://www.nature.com/articles/s44284-023-00023-3">Comparing the carbon footprints of urban and conventional agriculture</a></li>
+  <li><strong>Fall 2025</strong> &mdash; Jake begins teaching new courses at the intersection of computing and coupled natural-human systems at UW</li>
+  <li><strong>Now recruiting</strong> &mdash; The lab is actively seeking a postdoc. Send your CV and a brief statement of interests (&le;2 pages) to <a href="mailto:jhawes@uwyo.edu">jhawes@uwyo.edu</a></li>
 </ul>
 </div>
 
