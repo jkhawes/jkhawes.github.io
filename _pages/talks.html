@@ -77,6 +77,7 @@ author_profile: false
   <span style="font-size: 0.95rem; font-weight: 600; color: #202124;">Talks &amp; Presentations</span>
   <span class="gs-pub-count">{{ total_talks }} on record</span>
 </div>
+<p style="font-size:0.8rem; color:#777; margin-bottom:1.2rem;"><u>Underlined</u> authors were mentees at time of presentation.</p>
 
 {% if total_talks > 0 %}
 <ul class="gs-pub-list">
@@ -87,11 +88,12 @@ author_profile: false
       <div class="gs-title">
         {% if post.paperurl %}<a href="{{ post.paperurl }}" target="_blank">{{ post.title }}</a>{% else %}<span>{{ post.title }}</span>{% endif %}
       </div>
-      {% if post.type %}
-      <div class="gs-authors">{{ post.type }}</div>
+      {% if post.authors %}
+      <div class="gs-authors">{{ post.authors }}</div>
       {% endif %}
-      {% if post.venue or post.location %}
+      {% if post.type or post.venue or post.location %}
       <div class="gs-venue">
+        {% if post.type %}<span style="color:#9aa0a6; font-style:normal; margin-right:0.4em;">{{ post.type }}</span>{% endif %}
         {% if post.venue %}{{ post.venue }}{% endif %}{% if post.venue and post.location %}, {% endif %}{% if post.location %}{{ post.location }}{% endif %}
       </div>
       {% endif %}
