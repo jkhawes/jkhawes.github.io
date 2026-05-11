@@ -8,6 +8,28 @@ redirect_from:
 ---
 
 <style>
+/* ── Home-page: transparent nav over hero ──────────────── */
+.masthead {
+  position: absolute !important;
+  top: 0; left: 0; right: 0;
+  background: transparent !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
+}
+.greedy-nav { background: transparent !important; }
+.greedy-nav a { color: rgba(255,255,255,0.88) !important; }
+.greedy-nav a:hover { color: #6dd9a8 !important; }
+.greedy-nav .visible-links a::before { background: #6dd9a8 !important; }
+.masthead__submenu {
+  background: rgba(12,31,22,0.96) !important;
+  border-color: rgba(255,255,255,0.12) !important;
+}
+.masthead__submenu li a { color: rgba(255,255,255,0.82) !important; }
+.masthead__submenu li a:hover {
+  background: rgba(255,255,255,0.08) !important;
+  color: #6dd9a8 !important;
+}
+
 /* ── Hero ──────────────────────────────────────────────── */
 .hes-hero {
   position: relative;
@@ -16,7 +38,7 @@ redirect_from:
   margin-left: -50vw;
   margin-right: -50vw;
   width: 100vw;
-  min-height: 520px;
+  min-height: 100vh;
   background: #0c1f16;
   display: flex;
   align-items: center;
@@ -35,7 +57,7 @@ redirect_from:
 .hes-hero__body {
   position: relative;
   text-align: center;
-  padding: 4em 2em;
+  padding: 7em 2em 4em;
   max-width: 780px;
 }
 .hes-hero__label {
