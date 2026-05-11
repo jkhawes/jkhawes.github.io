@@ -3,7 +3,8 @@ title: "Smart Rural Places"
 excerpt: "Exploring the role of smart systems and artificial intelligence in rural places and small towns."
 collection: projects
 header:
-  teaser: /images/500x300.png
+  overlay_image: /images/smart-rural-places-hero.jpg
+  teaser: /images/smart-rural-places-hero.jpg
 hes_contributors:
   - "Md. Ismail Hossain"
   - "Dr. Vanessa Lueck"

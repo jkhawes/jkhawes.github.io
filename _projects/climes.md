@@ -3,7 +3,8 @@ title: "CLIMES"
 excerpt: "A collaborative modeling framework for understanding the impact of hazards on social, ecological, economic, and infrastructural systems."
 collection: projects
 header:
-  teaser: /images/500x300.png
+  overlay_image: /images/climes-hero.jpg
+  teaser: /images/climes-hero.jpg
 hes_contributors:
   - "Dr. Vanessa Lueck"
 collaborators:

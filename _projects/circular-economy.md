@@ -3,7 +3,8 @@ title: "Circular Economy"
 excerpt: "Research on circular economy principles and their application to sustainable systems."
 collection: projects
 header:
-  teaser: /images/500x300.png
+  overlay_image: /images/circular-economy-hero.jpg
+  teaser: /images/circular-economy-hero.jpg
 hes_contributors: []
 collaborators: []
 funders: []

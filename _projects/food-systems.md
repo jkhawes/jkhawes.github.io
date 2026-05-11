@@ -3,7 +3,8 @@ title: "Food Systems"
 excerpt: "Research on sustainable and resilient food systems."
 collection: projects
 header:
-  teaser: /images/500x300.png
+  overlay_image: /images/food-systems-hero.jpg
+  teaser: /images/food-systems-hero.jpg
 hes_contributors: []
 collaborators: []
 funders: []
