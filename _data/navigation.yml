@@ -10,6 +10,17 @@ main:
   
   - title: "Projects"
     url: /projects/
+    children:
+      - title: "Smart Rural Places"
+        url: /projects/smart-rural-places/
+      - title: "Infrastructure Resilience"
+        url: /projects/infrastructure-resilience/
+      - title: "CLIMES"
+        url: /projects/climes/
+      - title: "Circular Economy"
+        url: /projects/circular-economy/
+      - title: "Food Systems"
+        url: /projects/food-systems/
 
   - title: "Publications"
     url: /publications/
