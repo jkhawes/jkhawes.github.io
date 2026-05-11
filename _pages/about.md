@@ -11,16 +11,21 @@ redirect_from:
 /* ── Hero ──────────────────────────────────────────────── */
 .hes-hero {
   position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  width: 100vw;
   min-height: 520px;
   background: #0c1f16;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  margin: -2em -3em 3.5em;
+  margin-bottom: 3.5em;
 }
 @media (max-width: 768px) {
-  .hes-hero { margin: -1em -1em 2.5em; min-height: 380px; }
+  .hes-hero { min-height: 380px; }
 }
 .hes-hero__bg {
   position: absolute; inset: 0;
@@ -129,7 +134,7 @@ redirect_from:
   <img class="hes-hero__bg" src="/images/Sutton_clipped.jpg" alt="">
   <div class="hes-hero__body">
     <div class="hes-hero__label">Hawes Research Group &middot; University of Wyoming</div>
-    <h1 class="hes-hero__title">Social-Environmental<br>Systems Science</h1>
+    <h1 class="hes-hero__title">Human-Environmental<br>Systems Lab</h1>
     <p class="hes-hero__sub">Sustainability &nbsp;&middot;&nbsp; Resilience &nbsp;&middot;&nbsp; Justice</p>
     <div class="hes-hero__ctas">
       <a href="/projects/" class="hes-btn-primary">Our Projects</a>
