@@ -11,6 +11,8 @@ main:
   - title: "Projects"
     url: /projects/
     children:
+      - title: "All Projects"
+        url: /projects/
       - title: "Smart Rural Places"
         url: /projects/smart-rural-places/
       - title: "Infrastructure Resilience"
