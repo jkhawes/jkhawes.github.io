@@ -75,6 +75,20 @@ redirect_from:
   padding-bottom: 0.4em;
   margin: 2.2em 0 1.3em;
 }
+.hes-avatar-placeholder {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  background: #d4e9de;
+  color: #2a6e49;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 2rem;
+  letter-spacing: -0.04em;
+}
 </style>
 
 <h2 class="hes-members-heading">Principal Investigator</h2>
@@ -98,11 +112,65 @@ redirect_from:
 
 <h2 class="hes-members-heading">Current Lab Members</h2>
 
-<!-- ═══════════════════════════════════════════════════════════
-     ADD MEMBER CARDS BELOW — copy the block and fill in fields
-     ═══════════════════════════════════════════════════════════ -->
+<!-- Vanessa Lueck -->
+<div class="hes-member-card">
+  <div class="hes-avatar-placeholder" aria-label="Vanessa Lueck">VL</div>
+  <div>
+    <div class="hes-member-card__name">Vanessa Lueck, PhD</div>
+    <p class="hes-member-card__title">Postdoctoral Research Associate<br>University of Wyoming &mdash; Laramie, WY</p>
+    <p class="hes-member-card__bio" style="color:#888; font-style:italic;">Bio coming soon.</p>
+    <div class="hes-member-card__pub">Lueck, V., Lokman, K., Low, M., &amp; Doyon, A. (2026). The value of values: Rethinking flood adaptation practices. <em>Environmental Science &amp; Policy</em>, 179, 104385.</div>
+    <div class="hes-member-card__links">
+      <a href="mailto:vlueck@uwyo.edu">&#9993; vlueck@uwyo.edu</a>
+    </div>
+  </div>
+</div>
 
-<p style="color:#888; font-size:0.9rem; font-style:italic;">Member profiles coming soon.</p>
+<!-- Md. Ismail Hossain -->
+<div class="hes-member-card">
+  <div class="hes-avatar-placeholder" aria-label="Md. Ismail Hossain">IH</div>
+  <div>
+    <div class="hes-member-card__name">Md. Ismail Hossain</div>
+    <p class="hes-member-card__title">Graduate Research Assistant (MS)<br>University of Wyoming &mdash; Laramie, WY</p>
+    <p class="hes-member-card__bio" style="color:#888; font-style:italic;">Bio coming soon.</p>
+    <div class="hes-member-card__links">
+      <a href="mailto:mhossa14@uwyo.edu">&#9993; mhossa14@uwyo.edu</a>
+    </div>
+  </div>
+</div>
+
+<!-- Sandip Pantha -->
+<div class="hes-member-card">
+  <div class="hes-avatar-placeholder" aria-label="Sandip Pantha">SP</div>
+  <div>
+    <div class="hes-member-card__name">Sandip Pantha</div>
+    <p class="hes-member-card__title">Graduate Research Assistant (MS)<br>University of Wyoming &mdash; Laramie, WY</p>
+    <p class="hes-member-card__bio" style="color:#888; font-style:italic;">Bio coming soon.</p>
+    <div class="hes-member-card__links">
+      <a href="mailto:spantha@uwyo.edu">&#9993; spantha@uwyo.edu</a>
+    </div>
+  </div>
+</div>
+
+<!-- Briana Hiser -->
+<div class="hes-member-card">
+  <div class="hes-avatar-placeholder" aria-label="Briana Hiser">BH</div>
+  <div>
+    <div class="hes-member-card__name">Briana Hiser</div>
+    <p class="hes-member-card__title">Undergraduate Research Assistant<br>University of Wyoming &mdash; Laramie, WY</p>
+    <p class="hes-member-card__bio" style="color:#888; font-style:italic;">Bio coming soon.</p>
+  </div>
+</div>
+
+<!-- Nolan Reitz -->
+<div class="hes-member-card">
+  <div class="hes-avatar-placeholder" aria-label="Nolan Reitz">NR</div>
+  <div>
+    <div class="hes-member-card__name">Nolan Reitz</div>
+    <p class="hes-member-card__title">Undergraduate Research Assistant<br>University of Wyoming &mdash; Laramie, WY</p>
+    <p class="hes-member-card__bio" style="color:#888; font-style:italic;">Bio coming soon.</p>
+  </div>
+</div>
 
 <hr style="border:none; border-top:1px solid #f0f0f0; margin: 2.5em 0 2em;">
 
