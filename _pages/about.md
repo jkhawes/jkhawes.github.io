@@ -166,7 +166,7 @@ a.hes-research-card:hover .hes-research-card__title { color: #2a6e49; }
 
 <!-- Hero -->
 <div class="hes-hero">
-  <img class="hes-hero__bg" src="/images/Sutton_clipped.jpg" alt="">
+  <img class="hes-hero__bg" src="/images/WinterTeton.jpg" alt="">
   <div class="hes-hero__body">
     <div class="hes-hero__label">Hawes Research Group &middot; University of Wyoming</div>
     <h1 class="hes-hero__title">Human-Environmental<br>Systems Lab</h1>
