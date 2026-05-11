@@ -30,6 +30,10 @@ redirect_from:
   color: #6dd9a8 !important;
 }
 
+/* ── Kill the body padding-top set by masthead JS + #main margin ── */
+body { padding-top: 0 !important; }
+#main { margin-top: 0 !important; }
+
 /* ── Unclip parent containers so full-bleed can escape ─── */
 #main, #main > article, #main .page__content {
   overflow: visible !important;
