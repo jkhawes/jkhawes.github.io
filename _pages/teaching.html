@@ -5,10 +5,142 @@ permalink: /teaching/
 author_profile: false
 ---
 
-Beginning in Fall 2025, Jake will be establishing new courses at the intersection of computing and coupled natural-human systems for undergraduate and graduate students at the University of Wyoming. Interested in this intersection? Want to weigh in on new topics you want to see taught at the School of Computing and the Haub School? Get in touch @ jhawes@uwyo.edu. 
-<br>
-{% include base_path %}
+<style>
+.teach-intro {
+  font-size: 0.93rem;
+  line-height: 1.75;
+  color: #333;
+  margin-bottom: 2.5em;
+  padding: 1.1em 1.4em;
+  border-left: 3px solid #2a6e49;
+  background: #f6fbf8;
+  border-radius: 0 6px 6px 0;
+}
+.teach-intro a { color: #2a6e49; font-weight: 600; }
+.teach-intro a:hover { text-decoration: underline; }
 
-{% for post in site.teaching reversed %}
-  {% include archive-single.html %}
-{% endfor %}
+.course-list { display: flex; flex-direction: column; gap: 2.5em; }
+
+.course-card {
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.course-card__header {
+  padding: 1.3em 1.5em 1.1em;
+  background: #fff;
+}
+.course-card__meta {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #2a6e49;
+  margin-bottom: 0.4em;
+}
+.course-card__title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #111;
+  margin: 0 0 0.75em;
+  line-height: 1.3;
+}
+.course-card__desc {
+  font-size: 0.88rem;
+  color: #444;
+  line-height: 1.75;
+  margin-bottom: 0.9em;
+}
+.course-card__outcomes {
+  margin: 0.5em 0 0.9em 0;
+  padding-left: 1.4em;
+  font-size: 0.85rem;
+  color: #555;
+  line-height: 1.7;
+}
+.course-card__details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em 1.4em;
+  font-size: 0.8rem;
+  color: #777;
+  margin-bottom: 0.2em;
+}
+.course-card__detail span { font-weight: 600; color: #444; }
+
+.course-card__syllabus-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #777;
+  padding: 0.7em 1.5em 0.4em;
+  background: #fafafa;
+  border-top: 1px solid #efefef;
+}
+.course-card embed {
+  display: block;
+  width: 100%;
+  height: 520px;
+  border: none;
+  background: #f5f5f5;
+}
+</style>
+
+<div class="teach-intro">
+  Jake teaches at the intersection of computing, geospatial science, and environment at the University of Wyoming. Interested in topics at the intersection of computing and the environment? Whether you want to weigh in on new courses, explore an independent study, or discuss a potential upper-level elective in this space &mdash; <a href="mailto:jhawes@uwyo.edu">get in touch</a>.
+</div>
+
+<div class="course-list">
+
+  <!-- ENR 5100 -->
+  <div class="course-card">
+    <div class="course-card__header">
+      <div class="course-card__meta">Fall 2025 &nbsp;&middot;&nbsp; Haub School of Environment &amp; Natural Resources</div>
+      <div class="course-card__title">ENR 5100: Foundations of Environment, Natural Resources, &amp; Society</div>
+      <div class="course-card__desc">
+        This graduate course, required of students in the MS Environment, Natural Resources, and Society (ENRS) program, builds the conceptual and interdisciplinary foundations for engaging with complex environmental and natural resource challenges. Students develop a shared language for navigating the diverse paradigms, values, and ways of knowing that stakeholders bring to environmental issues — and practice applying that toolkit through case studies, collaborative problem-solving, and professional communication.
+      </div>
+      <ul class="course-card__outcomes">
+        <li>Synthesize knowledge across ecological, social, legal, and economic disciplines to address complex ENRS challenges</li>
+        <li>Evaluate interconnections between ecological, social, economic, political, and legal systems</li>
+        <li>Employ technical and analytical skills (e.g., policy analysis, impact assessment) to support decision-making</li>
+        <li>Facilitate collaborative problem-solving across diverse perspectives</li>
+        <li>Develop and deliver clear, audience-appropriate written, oral, and digital communications</li>
+      </ul>
+      <div class="course-card__details">
+        <div class="course-card__detail"><span>Credits:</span> 3</div>
+        <div class="course-card__detail"><span>Format:</span> Asynchronous online (Block 2, 8 weeks)</div>
+        <div class="course-card__detail"><span>Level:</span> Graduate</div>
+      </div>
+    </div>
+    <div class="course-card__syllabus-label">Syllabus</div>
+    <embed src="/files/ENR5100_syllabus_Fa25.pdf" type="application/pdf">
+  </div>
+
+  <!-- GIST 5220 -->
+  <div class="course-card">
+    <div class="course-card__header">
+      <div class="course-card__meta">Spring 2026 &nbsp;&middot;&nbsp; School of Computing</div>
+      <div class="course-card__title">GIST 5220: Spatial Modeling &amp; Data Analysis</div>
+      <div class="course-card__desc">
+        This course explores advanced spatial modeling concepts and techniques that go beyond basic GIS — including raster modeling, hybrid vector/raster approaches, and geocomputational methods. Students engage with both practical and theoretical dimensions of spatial analysis, with attention to uncertainty, scale, and error. The course covers spatial point pattern analysis, interpolation, spatial regression, 3D visualization, raster analysis, space-time analysis, and spatial analysis in GEE, Python, and R, culminating in a partner-driven research project.
+      </div>
+      <ul class="course-card__outcomes">
+        <li>Explain how complex spatial models can be applied to environmental and social problems</li>
+        <li>Plan, design, and implement a spatial analysis project using appropriate methods</li>
+        <li>Assess the validity, uncertainty, and sensitivity of model results</li>
+        <li>Apply concepts of distance, adjacency, interaction, and neighborhood in spatial analysis</li>
+      </ul>
+      <div class="course-card__details">
+        <div class="course-card__detail"><span>Credits:</span> 3</div>
+        <div class="course-card__detail"><span>Format:</span> HyFlex hybrid (in-person &amp; asynchronous online)</div>
+        <div class="course-card__detail"><span>Meets:</span> Tue/Thu 9:35–10:50 AM, ENGR 2109</div>
+        <div class="course-card__detail"><span>Level:</span> Graduate</div>
+      </div>
+    </div>
+    <div class="course-card__syllabus-label">Syllabus</div>
+    <embed src="/files/GIST5220_syllabus_Sp26.pdf" type="application/pdf">
+  </div>
+
+</div>
