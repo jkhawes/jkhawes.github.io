@@ -136,3 +136,15 @@ As active contributors to the global Industrial Ecology community, the HES lab i
     </div>
   </div>
 </div>
+
+<div class="hes-subproject">
+  <div class="hes-subproject__header">
+    <span class="hes-subproject__status hes-subproject__status--active">Active</span>
+    <h3 class="hes-subproject__title">Stylized Facts for the Circular Economy</h3>
+  </div>
+  <p class="hes-subproject__desc">This sub-project contributes to a major international synthesis effort that distills the scientific literature on the circular economy into 64 "stylized facts" — empirically grounded, topically relevant statements designed to make CE knowledge accessible to policymakers, practitioners, and the broader public. Drawing on decades of industrial ecology research on material stocks and flows, R-strategies, business models, and sustainability assessment, the stylized facts span the full scope of CE theory and practice — from the fundamental limits of material recycling to the socioeconomic and regulatory conditions that enable circular strategies to succeed. This effort, coordinated from within the global IE community, provides the first broad scientific synthesis of CE knowledge in this format.</p>
+  <div class="hes-subproject__meta">
+    <div><span>Key collaborators:</span> Stefan Pauliuk (University of Freiburg); Oleksandr Galychyn and Anna Barrero (University of Limerick); Jennifer Hawkin (University of Sheffield); Fridolin Krausmann, Magdalena Filter-Pieler, and Dominik Wiedenhofer (BOKU University); Sofie Férauge, Luc Alaerts, and Karel Van Acker (KU Leuven); Sina Leipold (Helmholtz Centre for Environmental Research / Friedrich-Schiller University Jena); Elena Verdolini (Università degli studi di Brescia / CMCC Foundation); Levon Amatuni (Leiden University); Charles Breton (Université Laval); Amy Brooks (University of Pittsburgh); Magnus Fröhling (Technical University of Munich); Oliver Heidrich and Josh Manley (Newcastle University); Antti Jukka (University of Eastern Finland / Vrije Universiteit Brussel); Manish Kumar (Karlsruhe Institute of Technology); Maud Lanau (Chalmers University of Technology); Prachi Ugle (Safe Landing Climate / IUCN); Stijn van Ewijk and Roberta Barr (University College London)</div>
+    <div><span>Outputs:</span> Pauliuk, S., Galychyn, O., Hawes, J. K., et al. (in preparation). Stylized facts for the circular economy: A knowledge synthesis. <em>Journal of Industrial Ecology</em>.</div>
+  </div>
+</div>
