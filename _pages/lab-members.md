@@ -131,10 +131,14 @@ redirect_from:
   <div class="hes-avatar-placeholder" aria-label="Md. Ismail Hossain">IH</div>
   <div>
     <div class="hes-member-card__name">Md. Ismail Hossain</div>
-    <p class="hes-member-card__title">Graduate Research Assistant (MS)<br>University of Wyoming &mdash; Laramie, WY</p>
-    <p class="hes-member-card__bio" style="color:#888; font-style:italic;">Bio coming soon.</p>
+    <p class="hes-member-card__title">Graduate Research Assistant (MS), Geospatial Information Science &amp; Technology<br>University of Wyoming &mdash; Laramie, WY</p>
+    <p class="hes-member-card__bio">Ismail's thesis examines digital-twin readiness in small cities, using Laramie and Afton, Wyoming, as case studies to evaluate whether smaller communities possess the spatial data infrastructure and institutional capacity needed to adopt advanced spatial technologies equitably. Before joining UW, he studied Urban Planning, graduating first in a class of 55. He also brings nearly three years of industry experience as a Software Development Engineer in Test and co-founded NextHunger, a small IT firm. His research interests include GeoAI and Machine Learning, Digital Twins, Transportation Planning, Urban Informatics, Smart and Resilient Communities, and Human&ndash;environment interactions. He plans to pursue doctoral studies in Summer/Fall 2027.</p>
+    <div class="hes-member-card__pub">Njoku, J. N., Shukla, D., Katariya, V., Hossain, M. I., &amp; Hawes, J. K. (2026). PANDA: A lightweight digital twin framework for smart parking management. In <em>Proceedings of the ASCE International Conference on Computing in Civil Engineering (i3CE 2026)</em>. Songdo, South Korea.</div>
     <div class="hes-member-card__links">
       <a href="mailto:mhossa14@uwyo.edu">&#9993; mhossa14@uwyo.edu</a>
+      <a href="https://www.linkedin.com/in/ismailtimes/" target="_blank">LinkedIn</a>
+      <a href="https://ismailtimes.weebly.com/" target="_blank">Website</a>
+      <a href="https://github.com/IsmailTimes" target="_blank">GitHub</a>
     </div>
   </div>
 </div>
@@ -144,10 +148,12 @@ redirect_from:
   <div class="hes-avatar-placeholder" aria-label="Sandip Pantha">SP</div>
   <div>
     <div class="hes-member-card__name">Sandip Pantha</div>
-    <p class="hes-member-card__title">Graduate Research Assistant (MS)<br>University of Wyoming &mdash; Laramie, WY</p>
-    <p class="hes-member-card__bio" style="color:#888; font-style:italic;">Bio coming soon.</p>
+    <p class="hes-member-card__title">Graduate Research Assistant (MS), Geographic Information Science &amp; Technology / Environment &amp; Natural Resources<br>University of Wyoming &mdash; Laramie, WY</p>
+    <p class="hes-member-card__bio">Sandip is a master's student at the University of Wyoming pursuing a dual major in Geographic Information Science and Technology (GIST) and Environment and Natural Resources (ENRS). His research focuses on the intersection of social vulnerability, climate risk, and geospatial analysis, with a particular interest in wildfire risk, environmental hazards, and community resilience. His current thesis examines the geography of social vulnerability and wildfire risk across Wyoming using spatial analysis and socio-environmental indicators. Before joining UW, he completed a Bachelor of Science in Forestry at Tribhuvan University, Nepal, and worked on several interdisciplinary research projects related to climate change vulnerability, flood-induced migration, and urban water security in Nepal. His technical interests include GIS, remote sensing, Google Earth Engine, R, and spatial data science for environmental decision-making. He is interested in future PhD opportunities related to climate adaptation, socio-environmental systems, geospatial modeling, and applied GIS research.</p>
     <div class="hes-member-card__links">
       <a href="mailto:spantha@uwyo.edu">&#9993; spantha@uwyo.edu</a>
+      <a href="https://www.linkedin.com/in/sandip-pantha/" target="_blank">LinkedIn</a>
+      <a href="https://orcid.org/0009-0003-2964-2373" target="_blank">ORCID</a>
     </div>
   </div>
 </div>
