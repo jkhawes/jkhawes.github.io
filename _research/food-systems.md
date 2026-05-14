@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Food Systems"
 excerpt: "Research on sustainable and resilient food systems."
 collection: research

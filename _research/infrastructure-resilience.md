@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Infrastructure Resilience"
 excerpt: "Resilient and sustainable infrastructure in rural and remote areas, from supply chains to social-ecological-technological systems."
 collection: research
