@@ -1,7 +1,7 @@
----
+﻿---
 title: "Food Systems"
 excerpt: "Research on sustainable and resilient food systems."
-collection: projects
+collection: research
 header:
   overlay_image: /images/food-systems-hero.jpg
   teaser: /images/food-systems-hero.jpg

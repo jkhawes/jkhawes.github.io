@@ -215,9 +215,9 @@ collections:
   publications:
     output: true
     permalink: /:collection/:path/
-  projects:
+  research:
     output: true
-    permalink: /projects/:path/
+    permalink: /research/:path/
   # portfolio:
   #   output: true
   #   permalink: /:collection/:path/
@@ -273,10 +273,10 @@ defaults:
   #     author_profile: true
   #     share: true
   #     comment: true
-  # _projects
+  # _research
   - scope:
       path: ""
-      type: projects
+      type: research
     values:
       layout: project
       author_profile: false

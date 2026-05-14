@@ -1,7 +1,7 @@
----
+﻿---
 title: "CLIMES"
 excerpt: "A collaborative modeling framework for understanding the impact of hazards on social, ecological, economic, and infrastructural systems."
-collection: projects
+collection: research
 header:
   overlay_image: /images/climes-hero.jpg
   teaser: /images/climes-hero.jpg

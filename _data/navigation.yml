@@ -8,21 +8,21 @@ main:
   - title: "Lab members"
     url: /lab-members/
   
-  - title: "Projects"
-    url: /projects/
+  - title: "Research"
+    url: /research/
     children:
-      - title: "All Projects"
-        url: /projects/
+      - title: "All Research"
+        url: /research/
       - title: "Smart Rural Places"
-        url: /projects/smart-rural-places/
+        url: /research/smart-rural-places/
       - title: "Infrastructure Resilience"
-        url: /projects/infrastructure-resilience/
+        url: /research/infrastructure-resilience/
       - title: "CLIMES"
-        url: /projects/climes/
+        url: /research/climes/
       - title: "Circular Economy"
-        url: /projects/circular-economy/
+        url: /research/circular-economy/
       - title: "Food Systems"
-        url: /projects/food-systems/
+        url: /research/food-systems/
 
   - title: "Publications"
     url: /publications/

@@ -1,7 +1,7 @@
----
+﻿---
 title: "Smart Rural Places"
 excerpt: "Exploring the role of smart systems and artificial intelligence in rural places and small towns."
-collection: projects
+collection: research
 header:
   overlay_image: /images/smart-rural-places-hero.jpg
   teaser: /images/smart-rural-places-hero.jpg
