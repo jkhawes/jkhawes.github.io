@@ -91,3 +91,15 @@ A key focus of the HES lab is resilient and sustainable infrastructure, particul
     <div><span>Funding:</span> Joint Fire Science Program</div>
   </div>
 </div>
+
+<div class="hes-project">
+  <div class="hes-project__header">
+    <span class="hes-project__status hes-project__status--active">Active</span>
+    <h3 class="hes-project__title">ARCAP — Alaska Railbelt Critical Assets Project</h3>
+  </div>
+  <p class="hes-project__desc">ARCAP is a multi-institution project funded by the ADAC-ARCTIC Center of Excellence (DHS) to evaluate and strengthen the resilience of the Port of Alaska (PoA) — a single point of failure for the entire state's supply chain and a node critical to fuel distribution, Arctic shipping, and multiple DHS missions. The project integrates critical infrastructure analysis, expert and stakeholder elicitation, and tabletop exercises to identify gaps in infrastructure security and resilience and develop actionable strategies. HES lab contributions center on two interconnected efforts: extending and refining DHS definitions of critical infrastructure to the Alaska context, and synthesizing the history of resilience efforts, interdependencies, and natural hazards at PoA. These include an interactive Alaska Critical Infrastructure Systems Timeline Map and ongoing work to contextualize the Port within the broader Railbelt region and catalog novel cyber-physical infrastructure across Alaska.</p>
+  <div class="hes-project__meta">
+    <div><span>Key collaborators:</span> Amber Sorg and Kelly Wilson (Idaho National Laboratory); Dr. Scott Hamel (University of Alaska Anchorage)</div>
+    <div><span>Funding:</span> ADAC-ARCTIC Center of Excellence (Department of Homeland Security)</div>
+  </div>
+</div>
