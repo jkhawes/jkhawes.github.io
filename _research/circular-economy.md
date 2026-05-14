@@ -1,6 +1,6 @@
 ---
-title: "Circular Economy"
-excerpt: "Reduce, reuse, and recycle — but who, when, where, why, and how?"
+title: "Social and Material Sustainability"
+excerpt: "How can material flows, food systems, and circular practices be redesigned to better serve people and the planet?"
 collection: research
 header:
   overlay_image: /images/circular-economy-hero.jpg
@@ -26,7 +26,7 @@ funders:
 links: []
 ---
 
-As active contributors to the global Industrial Ecology community, the HES lab is supporting the development of circular economy theory and practice. The circular economy is an economic model that replaces the traditional linear "take-make-dispose" approach with strategies that keep materials, products, and nutrients in use for as long as possible — reducing resource extraction and minimizing waste at every stage of a product's life. Building on work exploring the integration of urban farms and gardens with circular practice in cities, the HES lab has collaborated with several international teams to extend and rethink the Who, When, Where, Why, and How of circular economy — asking not just whether circularity is possible, but under what conditions and for whom it can be made to work.
+The HES lab investigates the social and material dimensions of sustainability — how resource flows, land use, and economic systems can be redesigned to keep materials in use, reduce waste, and support more equitable and resilient communities. Drawing on industrial ecology and mixed-methods social science, the lab asks not just whether more circular or sustainable systems are technically possible, but under what conditions and for whom they can be made to work. Current work spans circular economy theory and practice, urban food systems, and the governance and policy environments that shape both.
 
 ## Projects
 
@@ -147,4 +147,23 @@ As active contributors to the global Industrial Ecology community, the HES lab i
     <div><span>Key collaborators:</span> Stefan Pauliuk (University of Freiburg); Oleksandr Galychyn and Anna Barrero (University of Limerick); Jennifer Hawkin (University of Sheffield); Fridolin Krausmann, Magdalena Filter-Pieler, and Dominik Wiedenhofer (BOKU University); Sofie Férauge, Luc Alaerts, and Karel Van Acker (KU Leuven); Sina Leipold (Helmholtz Centre for Environmental Research / Friedrich-Schiller University Jena); Elena Verdolini (Università degli studi di Brescia / CMCC Foundation); Levon Amatuni (Leiden University); Charles Breton (Université Laval); Amy Brooks (University of Pittsburgh); Magnus Fröhling (Technical University of Munich); Oliver Heidrich and Josh Manley (Newcastle University); Antti Jukka (University of Eastern Finland / Vrije Universiteit Brussel); Manish Kumar (Karlsruhe Institute of Technology); Maud Lanau (Chalmers University of Technology); Prachi Ugle (Safe Landing Climate / IUCN); Stijn van Ewijk and Roberta Barr (University College London)</div>
     <div><span>Outputs:</span> Pauliuk, S., Galychyn, O., Hawes, J. K., et al. (in preparation). Stylized facts for the circular economy: A knowledge synthesis. <em>Journal of Industrial Ecology</em>.</div>
   </div>
+</div>
+
+<div class="hes-project">
+  <div class="hes-project__header">
+    <span class="hes-project__status hes-project__status--active">Active</span>
+    <h3 class="hes-project__title">Urban Food Systems</h3>
+  </div>
+  <p class="hes-project__desc">GLO-FORCE — Blockchain and AI for Optimizing Food Supply Chain Resilience and Security — is an interdisciplinary project that integrates blockchain, artificial intelligence, and geospatial intelligence to strengthen food supply chain resilience. The platform combines a county-resolved food security data model, blockchain-enabled farm-to-fork traceability, and AI-assisted optimization tools for routing supplies during disruptions — treating food supply chains as critical infrastructure and prioritizing communities most vulnerable to supply shocks. Piloted in the St. Louis region using the 2025 EF3 tornado as a case study, GLO-FORCE aims to compress the time from disaster detection to routed food shipments. The HES lab is contributing a critical infrastructure modeling framework and geospatial computing capacity to the project. Funding is currently being sought.</p>
+  <div class="hes-project__meta">
+    <div><span>Key collaborators:</span> Dr. Vijay Anand (Kennesaw State University, PI); Dr. Kate Trout and Dr. Haitao Li (University of Missouri); KC Kroll (Earth Daily); Carlton Adams (Operation Food Search)</div>
+  </div>
+</div>
+
+<div class="hes-project">
+  <div class="hes-project__header">
+    <span class="hes-project__status hes-project__status--active">Active</span>
+    <h3 class="hes-project__title">FEW-Meter</h3>
+  </div>
+  <p class="hes-project__desc">Details on this project coming soon.</p>
 </div>

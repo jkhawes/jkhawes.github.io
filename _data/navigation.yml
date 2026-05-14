@@ -15,14 +15,11 @@ main:
         url: /research/
       - title: "Smart Rural Places"
         url: /research/smart-rural-places/
-      - title: "Infrastructure Resilience"
+      - title: "Community and Infrastructure Resilience"
         url: /research/infrastructure-resilience/
-      - title: "CLIMES"
-        url: /research/climes/
-      - title: "Circular Economy"
+      - title: "Social and Material Sustainability"
         url: /research/circular-economy/
-      - title: "Food Systems"
-        url: /research/food-systems/
+
 
   - title: "Publications"
     url: /publications/
