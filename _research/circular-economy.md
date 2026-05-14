@@ -162,8 +162,21 @@ The HES lab investigates the social and material dimensions of sustainability �
 
 <div class="hes-project">
   <div class="hes-project__header">
-    <span class="hes-project__status hes-project__status--active">Active</span>
+    <span class="hes-project__status hes-project__status--complete">Complete</span>
     <h3 class="hes-project__title">FEW-Meter</h3>
   </div>
-  <p class="hes-project__desc">Details on this project coming soon.</p>
+  <p class="hes-project__desc">FEW-Meter (Food-Energy-Water Meter) was a large-scale international research project that measured the resource performance of urban agriculture across five countries in Europe and North America. Using a standardized measurement protocol developed by the project team, FEW-Meter quantified the food, energy, and water flows of urban farms and gardens — establishing a rigorous empirical foundation for evaluating where urban agriculture outperforms, and where it falls short of, conventional food production. HES lab contributions span the full arc of the project: from field data collection and cross-national analysis to high-impact publications comparing the carbon footprints of urban and conventional agriculture, assessing urban agriculture's potential to scale in the Global North, and synthesizing what the field knows about urban agriculture's impacts on people, places, and the planet. The project also developed the FEWP (Food-Energy-Water-People) framework to foreground social dimensions alongside resource flows, and produced a public roadmap for resource-efficient urban agriculture.</p>
+  <div class="hes-project__meta">
+    <div><span>Key collaborators:</span> Silvio Caputo; Erica Dorr; Runrid Fox-Kämper; Benjamin P. Goldstein and Joshua P. Newell (University of Michigan); Dimitrios Gounaridis; Caitlin K. Kirby; Kathrin Specht; Lidia Poniży; Agnès Fargue-Lelièvre</div>
+    <div><span>Outputs:</span>
+      <a href="https://doi.org/10.1038/s44284-023-00023-3" target="_blank">Hawes, Goldstein, Newell, et al. (2024). Comparing the carbon footprints of urban and conventional agriculture. <em>Nature Cities</em>, 1–10.</a><br>
+      <a href="https://doi.org/10.1016/j.landurbplan.2026.105657" target="_blank">Hawes, Gounaridis, Newell, et al. (2026). Assessing the potential to scale-up urban agriculture in the Global North. <em>Landscape and Urban Planning</em>, 272, 105657.</a><br>
+      <a href="https://doi.org/10.1007/s13593-022-00859-4" target="_blank">Dorr, Hawes, Goldstein, et al. (2023). Food production and resource use of urban farms and gardens: A five-country study. <em>Agronomy for Sustainable Development</em>, 43(1), 18.</a><br>
+      <a href="https://www.tandfonline.com/doi/abs/10.1080/00963402.2024.2339125" target="_blank">Fargue-Lelièvre, Hawes, Goldstein, Poniży &amp; Dorr (2024). What do we really know about urban agriculture's impact on people, places, and the planet? <em>Bulletin of the Atomic Scientists</em>, 80(3).</a><br>
+      <a href="https://doi.org/10.1016/j.landurbplan.2023.104848" target="_blank">Fox-Kämper, Kirby, Specht, et al. (2023). The role of urban agriculture in food-energy-water nexus policies. <em>Landscape and Urban Planning</em>, 239, 104848.</a><br>
+      <a href="https://doi.org/10.1016/j.ufug.2020.126934" target="_blank">Caputo, Schoen, Specht, et al. (2020). Applying the food-energy-water nexus approach to urban agriculture: From FEW to FEWP. <em>Urban Forestry &amp; Urban Greening</em>, 126934.</a><br>
+      <a href="https://doi.org/10.5281/zenodo.6558032" target="_blank">Caputo, Dorr, Fox-Kämper, et al. (2022). FEW-Meter Final Report. Zenodo.</a><br>
+      <a href="https://zenodo.org/record/6622125" target="_blank">Fox-Kämper, Specht, Caputo, et al. (2022). Roadmap to Resource Efficient Urban Agriculture. Zenodo.</a>
+    </div>
+  </div>
 </div>
