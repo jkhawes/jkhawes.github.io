@@ -158,23 +158,29 @@ redirect_from:
   </div>
 </div>
 
-<!-- Briana Hiser -->
-<div class="hes-member-card">
-  <div class="hes-avatar-placeholder" aria-label="Briana Hiser">BH</div>
-  <div>
-    <div class="hes-member-card__name">Briana Hiser</div>
-    <p class="hes-member-card__title">Undergraduate Research Assistant<br>University of Wyoming &mdash; Laramie, WY</p>
-    <p class="hes-member-card__bio" style="color:#888; font-style:italic;">Bio coming soon.</p>
-  </div>
-</div>
 
 <!-- Nolan Reitz -->
 <div class="hes-member-card">
   <div class="hes-avatar-placeholder" aria-label="Nolan Reitz">NR</div>
   <div>
     <div class="hes-member-card__name">Nolan Reitz</div>
-    <p class="hes-member-card__title">Undergraduate Research Assistant<br>University of Wyoming &mdash; Laramie, WY</p>
+    <p class="hes-member-card__title">Undergraduate Research Assistant &mdash; BS, Computer Engineering, University of Wyoming (Expected May 2028)<br>University of Wyoming &mdash; Laramie, WY</p>
     <p class="hes-member-card__bio" style="color:#888; font-style:italic;">Bio coming soon.</p>
+  </div>
+</div>
+
+<hr style="border:none; border-top:1px solid #f0f0f0; margin: 2.5em 0 2em;">
+
+<h2 class="hes-members-heading">Past Lab Members</h2>
+
+<!-- Briana Hiser -->
+<div class="hes-member-card">
+  <div class="hes-avatar-placeholder" aria-label="Briana Hiser">BH</div>
+  <div>
+    <div class="hes-member-card__name">Briana Hiser</div>
+    <p class="hes-member-card__title">School of Computing Undergraduate Research Experience Fellow &mdash; BS, Architectural Engineering, University of Wyoming (May 2026)</p>
+    <p class="hes-member-card__bio">Briana joined the lab as a School of Computing Undergraduate Research Experience (URE) fellow while completing her BS in Architectural Engineering at UW. Her fellowship work examined the reproducibility, representativity, and transparency of supervised machine learning models in industrial ecology research &mdash; contributing to a growing conversation about methodological standards at the intersection of ML and sustainability science.</p>
+    <div class="hes-member-card__pub">Donati, F., Tu, Q., Ward-Bond, J., Reitz, N., Hiser, B., et al. (2026). A call to ensure reproducibility of machine learning applications in industrial ecology. <em>ResearchSquare</em> [preprint]. <a href="https://www.researchsquare.com/article/rs-9270723/v1" target="_blank">https://doi.org/10.21203/rs.3.rs-9270723/v1</a></div>
   </div>
 </div>
 
