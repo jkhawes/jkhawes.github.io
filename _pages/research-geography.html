@@ -45,10 +45,26 @@ author_profile: false
   font-style: italic;
 }
 
-/* ── Leaflet tile fix (Minimal Mistakes sets max-width:100% on all images) */
-.leaflet-container img {
+/* ── Leaflet compatibility (Minimal Mistakes sets max-width/height on all images) */
+.leaflet-container img,
+.leaflet-tile,
+.leaflet-tile-container img {
   max-width: none !important;
   max-height: none !important;
+  box-sizing: content-box !important;
+}
+
+.map-error {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  font-size: 0.83rem;
+  color: #b45309;
+  background: #fef3e2;
+  border-radius: 8px;
+  padding: 2em;
+  text-align: center;
 }
 
 /* ── Popup ────────────────────────────────────── */
@@ -157,111 +173,135 @@ author_profile: false
 {% assign all_projects = site.data.projects.projects %}
 
 <script>
-const PROJECT_DATA = {{ all_projects | jsonify }};
+(function() {
+  var mapEl = document.getElementById('research-map');
 
-// Build region → projects lookup
-const regionMap = {};
-PROJECT_DATA.forEach(p => {
-  const regions = (p.geography && p.geography.regions) ? p.geography.regions : [];
-  regions.forEach(r => {
-    if (!regionMap[r]) regionMap[r] = [];
-    regionMap[r].push(p);
+  function showMapError(msg) {
+    mapEl.innerHTML = '<div class="map-error">' + msg + '</div>';
+  }
+
+  // Bail out cleanly if Leaflet failed to load
+  if (typeof L === 'undefined') {
+    showMapError('Map could not load (Leaflet library unavailable). The region list below is still accurate.');
+    return;
+  }
+
+  var PROJECT_DATA;
+  try {
+    PROJECT_DATA = {{ all_projects | jsonify }};
+  } catch(e) {
+    showMapError('Map data could not be parsed. The region list below is still accurate.');
+    return;
+  }
+
+  // Build region → projects lookup
+  var regionMap = {};
+  PROJECT_DATA.forEach(function(p) {
+    var regions = (p.geography && p.geography.regions) ? p.geography.regions : [];
+    regions.forEach(function(r) {
+      if (!regionMap[r]) regionMap[r] = [];
+      regionMap[r].push(p);
+    });
   });
-});
 
-const STATUS_COLORS = {
-  active:           '#2a6e49',
-  complete:         '#777',
-  'seeking-funding':'#b45309'
-};
-const STATUS_LABELS = {
-  active:           'Active',
-  complete:         'Complete',
-  'seeking-funding':'Seeking Funding'
-};
+  var STATUS_COLORS = {
+    active:           '#2a6e49',
+    complete:         '#777',
+    'seeking-funding':'#b45309'
+  };
+  var STATUS_LABELS = {
+    active:           'Active',
+    complete:         'Complete',
+    'seeking-funding':'Seeking Funding'
+  };
 
-const ACTIVE_STYLE   = { fillColor: '#2a6e49', fillOpacity: 0.28, color: '#2a6e49', weight: 1.5 };
-const HOVER_STYLE    = { fillColor: '#2a6e49', fillOpacity: 0.5,  color: '#2a6e49', weight: 2 };
-const INACTIVE_STYLE = { fillColor: '#ccc',    fillOpacity: 0.08, color: '#bbb',    weight: 0.4 };
+  var ACTIVE_STYLE   = { fillColor: '#2a6e49', fillOpacity: 0.28, color: '#2a6e49', weight: 1.5 };
+  var HOVER_STYLE    = { fillColor: '#2a6e49', fillOpacity: 0.5,  color: '#2a6e49', weight: 2 };
+  var INACTIVE_STYLE = { fillColor: '#ccc',    fillOpacity: 0.08, color: '#bbb',    weight: 0.4 };
 
-const map = L.map('research-map', { scrollWheelZoom: false }).setView([30, -20], 2);
+  var map;
+  try {
+    map = L.map('research-map', { scrollWheelZoom: false }).setView([30, -20], 2);
+  } catch(e) {
+    showMapError('Map failed to initialize: ' + e.message + '. The region list below is still accurate.');
+    return;
+  }
 
-L.tileLayer('https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png', {
-  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/">CARTO</a>',
-  subdomains: 'abcd',
-  maxZoom: 10
-}).addTo(map);
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/">CARTO</a>',
+    subdomains: 'abcd',
+    maxZoom: 10
+  }).addTo(map);
 
-function makePopup(regionName, projects) {
-  const lines = projects.map(p => {
-    const sc = STATUS_COLORS[p.status] || '#888';
-    const sl = STATUS_LABELS[p.status] || p.status;
-    const places = (p.geography && p.geography.places && p.geography.places.length)
-      ? `<span style="font-size:0.72rem;color:#888;display:block;">${p.geography.places.join(', ')}</span>`
-      : '';
-    return `<div class="map-popup__item">
-      <span class="map-popup__status" style="background:${sc}22;color:${sc}">${sl}</span>
-      <div>
-        <a href="/research/${p.id}/">${p.title}</a>
-        ${places}
-      </div>
-    </div>`;
-  }).join('');
-  return `<div class="map-popup__region">${regionName}</div>${lines}`;
-}
+  // Force layout recalc after render — fixes sizing issues in some themes
+  setTimeout(function() { map.invalidateSize(); }, 250);
 
-function styleFeature(regionName) {
-  return regionMap[regionName] ? ACTIVE_STYLE : INACTIVE_STYLE;
-}
+  function makePopup(regionName, projects) {
+    var lines = projects.map(function(p) {
+      var sc = STATUS_COLORS[p.status] || '#888';
+      var sl = STATUS_LABELS[p.status] || p.status;
+      var places = (p.geography && p.geography.places && p.geography.places.length)
+        ? '<span style="font-size:0.72rem;color:#888;display:block;">' + p.geography.places.join(', ') + '</span>'
+        : '';
+      return '<div class="map-popup__item">'
+        + '<span class="map-popup__status" style="background:' + sc + '22;color:' + sc + '">' + sl + '</span>'
+        + '<div><a href="/research/' + p.id + '/">' + p.title + '</a>' + places + '</div>'
+        + '</div>';
+    }).join('');
+    return '<div class="map-popup__region">' + regionName + '</div>' + lines;
+  }
 
-function onEach(regionName, layer) {
-  if (!regionMap[regionName]) return;
-  layer.on({
-    mouseover: e => { e.target.setStyle(HOVER_STYLE); e.target.bringToFront(); },
-    mouseout:  e => { e.target.setStyle(ACTIVE_STYLE); },
-    click:     e => {
-      layer.bindPopup(makePopup(regionName, regionMap[regionName]), { maxWidth: 280 }).openPopup(e.latlng);
-    }
-  });
-  layer.getElement && layer.getElement() && (layer.getElement().style.cursor = 'pointer');
-}
+  function styleFeature(regionName) {
+    return regionMap[regionName] ? ACTIVE_STYLE : INACTIVE_STYLE;
+  }
 
-// Load US states GeoJSON
-fetch('https://raw.githubusercontent.com/PublicaMundi/MappingAPI/master/data/geojson/us-states.json')
-  .then(r => r.json())
-  .then(data => {
-    L.geoJSON(data, {
-      style: f => styleFeature(f.properties.name),
-      onEachFeature: (f, layer) => {
-        layer.options.regionName = f.properties.name;
-        onEach(f.properties.name, layer);
-        if (!regionMap[f.properties.name]) {
-          layer.on('mouseover', e => e.target.setStyle({ fillOpacity: 0.15, color: '#999', weight: 0.6 }));
-          layer.on('mouseout',  e => e.target.setStyle(INACTIVE_STYLE));
-        }
+  function onEach(regionName, layer) {
+    if (!regionMap[regionName]) return;
+    layer.on({
+      mouseover: function(e) { e.target.setStyle(HOVER_STYLE); e.target.bringToFront(); },
+      mouseout:  function(e) { e.target.setStyle(ACTIVE_STYLE); },
+      click:     function(e) {
+        layer.bindPopup(makePopup(regionName, regionMap[regionName]), { maxWidth: 280 }).openPopup(e.latlng);
       }
-    }).addTo(map);
-  })
-  .catch(() => console.warn('Could not load US states GeoJSON'));
+    });
+  }
 
-// Load world countries GeoJSON (exclude USA — handled by states layer)
-fetch('https://raw.githubusercontent.com/datasets/geo-countries/master/data/countries.geojson')
-  .then(r => r.json())
-  .then(data => {
-    L.geoJSON(data, {
-      filter: f => f.properties.ADMIN !== 'United States of America',
-      style:  f => styleFeature(f.properties.ADMIN),
-      onEachFeature: (f, layer) => {
-        const name = f.properties.ADMIN;
-        onEach(name, layer);
-        if (!regionMap[name]) {
-          layer.on('mouseover', e => e.target.setStyle({ fillOpacity: 0.15, color: '#999', weight: 0.6 }));
-          layer.on('mouseout',  e => e.target.setStyle(INACTIVE_STYLE));
+  // Load US states GeoJSON
+  fetch('https://raw.githubusercontent.com/PublicaMundi/MappingAPI/master/data/geojson/us-states.json')
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+      L.geoJSON(data, {
+        style: function(f) { return styleFeature(f.properties.name); },
+        onEachFeature: function(f, layer) {
+          onEach(f.properties.name, layer);
+          if (!regionMap[f.properties.name]) {
+            layer.on('mouseover', function(e) { e.target.setStyle({ fillOpacity: 0.15, color: '#999', weight: 0.6 }); });
+            layer.on('mouseout',  function(e) { e.target.setStyle(INACTIVE_STYLE); });
+          }
         }
-      }
-    }).addTo(map);
-  })
-  .catch(() => console.warn('Could not load world countries GeoJSON'));
+      }).addTo(map);
+    })
+    .catch(function(e) { console.warn('Could not load US states GeoJSON', e); });
+
+  // Load world countries GeoJSON (exclude USA — handled by states layer)
+  fetch('https://raw.githubusercontent.com/datasets/geo-countries/master/data/countries.geojson')
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+      L.geoJSON(data, {
+        filter: function(f) { return f.properties.ADMIN !== 'United States of America'; },
+        style:  function(f) { return styleFeature(f.properties.ADMIN); },
+        onEachFeature: function(f, layer) {
+          var name = f.properties.ADMIN;
+          onEach(name, layer);
+          if (!regionMap[name]) {
+            layer.on('mouseover', function(e) { e.target.setStyle({ fillOpacity: 0.15, color: '#999', weight: 0.6 }); });
+            layer.on('mouseout',  function(e) { e.target.setStyle(INACTIVE_STYLE); });
+          }
+        }
+      }).addTo(map);
+    })
+    .catch(function(e) { console.warn('Could not load world countries GeoJSON', e); });
+})();
 </script>
 
 <!-- ── Region list below map ───────────────────────── -->
