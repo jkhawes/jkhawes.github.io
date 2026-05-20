@@ -7,9 +7,6 @@ author_profile: false
 
 {% include base_path %}
 
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-
 <style>
 .back-link {
   font-size: 0.82rem;
@@ -180,44 +177,10 @@ author_profile: false
     mapEl.innerHTML = '<div class="map-error">' + msg + '</div>';
   }
 
-  // Bail out cleanly if Leaflet failed to load
   if (typeof L === 'undefined') {
     showMapError('Map could not load (Leaflet library unavailable). The region list below is still accurate.');
     return;
   }
-
-  var PROJECT_DATA;
-  try {
-    PROJECT_DATA = {{ all_projects | jsonify }};
-  } catch(e) {
-    showMapError('Map data could not be parsed. The region list below is still accurate.');
-    return;
-  }
-
-  // Build region → projects lookup
-  var regionMap = {};
-  PROJECT_DATA.forEach(function(p) {
-    var regions = (p.geography && p.geography.regions) ? p.geography.regions : [];
-    regions.forEach(function(r) {
-      if (!regionMap[r]) regionMap[r] = [];
-      regionMap[r].push(p);
-    });
-  });
-
-  var STATUS_COLORS = {
-    active:           '#2a6e49',
-    complete:         '#777',
-    'seeking-funding':'#b45309'
-  };
-  var STATUS_LABELS = {
-    active:           'Active',
-    complete:         'Complete',
-    'seeking-funding':'Seeking Funding'
-  };
-
-  var ACTIVE_STYLE   = { fillColor: '#2a6e49', fillOpacity: 0.28, color: '#2a6e49', weight: 1.5 };
-  var HOVER_STYLE    = { fillColor: '#2a6e49', fillOpacity: 0.5,  color: '#2a6e49', weight: 2 };
-  var INACTIVE_STYLE = { fillColor: '#ccc',    fillOpacity: 0.08, color: '#bbb',    weight: 0.4 };
 
   var map;
   try {
@@ -233,8 +196,13 @@ author_profile: false
     maxZoom: 10
   }).addTo(map);
 
-  // Force layout recalc after render — fixes sizing issues in some themes
   setTimeout(function() { map.invalidateSize(); }, 250);
+
+  var STATUS_COLORS = { active: '#2a6e49', complete: '#777', 'seeking-funding': '#b45309' };
+  var STATUS_LABELS = { active: 'Active', complete: 'Complete', 'seeking-funding': 'Seeking Funding' };
+  var ACTIVE_STYLE   = { fillColor: '#2a6e49', fillOpacity: 0.28, color: '#2a6e49', weight: 1.5 };
+  var HOVER_STYLE    = { fillColor: '#2a6e49', fillOpacity: 0.5,  color: '#2a6e49', weight: 2 };
+  var INACTIVE_STYLE = { fillColor: '#ccc',    fillOpacity: 0.08, color: '#bbb',    weight: 0.4 };
 
   function makePopup(regionName, projects) {
     var lines = projects.map(function(p) {
@@ -251,56 +219,59 @@ author_profile: false
     return '<div class="map-popup__region">' + regionName + '</div>' + lines;
   }
 
-  function styleFeature(regionName) {
-    return regionMap[regionName] ? ACTIVE_STYLE : INACTIVE_STYLE;
-  }
-
-  function onEach(regionName, layer) {
-    if (!regionMap[regionName]) return;
-    layer.on({
-      mouseover: function(e) { e.target.setStyle(HOVER_STYLE); e.target.bringToFront(); },
-      mouseout:  function(e) { e.target.setStyle(ACTIVE_STYLE); },
-      click:     function(e) {
-        layer.bindPopup(makePopup(regionName, regionMap[regionName]), { maxWidth: 280 }).openPopup(e.latlng);
+  function applyGeoJSON(data, regionMap, nameKey, excludeName) {
+    var INACTIVE = INACTIVE_STYLE;
+    L.geoJSON(data, {
+      filter: function(f) { return !excludeName || f.properties[nameKey] !== excludeName; },
+      style:  function(f) { return regionMap[f.properties[nameKey]] ? ACTIVE_STYLE : INACTIVE; },
+      onEachFeature: function(f, layer) {
+        var name = f.properties[nameKey];
+        if (regionMap[name]) {
+          layer.on({
+            mouseover: function(e) { e.target.setStyle(HOVER_STYLE); e.target.bringToFront(); },
+            mouseout:  function(e) { e.target.setStyle(ACTIVE_STYLE); },
+            click: function(e) {
+              layer.bindPopup(makePopup(name, regionMap[name]), { maxWidth: 280 }).openPopup(e.latlng);
+            }
+          });
+        } else {
+          layer.on('mouseover', function(e) { e.target.setStyle({ fillOpacity: 0.15, color: '#999', weight: 0.6 }); });
+          layer.on('mouseout',  function(e) { e.target.setStyle(INACTIVE); });
+        }
       }
-    });
+    }).addTo(map);
   }
 
-  // Load US states GeoJSON
-  fetch('https://raw.githubusercontent.com/PublicaMundi/MappingAPI/master/data/geojson/us-states.json')
-    .then(function(r) { return r.json(); })
-    .then(function(data) {
-      L.geoJSON(data, {
-        style: function(f) { return styleFeature(f.properties.name); },
-        onEachFeature: function(f, layer) {
-          onEach(f.properties.name, layer);
-          if (!regionMap[f.properties.name]) {
-            layer.on('mouseover', function(e) { e.target.setStyle({ fillOpacity: 0.15, color: '#999', weight: 0.6 }); });
-            layer.on('mouseout',  function(e) { e.target.setStyle(INACTIVE_STYLE); });
-          }
-        }
-      }).addTo(map);
+  // Fetch project data from a pre-built JSON file (avoids inline Liquid injection issues)
+  fetch('/assets/data/projects.json')
+    .then(function(r) {
+      if (!r.ok) throw new Error('HTTP ' + r.status);
+      return r.json();
     })
-    .catch(function(e) { console.warn('Could not load US states GeoJSON', e); });
+    .then(function(projects) {
+      var regionMap = {};
+      projects.forEach(function(p) {
+        var regions = (p.geography && p.geography.regions) ? p.geography.regions : [];
+        regions.forEach(function(r) {
+          if (!regionMap[r]) regionMap[r] = [];
+          regionMap[r].push(p);
+        });
+      });
 
-  // Load world countries GeoJSON (exclude USA — handled by states layer)
-  fetch('https://raw.githubusercontent.com/datasets/geo-countries/master/data/countries.geojson')
-    .then(function(r) { return r.json(); })
-    .then(function(data) {
-      L.geoJSON(data, {
-        filter: function(f) { return f.properties.ADMIN !== 'United States of America'; },
-        style:  function(f) { return styleFeature(f.properties.ADMIN); },
-        onEachFeature: function(f, layer) {
-          var name = f.properties.ADMIN;
-          onEach(name, layer);
-          if (!regionMap[name]) {
-            layer.on('mouseover', function(e) { e.target.setStyle({ fillOpacity: 0.15, color: '#999', weight: 0.6 }); });
-            layer.on('mouseout',  function(e) { e.target.setStyle(INACTIVE_STYLE); });
-          }
-        }
-      }).addTo(map);
+      fetch('https://raw.githubusercontent.com/PublicaMundi/MappingAPI/master/data/geojson/us-states.json')
+        .then(function(r) { return r.json(); })
+        .then(function(data) { applyGeoJSON(data, regionMap, 'name', null); })
+        .catch(function(e) { console.warn('Could not load US states GeoJSON', e); });
+
+      fetch('https://raw.githubusercontent.com/datasets/geo-countries/master/data/countries.geojson')
+        .then(function(r) { return r.json(); })
+        .then(function(data) { applyGeoJSON(data, regionMap, 'ADMIN', 'United States of America'); })
+        .catch(function(e) { console.warn('Could not load world countries GeoJSON', e); });
     })
-    .catch(function(e) { console.warn('Could not load world countries GeoJSON', e); });
+    .catch(function(e) {
+      console.warn('Could not load project data for map overlay:', e);
+      // Base tiles still show; map works, just without highlighted regions
+    });
 })();
 </script>
 
