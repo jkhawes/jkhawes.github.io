@@ -1,6 +1,6 @@
 ---
 layout: archive
-title: "Research by Topic"
+title: "Research by Theme"
 permalink: /research/topics/
 author_profile: false
 ---
@@ -25,70 +25,38 @@ author_profile: false
   margin-bottom: 2.5em;
 }
 
-/* ── Tag index bar ─────────────────────────────── */
-.topic-index {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5em;
-  margin-bottom: 3em;
+/* ── Theme section ─────────────────────────────── */
+.theme-section {
+  margin-bottom: 3.5em;
 }
-.topic-index__chip {
-  font-size: 0.78rem;
-  font-weight: 600;
-  padding: 0.3em 0.9em;
-  border-radius: 999px;
-  background: #f0f0f0;
-  color: #333;
-  text-decoration: none;
-  transition: background 0.15s, color 0.15s;
-}
-.topic-index__chip:hover {
-  background: #2a6e49;
-  color: #fff;
-  text-decoration: none;
-}
-
-/* ── Topic section ─────────────────────────────── */
-.topic-section {
-  margin-bottom: 3em;
-}
-.topic-section__header {
-  display: flex;
-  align-items: baseline;
-  gap: 0.8em;
-  margin-bottom: 0.9em;
+.theme-section__header {
+  margin-bottom: 1em;
+  padding-bottom: 0.5em;
   border-bottom: 2px solid #e5e5e5;
-  padding-bottom: 0.4em;
 }
-.topic-section__title {
-  font-size: 1.1rem;
+.theme-section__title {
+  font-size: 1.15rem;
   font-weight: 700;
   color: #111;
+  margin: 0 0 0.25em;
+}
+.theme-section__desc {
+  font-size: 0.85rem;
+  color: #666;
+  line-height: 1.6;
   margin: 0;
 }
-.topic-section__count {
-  font-size: 0.78rem;
-  color: #888;
-}
-.topic-section__explore {
-  margin-left: auto;
-  font-size: 0.78rem;
-  font-weight: 600;
-  color: #2a6e49;
-  text-decoration: none;
-}
-.topic-section__explore:hover { text-decoration: underline; }
 
-/* ── Mini project cards ────────────────────────── */
-.mini-cards {
+/* ── Project cards ─────────────────────────────── */
+.theme-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 1em;
 }
-.mini-card {
+.theme-card {
   border: 1px solid #e5e5e5;
   border-radius: 7px;
-  padding: 1em 1.2em;
+  padding: 1.1em 1.3em 1em;
   background: #fff;
   text-decoration: none;
   color: inherit;
@@ -96,13 +64,13 @@ author_profile: false
   flex-direction: column;
   transition: border-color 0.15s, box-shadow 0.15s;
 }
-.mini-card:hover {
+.theme-card:hover {
   border-color: #2a6e49;
   box-shadow: 0 2px 8px rgba(0,0,0,0.07);
   text-decoration: none;
   color: inherit;
 }
-.mini-card__status {
+.theme-card__status {
   font-size: 0.62rem;
   font-weight: 700;
   letter-spacing: 0.1em;
@@ -113,18 +81,18 @@ author_profile: false
   margin-bottom: 0.5em;
   align-self: flex-start;
 }
-.status--active   { background: #e6f4ed; color: #2a6e49; }
-.status--complete { background: #f0f0f0; color: #666; }
-.status--seeking-funding { background: #fef3e2; color: #b45309; }
+.status--active           { background: #e6f4ed; color: #2a6e49; }
+.status--complete         { background: #f0f0f0; color: #666; }
+.status--seeking-funding  { background: #fef3e2; color: #b45309; }
 
-.mini-card__title {
-  font-size: 0.88rem;
+.theme-card__title {
+  font-size: 0.9rem;
   font-weight: 700;
   color: #111;
   margin: 0 0 0.35em;
   line-height: 1.35;
 }
-.mini-card__desc {
+.theme-card__desc {
   font-size: 0.78rem;
   color: #555;
   line-height: 1.6;
@@ -135,59 +103,63 @@ author_profile: false
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
+
+.explore-link {
+  display: inline-block;
+  margin-top: 3em;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #2a6e49;
+  text-decoration: none;
+  border: 1.5px solid #2a6e49;
+  padding: 0.4em 1.1em;
+  border-radius: 5px;
+  transition: background 0.15s, color 0.15s;
+}
+.explore-link:hover {
+  background: #2a6e49;
+  color: #fff;
+  text-decoration: none;
+}
 </style>
 
 <a href="/research/" class="back-link">&larr; Back to Research</a>
 
-<p class="topics-intro">Browse our projects by research topic. Click any tag to see all projects in that area, or use the <a href="/research/explore/">explore page</a> to filter across topics, geography, and status at once.</p>
+<p class="topics-intro">Our work is organized across five research themes. Click any project to learn more, or use the <a href="/research/explore/">explore page</a> to filter across all projects by topic, geography, and status.</p>
 
 {% assign all_projects = site.data.projects.projects %}
-{% assign topic_labels = site.data.projects.topic_labels %}
 
-<!-- Build a unique sorted list of all topics used across projects -->
-{% assign all_topics = "" | split: "" %}
-{% for project in all_projects %}
-  {% for topic in project.topics %}
-    {% unless all_topics contains topic %}
-      {% assign all_topics = all_topics | push: topic %}
-    {% endunless %}
-  {% endfor %}
-{% endfor %}
-{% assign all_topics = all_topics | sort %}
+{% assign theme_list = "Community and Infrastructure Resilience|Smart Rural Places|Sustainable Economy and Environment|Computing for Sustainability, Resilience, and Justice Research|Equitable Communities" | split: "|" %}
 
-<!-- Quick-jump chip bar -->
-<div class="topic-index">
-  {% for topic in all_topics %}
-    {% assign label = topic_labels[topic] | default: topic %}
-    <a href="#topic-{{ topic }}" class="topic-index__chip">{{ label }}</a>
-  {% endfor %}
-</div>
+{% assign theme_descs = "How communities, supply chains, and physical systems respond to and recover from hazard events — including wildfire, supply chain disruption, and the compounding effects of climate change.|Applying digital tools, sensing infrastructure, and AI to help small towns and rural communities make better decisions about local services, infrastructure, and their technology futures.|Understanding how economic and ecological systems interact — from urban food systems and the circular economy to indoor farming and coastal land markets.|Advancing the computational methods and tools that researchers use to study environmental and social systems, including AI, machine learning, and decision-support frameworks.|Examining who bears the costs and who captures the benefits of environmental change, infrastructure investment, and development — and building evidence for more just outcomes." | split: "|" %}
 
-<!-- One section per topic -->
-{% for topic in all_topics %}
-  {% assign label = topic_labels[topic] | default: topic %}
-  {% assign topic_projects = all_projects | where_exp: "p", "p.topics contains topic" %}
+{% for theme in theme_list %}
+  {% assign theme_idx = forloop.index0 %}
+  {% assign theme_desc = theme_descs[theme_idx] %}
+  {% assign theme_projects = all_projects | where: "group", theme %}
 
-  <div class="topic-section" id="topic-{{ topic }}">
-    <div class="topic-section__header">
-      <h2 class="topic-section__title">{{ label }}</h2>
-      <span class="topic-section__count">{{ topic_projects.size }} project{% if topic_projects.size != 1 %}s{% endif %}</span>
-      <a href="/research/explore/?topic={{ topic }}" class="topic-section__explore">See all &rarr;</a>
+  {% if theme_projects.size > 0 %}
+  <div class="theme-section">
+    <div class="theme-section__header">
+      <h2 class="theme-section__title">{{ theme }}</h2>
+      <p class="theme-section__desc">{{ theme_desc }}</p>
     </div>
-
-    <div class="mini-cards">
-      {% for project in topic_projects limit: 4 %}
-        <a href="/research/{{ project.id }}/" class="mini-card">
-          <span class="mini-card__status status--{{ project.status }}">
+    <div class="theme-cards">
+      {% for project in theme_projects %}
+        <a href="/research/{{ project.id }}/" class="theme-card">
+          <span class="theme-card__status status--{{ project.status }}">
             {% if project.status == 'active' %}Active
             {% elsif project.status == 'complete' %}Complete
             {% elsif project.status == 'seeking-funding' %}Seeking Funding
             {% endif %}
           </span>
-          <p class="mini-card__title">{{ project.title }}</p>
-          <p class="mini-card__desc">{{ project.short_description }}</p>
+          <p class="theme-card__title">{{ project.title }}</p>
+          <p class="theme-card__desc">{{ project.short_description }}</p>
         </a>
       {% endfor %}
     </div>
   </div>
+  {% endif %}
 {% endfor %}
+
+<a href="/research/explore/" class="explore-link">Browse all projects &rarr;</a>

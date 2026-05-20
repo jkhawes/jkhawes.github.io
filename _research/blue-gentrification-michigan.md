@@ -1,5 +1,5 @@
 ---
-title: "Assessing Blue Gentrification in Michigan's Coastal Communities"
+title: "Assessing Gentrification in Michigan's Coastal Communities"
 status: active
 year_start: 2023
 year_end: null

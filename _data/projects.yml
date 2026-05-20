@@ -5,6 +5,7 @@ projects:
     status: complete
     year_start: 2021
     year_end: 2026
+    group: "Sustainable Economy and Environment"
     sponsor: "University of Michigan School for Environment and Sustainability"
     funders:
       - "University of Michigan School for Environment and Sustainability"
@@ -42,6 +43,7 @@ projects:
     status: active
     year_start: 2023
     year_end: null
+    group: "Computing for Sustainability, Resilience, and Justice Research"
     sponsor: "Unfunded / collaborative"
     funders: []
     topics:
@@ -80,6 +82,7 @@ projects:
     status: active
     year_start: 2025
     year_end: null
+    group: "Sustainable Economy and Environment"
     sponsor: "Collaborative / unfunded"
     funders: []
     topics:
@@ -110,6 +113,7 @@ projects:
     status: seeking-funding
     year_start: 2025
     year_end: null
+    group: "Community and Infrastructure Resilience"
     sponsor: "Seeking funding"
     funders: []
     topics:
@@ -143,6 +147,7 @@ projects:
     status: complete
     year_start: 2018
     year_end: 2024
+    group: "Sustainable Economy and Environment"
     sponsor: "JPI Urban Europe / SUGI FWE Nexus"
     funders:
       - "ESRC, UK (ES/S002170/2)"
@@ -217,6 +222,7 @@ projects:
     status: active
     year_start: 2025
     year_end: null
+    group: "Community and Infrastructure Resilience"
     sponsor: "ADAC-ARCTIC Center of Excellence (Department of Homeland Security)"
     funders:
       - "ADAC-ARCTIC Center of Excellence (Department of Homeland Security)"
@@ -250,6 +256,7 @@ projects:
     status: active
     year_start: 2025
     year_end: null
+    group: "Community and Infrastructure Resilience"
     sponsor: "Seeking funding"
     funders: []
     topics:
@@ -282,6 +289,7 @@ projects:
     status: active
     year_start: 2026
     year_end: 2029
+    group: "Computing for Sustainability, Resilience, and Justice Research"
     sponsor: "Joint Fire Science Program"
     funders:
       - "Joint Fire Science Program"
@@ -310,6 +318,7 @@ projects:
     status: seeking-funding
     year_start: 2025
     year_end: null
+    group: "Community and Infrastructure Resilience"
     sponsor: "NSF (seeking)"
     funders: []
     topics:
@@ -345,6 +354,7 @@ projects:
     status: active
     year_start: 2025
     year_end: null
+    group: "Smart Rural Places"
     sponsor: "Center for Rural Community Resilience and Innovation (CRCRI), University of Wyoming"
     funders:
       - "Center for Rural Community Resilience and Innovation (CRCRI), University of Wyoming"
@@ -385,6 +395,7 @@ projects:
     status: active
     year_start: 2025
     year_end: null
+    group: "Community and Infrastructure Resilience"
     sponsor: "Unfunded (thesis research)"
     funders: []
     topics:
@@ -416,6 +427,7 @@ projects:
     status: active
     year_start: 2025
     year_end: null
+    group: "Sustainable Economy and Environment"
     sponsor: "UW AI Seed Grant"
     funders:
       - "University of Wyoming AI Seed Grant"
@@ -453,6 +465,7 @@ projects:
     status: active
     year_start: 2026
     year_end: null
+    group: "Smart Rural Places"
     sponsor: "Wyoming Institute for Humanities Research (Humanities for AI Seed Grant)"
     funders:
       - "Wyoming Institute for Humanities Research (Humanities for AI Seed Grant, $10,000)"
@@ -488,6 +501,7 @@ projects:
     status: active
     year_start: 2026
     year_end: null
+    group: "Community and Infrastructure Resilience"
     sponsor: "North Central Climate Adaptation Science Center (NC CASC)"
     funders:
       - "North Central Climate Adaptation Science Center, via CU Boulder"
@@ -519,11 +533,55 @@ projects:
         citation: "Corbett, P., et al. (planned). Journal TBD."
         url: ""
 
+  - id: digital-twin-readiness
+    title: "Digital Twin Readiness and Equity in Small Cities"
+    status: active
+    year_start: 2025
+    year_end: null
+    group: "Equitable Communities"
+    sponsor: "Center for Rural Community Resilience and Innovation (CRCRI), University of Wyoming"
+    funders:
+      - "Center for Rural Community Resilience and Innovation (CRCRI), University of Wyoming"
+    topics:
+      - digital-twins
+      - rural-communities
+      - smart-technology
+      - governance
+      - social-vulnerability
+      - methodology
+    themes:
+      - social-equity
+      - smart-communities
+    geography:
+      places:
+        - "Laramie, WY"
+        - "Afton, WY"
+      regions:
+        - "Wyoming"
+    short_description: "Investigates whether digital twin technology deepens or reduces inequality in small cities, combining a critical literature review on digital twin equity with a comparative empirical assessment of data infrastructure and governance readiness in Laramie and Afton, Wyoming. The work produces a replicable framework for evaluating digital twin readiness in resource-constrained communities — asking whether the technology can serve small cities equitably, or whether it reproduces the 'smart urban divide' it promises to bridge."
+    hes_contributors:
+      - "Dr. Jake Hawes (advisor)"
+      - "Md. Ismail Hossain (MS student)"
+    collaborators:
+      - "Dr. Judith Njoku"
+      - "Dr. Diksha Shukla"
+      - "Dr. Vinit Katariya"
+      - "Dr. Jeff Hamerlinck"
+      - "Dr. Jian Gong"
+    outputs:
+      - label: "How digital twins reproduce or reduce inequalities in small cities: A theoretical model"
+        citation: "Hossain, M. I. & Hawes, J. K. (planned). Journal TBD."
+        url: ""
+      - label: "Digital twin readiness and data equity in small cities: A comparative assessment of Laramie and Afton, Wyoming"
+        citation: "Hossain, M. I. & Hawes, J. K. (planned). Journal TBD."
+        url: ""
+
   - id: blue-gentrification-michigan
-    title: "Assessing Blue Gentrification in Michigan's Coastal Communities"
+    title: "Assessing Gentrification in Michigan's Coastal Communities"
     status: active
     year_start: 2023
     year_end: null
+    group: "Equitable Communities"
     sponsor: "Michigan Sea Grant"
     funders:
       - "Michigan Sea Grant"
