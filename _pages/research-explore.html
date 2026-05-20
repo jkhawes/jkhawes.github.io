@@ -1,0 +1,490 @@
+---
+layout: archive
+title: "Explore Research"
+permalink: /research/explore/
+author_profile: false
+---
+
+{% include base_path %}
+
+<style>
+.back-link {
+  font-size: 0.82rem;
+  color: #2a6e49;
+  text-decoration: none;
+  display: inline-block;
+  margin-bottom: 1.5em;
+}
+.back-link:hover { text-decoration: underline; }
+
+/* ── Filter panel ─────────────────────────────── */
+.explore-layout {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 2em;
+  align-items: start;
+}
+@media (max-width: 680px) {
+  .explore-layout { grid-template-columns: 1fr; }
+}
+
+.filter-panel {
+  position: sticky;
+  top: 1em;
+}
+.filter-panel__title {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #888;
+  margin: 0 0 0.6em;
+}
+.filter-panel__section {
+  margin-bottom: 1.4em;
+}
+.filter-panel__clear {
+  font-size: 0.75rem;
+  color: #c0392b;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: none;
+  margin-top: 0.8em;
+  font-weight: 600;
+}
+.filter-panel__clear:hover { text-decoration: underline; }
+.filter-panel__clear.visible { display: inline-block; }
+
+.filter-chip {
+  display: inline-block;
+  font-size: 0.74rem;
+  font-weight: 600;
+  padding: 0.28em 0.75em;
+  border-radius: 999px;
+  margin: 0.25em 0.2em 0.25em 0;
+  cursor: pointer;
+  border: 1.5px solid #ddd;
+  background: #fff;
+  color: #444;
+  transition: border-color 0.12s, background 0.12s, color 0.12s;
+  user-select: none;
+}
+.filter-chip:hover {
+  border-color: #2a6e49;
+  color: #2a6e49;
+}
+.filter-chip.active {
+  background: #2a6e49;
+  border-color: #2a6e49;
+  color: #fff;
+}
+
+/* ── Active filter summary bar ───────────────── */
+.active-filters-bar {
+  display: none;
+  flex-wrap: wrap;
+  gap: 0.4em;
+  margin-bottom: 1.2em;
+  padding: 0.7em 1em;
+  background: #f7f7f7;
+  border-radius: 6px;
+  align-items: center;
+}
+.active-filters-bar.visible { display: flex; }
+.active-filters-bar__label {
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: #888;
+  margin-right: 0.3em;
+}
+.active-filter-tag {
+  font-size: 0.72rem;
+  font-weight: 600;
+  background: #2a6e49;
+  color: #fff;
+  padding: 0.2em 0.6em;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  gap: 0.4em;
+}
+.active-filter-tag__remove {
+  cursor: pointer;
+  font-size: 0.85em;
+  opacity: 0.7;
+  line-height: 1;
+}
+.active-filter-tag__remove:hover { opacity: 1; }
+
+/* ── Results ──────────────────────────────────── */
+.results-header {
+  display: flex;
+  align-items: baseline;
+  gap: 0.8em;
+  margin-bottom: 1.2em;
+}
+.results-count {
+  font-size: 0.8rem;
+  color: #888;
+}
+
+.project-card {
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  padding: 1.3em 1.5em 1.1em;
+  margin-bottom: 1.1em;
+  background: #fff;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+.project-card.highlighted {
+  border-color: #2a6e49;
+  box-shadow: 0 2px 12px rgba(42,110,73,0.12);
+}
+.project-card.hidden { display: none; }
+
+.project-card__header {
+  display: flex;
+  align-items: center;
+  gap: 0.7em;
+  margin-bottom: 0.5em;
+  flex-wrap: wrap;
+}
+.project-card__status {
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.2em 0.6em;
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+.status--active   { background: #e6f4ed; color: #2a6e49; }
+.status--complete { background: #f0f0f0; color: #666; }
+.status--seeking-funding { background: #fef3e2; color: #b45309; }
+
+.project-card__years {
+  font-size: 0.72rem;
+  color: #999;
+  font-weight: 600;
+}
+.project-card__title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #111;
+  margin: 0 0 0.4em;
+}
+.project-card__desc {
+  font-size: 0.85rem;
+  line-height: 1.75;
+  color: #444;
+  margin: 0 0 0.8em;
+}
+.project-card__meta {
+  font-size: 0.78rem;
+  color: #777;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2em;
+  margin-bottom: 0.9em;
+}
+.project-card__meta span { font-weight: 600; color: #444; }
+.project-card__meta a { color: #2a6e49; }
+.project-card__meta a:hover { text-decoration: underline; }
+
+.project-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35em;
+}
+.project-tag {
+  font-size: 0.68rem;
+  padding: 0.18em 0.6em;
+  border-radius: 3px;
+  font-weight: 600;
+  cursor: pointer;
+  background: #f0f0f0;
+  color: #555;
+  border: 1.5px solid transparent;
+  transition: background 0.12s, color 0.12s, border-color 0.12s;
+}
+.project-tag:hover {
+  background: #e6f4ed;
+  color: #2a6e49;
+  border-color: #2a6e49;
+}
+
+.no-results {
+  display: none;
+  padding: 2em;
+  text-align: center;
+  color: #888;
+  font-size: 0.9rem;
+  border: 1px dashed #ddd;
+  border-radius: 8px;
+}
+.no-results.visible { display: block; }
+</style>
+
+<a href="/research/" class="back-link">&larr; Back to Research</a>
+
+<!-- Embed all project data as JSON for JS filtering -->
+<script>
+const ALL_PROJECTS = {{ site.data.projects.projects | jsonify }};
+const TOPIC_LABELS = {{ site.data.projects.topic_labels | jsonify }};
+</script>
+
+<div class="explore-layout">
+
+  <!-- ── Filter sidebar ─────────────────────────── -->
+  <aside class="filter-panel">
+
+    <div class="filter-panel__section">
+      <p class="filter-panel__title">Status</p>
+      <span class="filter-chip" data-filter-type="status" data-filter-value="active">Active</span>
+      <span class="filter-chip" data-filter-type="status" data-filter-value="complete">Complete</span>
+      <span class="filter-chip" data-filter-type="status" data-filter-value="seeking-funding">Seeking Funding</span>
+    </div>
+
+    <div class="filter-panel__section">
+      <p class="filter-panel__title">Topic</p>
+      <div id="topic-chips"></div>
+    </div>
+
+    <div class="filter-panel__section">
+      <p class="filter-panel__title">Geography</p>
+      <div id="geo-chips"></div>
+    </div>
+
+    <button class="filter-panel__clear" id="clear-all-btn">Clear all filters</button>
+
+  </aside>
+
+  <!-- ── Results pane ───────────────────────────── -->
+  <main>
+    <div class="active-filters-bar" id="active-filters-bar">
+      <span class="active-filters-bar__label">Filtering by:</span>
+      <div id="active-filter-tags"></div>
+    </div>
+
+    <div class="results-header">
+      <span class="results-count" id="results-count"></span>
+    </div>
+
+    <div id="project-list"></div>
+    <div class="no-results" id="no-results">No projects match the selected filters. <a href="#" id="no-results-clear">Clear filters</a></div>
+  </main>
+
+</div>
+
+<script>
+// ── State ──────────────────────────────────────────────────────────
+const activeFilters = { status: new Set(), topic: new Set(), geo: new Set() };
+let highlightId = null;
+
+// ── Boot ───────────────────────────────────────────────────────────
+function boot() {
+  buildChips();
+  renderCards();
+  readUrlParams();
+  applyFilters();
+}
+
+// ── Build filter chips from project data ──────────────────────────
+function buildChips() {
+  const topics = new Set();
+  const geos = new Set();
+  ALL_PROJECTS.forEach(p => {
+    (p.topics || []).forEach(t => topics.add(t));
+    ((p.geography && p.geography.regions) ? p.geography.regions : []).forEach(r => geos.add(r));
+  });
+
+  const topicContainer = document.getElementById('topic-chips');
+  [...topics].sort().forEach(t => {
+    const label = TOPIC_LABELS[t] || t;
+    topicContainer.innerHTML += `<span class="filter-chip" data-filter-type="topic" data-filter-value="${t}">${label}</span>`;
+  });
+
+  const geoContainer = document.getElementById('geo-chips');
+  [...geos].sort().forEach(g => {
+    geoContainer.innerHTML += `<span class="filter-chip" data-filter-type="geo" data-filter-value="${g}">${g}</span>`;
+  });
+
+  document.querySelectorAll('.filter-chip').forEach(chip => {
+    chip.addEventListener('click', () => toggleChip(chip));
+  });
+}
+
+// ── Render all project cards (hidden/shown by JS) ─────────────────
+function renderCards() {
+  const list = document.getElementById('project-list');
+  list.innerHTML = '';
+  ALL_PROJECTS.forEach(p => {
+    const years = p.year_end ? `${p.year_start}–${p.year_end}` : `${p.year_start}–present`;
+    const statusLabel = { active: 'Active', complete: 'Complete', 'seeking-funding': 'Seeking Funding' }[p.status] || p.status;
+
+    const outputs = (p.outputs || []).slice(0, 3).map(o =>
+      o.url
+        ? `<a href="${o.url}" target="_blank">${o.label}</a> — <em>${o.citation}</em>`
+        : `${o.label} — <em>${o.citation}</em>`
+    ).join('<br>');
+
+    const topicTags = (p.topics || []).map(t => {
+      const label = TOPIC_LABELS[t] || t;
+      return `<span class="project-tag" data-topic="${t}" title="Filter by ${label}">${label}</span>`;
+    }).join('');
+
+    const collabs = (p.collaborators || []).join('; ');
+    const funders = (p.funders || []).join('; ');
+    const geoPlaces = (p.geography && p.geography.places ? p.geography.places : []).join(', ');
+
+    list.innerHTML += `
+    <div class="project-card" data-id="${p.id}"
+         data-status="${p.status}"
+         data-topics="${(p.topics||[]).join(',')}"
+         data-geo="${(p.geography && p.geography.regions ? p.geography.regions : []).join('|||')}">
+      <div class="project-card__header">
+        <span class="project-card__status status--${p.status}">${statusLabel}</span>
+        <span class="project-card__years">${years}</span>
+      </div>
+      <h3 class="project-card__title"><a href="/research/${p.id}/" style="color:inherit; text-decoration:none;">${p.title}</a></h3>
+      <p class="project-card__desc">${p.short_description}</p>
+      <div class="project-card__meta">
+        ${collabs ? `<div><span>Collaborators:</span> ${collabs}</div>` : ''}
+        ${geoPlaces ? `<div><span>Geography:</span> ${geoPlaces}</div>` : ''}
+        ${outputs ? `<div><span>Key outputs:</span> ${outputs}</div>` : ''}
+        ${funders ? `<div><span>Funding:</span> ${funders}</div>` : ''}
+      </div>
+      <div class="project-card__tags">${topicTags}</div>
+      <div style="margin-top:0.8em;">
+        <a href="/research/${p.id}/" style="font-size:0.78rem; font-weight:600; color:#2a6e49; text-decoration:none;">View project &rarr;</a>
+      </div>
+    </div>`;
+  });
+
+  // Topic tag click-to-filter on cards
+  document.querySelectorAll('.project-tag').forEach(tag => {
+    tag.addEventListener('click', () => {
+      const topic = tag.dataset.topic;
+      activeFilters.topic.add(topic);
+      syncChipUI();
+      applyFilters();
+      updateUrl();
+    });
+  });
+}
+
+// ── Toggle a filter chip ──────────────────────────────────────────
+function toggleChip(chip) {
+  const type = chip.dataset.filterType;
+  const value = chip.dataset.filterValue;
+  const set = activeFilters[type];
+  if (set.has(value)) { set.delete(value); chip.classList.remove('active'); }
+  else { set.add(value); chip.classList.add('active'); }
+  applyFilters();
+  updateUrl();
+  renderActiveFilterBar();
+}
+
+// ── Apply current filters to cards ───────────────────────────────
+function applyFilters() {
+  const cards = document.querySelectorAll('.project-card');
+  let visible = 0;
+  cards.forEach(card => {
+    const matchStatus = activeFilters.status.size === 0 || activeFilters.status.has(card.dataset.status);
+    const cardTopics = (card.dataset.topics || '').split(',').filter(Boolean);
+    const matchTopic = activeFilters.topic.size === 0 || [...activeFilters.topic].some(t => cardTopics.includes(t));
+    const cardGeos = (card.dataset.geo || '').split('|||').filter(Boolean);
+    const matchGeo = activeFilters.geo.size === 0 || [...activeFilters.geo].some(g => cardGeos.includes(g));
+    const show = matchStatus && matchTopic && matchGeo;
+    card.classList.toggle('hidden', !show);
+    if (show) visible++;
+
+    if (highlightId && card.dataset.id === highlightId) {
+      card.classList.add('highlighted');
+      if (show) card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+  });
+
+  document.getElementById('results-count').textContent = `${visible} project${visible !== 1 ? 's' : ''}`;
+  document.getElementById('no-results').classList.toggle('visible', visible === 0);
+  renderActiveFilterBar();
+
+  const hasFilters = activeFilters.status.size + activeFilters.topic.size + activeFilters.geo.size > 0;
+  document.getElementById('clear-all-btn').classList.toggle('visible', hasFilters);
+}
+
+// ── Active filter summary bar ─────────────────────────────────────
+function renderActiveFilterBar() {
+  const bar = document.getElementById('active-filters-bar');
+  const container = document.getElementById('active-filter-tags');
+  const allTags = [];
+
+  activeFilters.status.forEach(v => allTags.push({ type: 'status', value: v, label: { active: 'Active', complete: 'Complete', 'seeking-funding': 'Seeking Funding' }[v] || v }));
+  activeFilters.topic.forEach(v => allTags.push({ type: 'topic', value: v, label: TOPIC_LABELS[v] || v }));
+  activeFilters.geo.forEach(v => allTags.push({ type: 'geo', value: v, label: v }));
+
+  container.innerHTML = allTags.map(t =>
+    `<span class="active-filter-tag">
+       ${t.label}
+       <span class="active-filter-tag__remove" data-type="${t.type}" data-value="${t.value}">&times;</span>
+     </span>`
+  ).join('');
+
+  container.querySelectorAll('.active-filter-tag__remove').forEach(btn => {
+    btn.addEventListener('click', () => {
+      activeFilters[btn.dataset.type].delete(btn.dataset.value);
+      syncChipUI();
+      applyFilters();
+      updateUrl();
+    });
+  });
+
+  bar.classList.toggle('visible', allTags.length > 0);
+}
+
+// ── Keep chip UI in sync with activeFilters ───────────────────────
+function syncChipUI() {
+  document.querySelectorAll('.filter-chip').forEach(chip => {
+    const type = chip.dataset.filterType;
+    const value = chip.dataset.filterValue;
+    chip.classList.toggle('active', activeFilters[type] && activeFilters[type].has(value));
+  });
+}
+
+// ── URL param read/write ──────────────────────────────────────────
+function readUrlParams() {
+  const params = new URLSearchParams(window.location.search);
+  if (params.get('status')) { params.get('status').split(',').forEach(v => activeFilters.status.add(v)); }
+  if (params.get('topic'))  { params.get('topic').split(',').forEach(v => activeFilters.topic.add(v)); }
+  if (params.get('geo'))    { decodeURIComponent(params.get('geo')).split(',').forEach(v => activeFilters.geo.add(v)); }
+  highlightId = params.get('highlight') || null;
+  syncChipUI();
+}
+
+function updateUrl() {
+  const params = new URLSearchParams();
+  if (activeFilters.status.size) params.set('status', [...activeFilters.status].join(','));
+  if (activeFilters.topic.size)  params.set('topic',  [...activeFilters.topic].join(','));
+  if (activeFilters.geo.size)    params.set('geo',    [...activeFilters.geo].join(','));
+  const newUrl = window.location.pathname + (params.toString() ? '?' + params.toString() : '');
+  history.replaceState(null, '', newUrl);
+}
+
+// ── Clear all ─────────────────────────────────────────────────────
+document.getElementById('clear-all-btn').addEventListener('click', clearAll);
+document.getElementById('no-results-clear').addEventListener('click', e => { e.preventDefault(); clearAll(); });
+
+function clearAll() {
+  activeFilters.status.clear();
+  activeFilters.topic.clear();
+  activeFilters.geo.clear();
+  highlightId = null;
+  syncChipUI();
+  applyFilters();
+  updateUrl();
+}
+
+boot();
+</script>

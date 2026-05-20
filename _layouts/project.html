@@ -27,7 +27,7 @@ layout: default
       <div class="proj-hero__meta-group">
         <div class="proj-hero__meta-label">Collaborators</div>
         {% for collab in page.collaborators %}
-        <div class="proj-hero__meta-item">{{ collab.name }}</div>
+        <div class="proj-hero__meta-item">{{ collab.name | default: collab }}</div>
         {% endfor %}
       </div>
       {% endif %}
@@ -55,6 +55,25 @@ layout: default
       {% unless page.header.overlay_image %}
       <header>
         {% if page.title %}<h1 class="page__title" itemprop="headline">{{ page.title | markdownify | remove: "<p>" | remove: "</p>" }}</h1>{% endif %}
+        <div style="display:flex; align-items:center; gap:0.75em; flex-wrap:wrap; margin-top:0.5em; margin-bottom:1em;">
+          {% assign status_label = page.status %}
+          {% if page.status == 'active' %}{% assign status_label = 'Active' %}{% endif %}
+          {% if page.status == 'complete' %}{% assign status_label = 'Complete' %}{% endif %}
+          {% if page.status == 'seeking-funding' %}{% assign status_label = 'Seeking Funding' %}{% endif %}
+          <span style="font-size:0.7rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; padding:0.25em 0.75em; border-radius:4px;
+            {% if page.status == 'active' %}background:#e6f4ed; color:#2a6e49;
+            {% elsif page.status == 'complete' %}background:#f0f0f0; color:#555;
+            {% elsif page.status == 'seeking-funding' %}background:#fef3e2; color:#b45309;
+            {% endif %}">{{ status_label }}</span>
+          {% if page.year_start %}
+          <span style="font-size:0.82rem; color:#888; font-weight:600;">
+            {{ page.year_start }}{% if page.year_end %}–{{ page.year_end }}{% else %}–present{% endif %}
+          </span>
+          {% endif %}
+          {% if page.sponsor %}
+          <span style="font-size:0.82rem; color:#666;">{{ page.sponsor }}</span>
+          {% endif %}
+        </div>
       </header>
       {% endunless %}
 
@@ -63,7 +82,7 @@ layout: default
       </section>
 
       {% unless page.header.overlay_image %}
-      <div class="page__meta" style="margin-top: 2em;">
+      <div class="page__meta" style="margin-top: 2em; border-top: 1px solid #eee; padding-top: 1.5em;">
 
         {% if page.hes_contributors and page.hes_contributors.size > 0 %}
         <div style="margin-bottom: 1.5em;">
@@ -82,7 +101,9 @@ layout: default
           <ul style="list-style: none; padding: 0; margin: 0.5em 0 0 0;">
             {% for collab in page.collaborators %}
             <li style="margin-bottom: 0.25em;">
-              {% if collab.url and collab.url != "" %}<a href="{{ collab.url }}">{{ collab.name }}</a>{% else %}{{ collab.name }}{% endif %}
+              {% assign collab_name = collab.name | default: collab %}
+              {% assign collab_url  = collab.url  | default: "" %}
+              {% if collab_url != "" %}<a href="{{ collab_url }}">{{ collab_name }}</a>{% else %}{{ collab_name }}{% endif %}
             </li>
             {% endfor %}
           </ul>
@@ -91,10 +112,28 @@ layout: default
 
         {% if page.funders and page.funders.size > 0 %}
         <div style="margin-bottom: 1.5em;">
-          <h3 class="page__meta-title">Funders</h3>
+          <h3 class="page__meta-title">Funding</h3>
           <ul style="list-style: none; padding: 0; margin: 0.5em 0 0 0;">
             {% for funder in page.funders %}
             <li style="margin-bottom: 0.25em;">{{ funder }}</li>
+            {% endfor %}
+          </ul>
+        </div>
+        {% endif %}
+
+        {% if page.outputs and page.outputs.size > 0 %}
+        <div style="margin-bottom: 1.5em;">
+          <h3 class="page__meta-title">Outputs</h3>
+          <ul style="list-style: none; padding: 0; margin: 0.5em 0 0 0;">
+            {% for output in page.outputs %}
+            <li style="margin-bottom: 0.6em; font-size: 0.88rem; line-height: 1.5;">
+              {% if output.url and output.url != "" %}
+                <a href="{{ output.url }}" target="_blank">{{ output.label }}</a>
+              {% else %}
+                {{ output.label }}
+              {% endif %}
+              {% if output.citation %}<br><span style="color:#666; font-size:0.83rem;">{{ output.citation }}</span>{% endif %}
+            </li>
             {% endfor %}
           </ul>
         </div>

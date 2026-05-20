@@ -1,0 +1,595 @@
+projects:
+
+  - id: urban-symbiosis
+    title: "Urban Symbiosis"
+    status: complete
+    year_start: 2021
+    year_end: 2026
+    sponsor: "University of Michigan School for Environment and Sustainability"
+    funders:
+      - "University of Michigan School for Environment and Sustainability"
+      - "University of Michigan Rackham Graduate School"
+    topics:
+      - circular-economy
+      - urban-systems
+      - resource-flows
+      - governance
+    themes:
+      - sustainability
+      - social-equity
+    geography:
+      places:
+        - "London, UK"
+      regions:
+        - "United Kingdom"
+    short_description: "Developed and empirically grounded the concept of urban symbiosis — the mutually beneficial, citizen-led sharing of materials and resources within cities. A London case study found that social and wellbeing outcomes frequently outweigh environmental motivations, challenging purely resource-efficiency framings of the circular economy."
+    hes_contributors:
+      - "Dr. Jake Hawes"
+    collaborators:
+      - "Dr. Benjamin Goldstein (University of Michigan)"
+      - "Dr. Brandon Finn (University of Michigan)"
+      - "Danielle Levy (University of Michigan)"
+    outputs:
+      - label: "A typology of resource circularity in cities"
+        citation: "Goldstein, Levy, Hawes & Finn (2026). Resources, Conservation and Recycling, 227, 108743."
+        url: "https://doi.org/10.1016/j.resconrec.2025.108743"
+      - label: "The why, how, and what of urban symbiosis"
+        citation: "Levy, Finn, Goldstein & Hawes (in review)."
+        url: ""
+
+  - id: ai-best-practices-ie
+    title: "AI Best Practices for Industrial Ecology"
+    status: active
+    year_start: 2023
+    year_end: null
+    sponsor: "Unfunded / collaborative"
+    funders: []
+    topics:
+      - machine-learning
+      - industrial-ecology
+      - methodology
+      - sustainability-assessment
+    themes:
+      - reproducibility
+      - data-science
+    geography:
+      places: []
+      regions: []
+    short_description: "Two parallel papers examine the state of machine learning in industrial ecology from complementary angles. Rankin et al. audits reproducibility across ML studies in the field, finding that best practices for transparency and replication are rarely followed. Taghdisian et al. takes a broader evaluative lens, assessing how, when, and in what ways AI is being applied well or poorly across IE research."
+    hes_contributors:
+      - "Dr. Jake Hawes"
+      - "Nolan Reitz"
+      - "Brianna Hiser"
+    collaborators:
+      - "Keagan H. Rankin, Jesse Ward-Bond, Shoshanna Saxe, and I. Daniel Posen (University of Toronto)"
+      - "Franco Donati and Simon van Lierde (Leiden University)"
+      - "Qingshi Tu (University of British Columbia)"
+      - "Alireza Taghdisian and Grant Clark (McGill University)"
+      - "Tamar Makov (Ben-Gurion University of the Negev)"
+      - "Benjamin P. Goldstein (University of Michigan)"
+    outputs:
+      - label: "A call to ensure reproducibility of machine learning applications in industrial ecology"
+        citation: "Rankin, Donati, Tu, Ward-Bond, Reitz, Hiser, et al. (in review). Research Square [preprint]."
+        url: "https://www.researchsquare.com/article/rs-9270723/v1"
+      - label: "Taking stock of the use of machine learning in industrial ecology"
+        citation: "Taghdisian, Hawes, Makov, Clark & Goldstein (in review). Journal of Industrial Ecology."
+        url: ""
+
+  - id: stylized-facts-ce
+    title: "Stylized Facts for the Circular Economy"
+    status: active
+    year_start: 2025
+    year_end: null
+    sponsor: "Collaborative / unfunded"
+    funders: []
+    topics:
+      - circular-economy
+      - policy
+      - knowledge-synthesis
+      - industrial-ecology
+    themes:
+      - sustainability
+      - governance
+    geography:
+      places: []
+      regions: []
+    short_description: "An international synthesis effort distilling the circular economy literature into a set of empirically grounded 'stylized facts' — concise, evidence-based propositions that capture what is reliably known about CE systems. The goal is to make the state of CE knowledge accessible and actionable for policymakers, practitioners, and researchers who need to navigate a sprawling and often contradictory literature."
+    hes_contributors:
+      - "Dr. Jake Hawes"
+    collaborators:
+      - "Stefan Pauliuk (University of Freiburg, lead)"
+      - "Levon Amatuni, Charles Breton, Sofie C.R. Férauge, Magdalena Filter-Pieler, Oleksandr Galychyn, Jennifer Hawkin, Fridolin Krausmann, Maud Lanau, Sina Leipold, Elena Verdolini"
+      - "Luc Alaerts, Roberta Barr, Anna Barrero, Amy Brooks, Magnus Fröhling, Oliver Heidrich, Antti Jukka, Manish Kumar, Josh Manley, Prachi Ugle, Karel Van Acker, Stijn van Ewijk, Dominik Wiedenhofer"
+    outputs:
+      - label: "Stylized facts for the circular economy: A knowledge synthesis"
+        citation: "Pauliuk, S., et al. (in preparation). Journal of Industrial Ecology."
+        url: ""
+
+  - id: glo-force
+    title: "GLO-FORCE: Urban Food Systems Resilience"
+    status: seeking-funding
+    year_start: 2025
+    year_end: null
+    sponsor: "Seeking funding"
+    funders: []
+    topics:
+      - food-systems
+      - supply-chain
+      - artificial-intelligence
+      - critical-infrastructure
+      - resilience
+    themes:
+      - resilience
+      - social-equity
+      - technology
+    geography:
+      places:
+        - "St. Louis, MO"
+      regions:
+        - "Missouri"
+    short_description: "Integrates blockchain, AI, and geospatial intelligence to strengthen food supply chain resilience in urban regions, with plans to pilot in St. Louis using the 2025 EF3 tornado as a real-world stress test case. The project aims to identify vulnerabilities in local food distribution and emergency response networks and develop decision-support tools for rapid recovery after disruption. Seeking funding — reach out to Jake."
+    hes_contributors:
+      - "Dr. Jake Hawes (Co-PI)"
+    collaborators:
+      - "Dr. Vijay Anand (Kennesaw State University, PI)"
+      - "Dr. Kate Trout and Dr. Haitao Li (University of Missouri)"
+      - "KC Kroll (Earth Daily)"
+      - "Carlton Adams (Operation Food Search)"
+      - "Taylor Geospatial Institute"
+    outputs: []
+
+  - id: few-meter
+    title: "FEW-Meter"
+    status: complete
+    year_start: 2018
+    year_end: 2024
+    sponsor: "JPI Urban Europe / SUGI FWE Nexus"
+    funders:
+      - "ESRC, UK (ES/S002170/2)"
+      - "BMBF, Germany (01LF1801A)"
+      - "ANR, France (ANR-17-SUGI-0001-01)"
+      - "NSF Belmont Forum, USA (18929627)"
+      - "National Science Centre, Poland (2017/25/Z/HS4/03048)"
+      - "European Union Horizon 2020 (GA No 730254)"
+    topics:
+      - urban-agriculture
+      - food-systems
+      - carbon-footprint
+      - sustainability-assessment
+    themes:
+      - sustainability
+      - food-energy-water-nexus
+    geography:
+      places:
+        - "New York City, NY"
+        - "London, UK"
+        - "Paris, France"
+        - "Dortmund, Germany"
+        - "Nantes, France"
+        - "Gorzów Wielkopolski, Poland"
+      regions:
+        - "New York"
+        - "United Kingdom"
+        - "France"
+        - "Germany"
+        - "Poland"
+    short_description: "Measured the food, energy, and water flows of urban farms across five countries in Europe and North America, establishing a rigorous empirical foundation for evaluating the environmental performance of urban agriculture. The project developed and applied a standardized accounting methodology — the FEW-Meter tool — to enable cross-site comparison at a scale not previously attempted in the field."
+    hes_contributors:
+      - "Dr. Jake Hawes"
+    collaborators:
+      - "Dimitrios Gounaridis and Joshua P. Newell (University of Michigan)"
+      - "Benjamin P. Goldstein (University of Michigan)"
+      - "Silvio Caputo"
+      - "Nevin Cohen"
+      - "Agnès Fargue-Lelièvre"
+      - "Lidia Poniży"
+      - "Kathrin Specht"
+      - "Erica Dorr"
+      - "Victoria Schoen"
+    outputs:
+      - label: "Comparing the carbon footprints of urban and conventional agriculture"
+        citation: "Hawes, Goldstein, Newell, et al. (2024). Nature Cities, 1–10."
+        url: "https://doi.org/10.1038/s44284-023-00023-3"
+      - label: "Assessing the potential to scale-up urban agriculture in the Global North"
+        citation: "Hawes, Gounaridis, Newell, et al. (2026). Landscape and Urban Planning, 272, 105657."
+        url: "https://doi.org/10.1016/j.landurbplan.2026.105657"
+      - label: "Food production and resource use of urban farms and gardens: A five-country study"
+        citation: "Dorr, Hawes, Goldstein, et al. (2023). Agronomy for Sustainable Development, 43(1), 18."
+        url: "https://doi.org/10.1007/s13593-022-00859-4"
+      - label: "What do we really know about urban agriculture's impact on people, places, and the planet?"
+        citation: "Fargue-Lelièvre, Hawes, Goldstein, Poniży & Dorr (2024). Bulletin of the Atomic Scientists, 80(3)."
+        url: "https://www.tandfonline.com/doi/abs/10.1080/00963402.2024.2339125"
+      - label: "The role of urban agriculture in food-energy-water nexus policies"
+        citation: "Fox-Kämper, Kirby, Specht, et al. (2023). Landscape and Urban Planning, 239, 104848."
+        url: "https://doi.org/10.1016/j.landurbplan.2023.104848"
+      - label: "Applying the food-energy-water nexus approach to urban agriculture"
+        citation: "Caputo, Schoen, Specht, et al. (2020). Urban Forestry & Urban Greening, 126934."
+        url: "https://doi.org/10.1016/j.ufug.2020.126934"
+      - label: "FEW-Meter Final Report"
+        citation: "Caputo, Dorr, Fox-Kämper, et al. (2022). Zenodo."
+        url: "https://doi.org/10.5281/zenodo.6558032"
+      - label: "Roadmap to Resource Efficient Urban Agriculture"
+        citation: "Fox-Kämper, Specht, Caputo, et al. (2022). Zenodo."
+        url: "https://zenodo.org/record/6622125"
+
+  - id: arcap
+    title: "ARCAP — Alaska Railbelt Critical Assets Project"
+    status: active
+    year_start: 2025
+    year_end: null
+    sponsor: "ADAC-ARCTIC Center of Excellence (Department of Homeland Security)"
+    funders:
+      - "ADAC-ARCTIC Center of Excellence (Department of Homeland Security)"
+    topics:
+      - critical-infrastructure
+      - supply-chain
+      - resilience
+      - environmental-security
+    themes:
+      - hazard-modeling
+      - rural-communities
+    geography:
+      places:
+        - "Alaska"
+      regions:
+        - "Alaska"
+    short_description: "Examines critical infrastructure resilience across Alaska's Railbelt region — the interconnected corridor of communities, utilities, and supply networks stretching from Fairbanks to the Kenai Peninsula. A central focus is the Port of Alaska, a single point of failure for the entire state's supply chain, analyzed through infrastructure assessment, expert elicitation, and tabletop exercises to understand cascading vulnerabilities and inform mitigation investment."
+    hes_contributors:
+      - "Dr. Jake Hawes (PI)"
+      - "Dr. Vanessa Lueck"
+    collaborators:
+      - "Amber Sorg and Kelly Wilson (Idaho National Laboratory)"
+      - "Dr. Scott Hamel (University of Alaska Anchorage)"
+    outputs:
+      - label: "What counts as critical? Local definitions of critical infrastructure in Alaska"
+        citation: "Lueck, V., et al. (planned). Journal TBD."
+        url: ""
+
+  - id: smoke-tourism
+    title: "The Impact of Wildfire Smoke on Tourism in the GYE"
+    status: active
+    year_start: 2025
+    year_end: null
+    sponsor: "Seeking funding"
+    funders: []
+    topics:
+      - wildfire
+      - climate-modeling
+      - resilience
+      - computational-modeling
+    themes:
+      - hazard-modeling
+      - rural-communities
+    geography:
+      places:
+        - "Greater Yellowstone Ecosystem, WY"
+      regions:
+        - "Wyoming"
+    short_description: "Examines how increasing wildfire smoke events are affecting tourism in the Greater Yellowstone Ecosystem — one of the most visited landscapes in the United States — using climate projections and economic data to estimate current and future impacts on visitation, recreation, and gateway community livelihoods."
+    hes_contributors:
+      - "Dr. Jake Hawes"
+      - "Dr. Vanessa Lueck"
+    collaborators:
+      - "Dr. Melissa Bukovsky (lead)"
+      - "Dr. Nino Abashidze"
+      - "Dr. Tucker Furniss"
+      - "Dr. Stefan Rahimi"
+      - "Bailey Kirkland"
+    outputs: []
+
+  - id: climes-jfsp
+    title: "Inventory and Evaluation of Operational Fire Potential Forecasts Across Scales for Decision Support"
+    status: active
+    year_start: 2026
+    year_end: 2029
+    sponsor: "Joint Fire Science Program"
+    funders:
+      - "Joint Fire Science Program"
+    topics:
+      - wildfire
+      - computational-modeling
+      - methodology
+      - human-dimensions
+    themes:
+      - hazard-modeling
+      - decision-support
+    geography:
+      places: []
+      regions: []
+    short_description: "Wildfire managers rely on dozens of fire potential forecast products to guide decisions — but these tools have never been systematically cataloged or independently evaluated. This project builds a standardized, open-access inventory of existing fire potential forecast products and conducts rigorous evaluation of selected tools using the METplus verification framework, with the goal of giving practitioners clear, evidence-based guidance on which products are most reliable, under what conditions, and at what scales."
+    hes_contributors:
+      - "Dr. Jake Hawes (collaborator — practitioner engagement)"
+    collaborators:
+      - "Dr. Melissa Bukovsky (PI, University of Wyoming)"
+      - "Amanda Siems-Anderson, Michelle Harrold, Lee Kessenich, Rachel McCrary (NCAR, Co-PIs)"
+      - "Rajesh Kumar"
+    outputs: []
+
+  - id: coupled-hazard-modeling
+    title: "Coupled Hazard Modeling for Rural and Gateway Communities"
+    status: seeking-funding
+    year_start: 2025
+    year_end: null
+    sponsor: "NSF (seeking)"
+    funders: []
+    topics:
+      - wildfire
+      - computational-modeling
+      - resilience
+      - human-dimensions
+      - rural-communities
+      - social-vulnerability
+      - scenario-planning
+    themes:
+      - hazard-modeling
+      - rural-communities
+    geography:
+      places:
+        - "Greater Yellowstone Ecosystem, WY"
+        - "Wyoming (statewide)"
+      regions:
+        - "Wyoming"
+    short_description: "Develops coupled modeling approaches that link wildfire dynamics, atmospheric processes, and human social systems to understand how disturbance events affect rural and gateway communities in the Greater Yellowstone Ecosystem and across Wyoming. The work aims to improve the scientific basis for anticipating how cascading hazards unfold across landscapes and communities — and to translate that understanding into scenario planning and decision-support tools for managers and planners facing an increasingly dynamic fire environment."
+    hes_contributors:
+      - "Dr. Jake Hawes (Co-PI)"
+      - "Dr. Vanessa Lueck"
+    collaborators:
+      - "Dr. Melissa Bukovsky (University of Wyoming)"
+      - "Dr. Tucker Furniss (University of Wyoming)"
+      - "Dr. Nino Abashidze (University of Wyoming)"
+      - "Dr. Stefan Rahimi (University of Wyoming)"
+    outputs: []
+
+  - id: digital-twins-smart-rural-places
+    title: "Digital Twins for Smart Rural Places"
+    status: active
+    year_start: 2025
+    year_end: null
+    sponsor: "Center for Rural Community Resilience and Innovation (CRCRI), University of Wyoming"
+    funders:
+      - "Center for Rural Community Resilience and Innovation (CRCRI), University of Wyoming"
+    topics:
+      - rural-communities
+      - smart-technology
+      - artificial-intelligence
+      - resilience
+      - computational-modeling
+      - digital-twins
+    themes:
+      - smart-communities
+      - technology
+    geography:
+      places:
+        - "Laramie, WY"
+        - "Afton, WY"
+      regions:
+        - "Wyoming"
+    short_description: "Develops digital twin frameworks for infrastructure and services in small towns and rural communities across Wyoming, using Laramie and Afton as testbed communities. The work combines smart sensing, data integration, and computational modeling to create living simulations that help community planners and managers understand system behavior, anticipate problems, and make better-informed decisions about local infrastructure."
+    hes_contributors:
+      - "Dr. Jake Hawes"
+      - "Dr. Vanessa Lueck"
+      - "Md. Ismail Hossain"
+    collaborators:
+      - "Dr. Judith Njoku"
+      - "Dr. Diksha Shukla"
+      - "Dr. Vinit Katariya"
+      - "Dr. Jeff Hamerlinck"
+      - "Dr. Jian Gong"
+    outputs:
+      - label: "PANDA: A lightweight digital twin framework for smart parking management"
+        citation: "Njoku, Shukla, Katariya, Hossain & Hawes (2026). ASCE i3CE 2026, Songdo, South Korea."
+        url: ""
+
+  - id: sovi-wildfire-wyoming
+    title: "The Geography of Social Vulnerability and Wildfire Risk across Wyoming"
+    status: active
+    year_start: 2025
+    year_end: null
+    sponsor: "Unfunded (thesis research)"
+    funders: []
+    topics:
+      - wildfire
+      - social-vulnerability
+      - rural-communities
+      - resilience
+      - computational-modeling
+    themes:
+      - hazard-modeling
+      - social-equity
+    geography:
+      places:
+        - "Wyoming (statewide)"
+      regions:
+        - "Wyoming"
+    short_description: "Develops a Wyoming-specific social vulnerability index and maps it against wildfire hazard across the state's 23 counties and 132 census tracts, using local Census data and expert elicitation to capture dimensions of vulnerability that national indices like the CDC/ATSDR SVI systematically undercount in rural, resource-dependent contexts. The goal is to identify where social vulnerability and fire risk most dangerously overlap — and to give policymakers, emergency managers, and community leaders geographically targeted evidence for mitigation investment."
+    hes_contributors:
+      - "Dr. Jake Hawes (advisor)"
+      - "Sandip Pantha (MS student)"
+    collaborators: []
+    outputs:
+      - label: "The geography of social vulnerability and wildfire risk across Wyoming"
+        citation: "Pantha, S. & Hawes, J. K. (planned). Journal TBD."
+        url: ""
+
+  - id: ai-cea
+    title: "AI-Optimized Controlled Environment Agriculture"
+    status: active
+    year_start: 2025
+    year_end: null
+    sponsor: "UW AI Seed Grant"
+    funders:
+      - "University of Wyoming AI Seed Grant"
+    topics:
+      - artificial-intelligence
+      - food-systems
+      - urban-agriculture
+      - computational-modeling
+      - carbon-footprint
+    themes:
+      - sustainability
+      - technology
+    geography:
+      places:
+        - "Jackson Hole, WY"
+        - "Denver, CO"
+        - "Salt Lake City, UT"
+      regions:
+        - "Wyoming"
+        - "Colorado"
+        - "Utah"
+    short_description: "Applies AI planning methods to optimize the energy use and carbon footprint of controlled environment agriculture (CEA) operations, treating the scheduling of lighting, heating, and water systems as an optimization problem that responds dynamically to grid prices, fuel mix, and weather conditions. A second phase extends this model spatially, identifying where in the Mountain West CEA is best positioned to take advantage of expanding renewable energy capacity while minimizing costs and environmental impact."
+    hes_contributors:
+      - "Dr. Jake Hawes (PI)"
+    collaborators:
+      - "Dr. Liping Wang (University of Wyoming, Director of Center for Controlled Environment Agriculture)"
+      - "Dr. Shannon Albeke (WyGISC)"
+    outputs:
+      - label: "AI-optimized controlled environment agriculture: Compatibility with evolving renewable energy networks"
+        citation: "Hawes, J. K. & Wang, L. (planned). Journal TBD."
+        url: ""
+
+  - id: ai-wyoming-by-wyoming
+    title: "AI for Wyoming, By Wyoming"
+    status: active
+    year_start: 2026
+    year_end: null
+    sponsor: "Wyoming Institute for Humanities Research (Humanities for AI Seed Grant)"
+    funders:
+      - "Wyoming Institute for Humanities Research (Humanities for AI Seed Grant, $10,000)"
+    topics:
+      - artificial-intelligence
+      - rural-communities
+      - human-dimensions
+      - scenario-planning
+    themes:
+      - community-resilience
+      - technology
+    geography:
+      places:
+        - "Wyoming (statewide)"
+      regions:
+        - "Wyoming"
+    short_description: "Wyoming is rapidly becoming a testing ground for AI infrastructure — data centers, smart agriculture, AI-assisted governance — yet rural residents have had little say in how these technologies arrive or what they displace. This project surveys Wyomingites' understanding of and concerns about AI, using speculative narratives and mixed methods to surface authentic community perspectives and build an evidence base for human-centered, rural-values-aligned AI development across the state."
+    hes_contributors:
+      - "Dr. Jake Hawes (Co-PI)"
+      - "Dr. Vanessa Lueck"
+    collaborators:
+      - "Dr. Brandon Gellis (University of Wyoming)"
+    outputs:
+      - label: "Wyoming's AI infrastructure context and rural resident perspectives: A mixed-methods study"
+        citation: "Hawes, Lueck & Gellis (planned). Journal TBD."
+        url: ""
+      - label: "Resident profiles, future narratives, and policy implications for human-centered rural AI in Wyoming"
+        citation: "White paper (planned)."
+        url: ""
+
+  - id: signals-wyoming
+    title: "Signals for Understanding Wyoming Water and Fire Futures"
+    status: active
+    year_start: 2026
+    year_end: null
+    sponsor: "North Central Climate Adaptation Science Center (NC CASC)"
+    funders:
+      - "North Central Climate Adaptation Science Center, via CU Boulder"
+    topics:
+      - signals
+      - scenario-planning
+      - wildfire
+      - resilience
+      - human-dimensions
+      - rural-communities
+      - water-systems
+    themes:
+      - hazard-modeling
+      - community-resilience
+    geography:
+      places:
+        - "Wind River Basin, WY"
+      regions:
+        - "Wyoming"
+    short_description: "Lays the groundwork for community-based hazard planning in Wyoming's Wind River Basin through literature synthesis, coalition building, and theory development around 'signals committees' — bodies that bring together scientific data, community knowledge, and traditional ecological knowledge to identify the conditions that should trigger adaptation responses. The longer-term goal is a sustained, community-grounded planning infrastructure for navigating water and fire futures under climate change."
+    hes_contributors:
+      - "Dr. Jake Hawes"
+    collaborators:
+      - "Dr. Mary Keller (University of Wyoming)"
+      - "Dr. Tucker Furniss (University of Wyoming)"
+      - "Priscilla Corbett (CU Boulder)"
+    outputs:
+      - label: "Sustaining signals committees: Long-term frameworks for community-based scenario planning and hazard response"
+        citation: "Corbett, P., et al. (planned). Journal TBD."
+        url: ""
+
+  - id: blue-gentrification-michigan
+    title: "Assessing Blue Gentrification in Michigan's Coastal Communities"
+    status: active
+    year_start: 2023
+    year_end: null
+    sponsor: "Michigan Sea Grant"
+    funders:
+      - "Michigan Sea Grant"
+    topics:
+      - gentrification
+      - amenity-migration
+      - governance
+      - social-vulnerability
+      - rural-communities
+    themes:
+      - social-equity
+      - coastal-communities
+    geography:
+      places:
+        - "Michigan coastal communities (46 Great Lakes shoreline communities)"
+      regions:
+        - "Michigan"
+    short_description: "Produces the first systematic map of blue gentrification across 46 of Michigan's Great Lakes coastal communities, using household-level spatial analysis to track how waterfront proximity has driven changes in property values, wealth, and residential displacement between 2006 and 2020. A central question is whether Great Lakes Restoration Initiative (GLRI) waterfront revitalization investments have paradoxically accelerated displacement in the communities they were meant to benefit. Findings are translated into a publicly accessible MI Blue Gentrification Hotspot Tool and policy brief aimed at local, state, and federal decision-makers."
+    hes_contributors:
+      - "Jake Hawes (project predates UW; still ongoing)"
+    collaborators:
+      - "Joshua P. Newell (University of Michigan, PI)"
+      - "Dimitrios Gounaridis (University of Michigan)"
+      - "Matthew E. Liesch (Central Michigan University)"
+      - "Laura Rubin (Healing Our Waters–Great Lakes Coalition)"
+      - "Sophee Langerman (Healing Our Waters–Great Lakes Coalition)"
+    outputs:
+      - label: "Novel quantification of gentrification in amenity-driven coastal communities"
+        citation: "Hawes, J. K., et al. (planned). Journal TBD."
+        url: ""
+      - label: "Michigan Blue Gentrification Policy Brief"
+        citation: "Newell, J. P., et al. (planned). Healing Our Waters–Great Lakes Coalition."
+        url: ""
+
+
+# ─── Tag display labels ───────────────────────────────────────────────────────
+topic_labels:
+  amenity-migration:         "Amenity Migration"
+  artificial-intelligence:   "Artificial Intelligence"
+  carbon-footprint:          "Carbon Footprint"
+  circular-economy:          "Circular Economy"
+  climate-modeling:          "Climate Modeling"
+  computational-modeling:    "Computational Modeling"
+  critical-infrastructure:   "Critical Infrastructure"
+  digital-twins:             "Digital Twins"
+  environmental-security:    "Environmental Security"
+  food-systems:              "Food Systems"
+  gentrification:            "Gentrification"
+  governance:                "Governance"
+  homeland-security:         "Homeland Security"
+  human-dimensions:          "Human Dimensions"
+  industrial-ecology:        "Industrial Ecology"
+  knowledge-synthesis:       "Knowledge Synthesis"
+  machine-learning:          "Machine Learning"
+  methodology:               "Methodology"
+  policy:                    "Policy"
+  resilience:                "Resilience"
+  resource-flows:            "Resource Flows"
+  rural-communities:         "Rural Communities"
+  scenario-planning:         "Scenario Planning"
+  signals:                   "Signals"
+  smart-technology:          "Smart Technology"
+  social-vulnerability:      "Social Vulnerability"
+  supply-chain:              "Supply Chain"
+  sustainability-assessment: "Sustainability Assessment"
+  urban-agriculture:         "Urban Agriculture"
+  urban-systems:             "Urban Systems"
+  water-systems:             "Water Systems"
+  wildfire:                  "Wildfire"

@@ -1,0 +1,193 @@
+---
+layout: archive
+title: "Research by Topic"
+permalink: /research/topics/
+author_profile: false
+---
+
+{% include base_path %}
+
+<style>
+.back-link {
+  font-size: 0.82rem;
+  color: #2a6e49;
+  text-decoration: none;
+  display: inline-block;
+  margin-bottom: 1.5em;
+}
+.back-link:hover { text-decoration: underline; }
+
+.topics-intro {
+  font-size: 0.93rem;
+  color: #444;
+  line-height: 1.7;
+  max-width: 680px;
+  margin-bottom: 2.5em;
+}
+
+/* ── Tag index bar ─────────────────────────────── */
+.topic-index {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em;
+  margin-bottom: 3em;
+}
+.topic-index__chip {
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 0.3em 0.9em;
+  border-radius: 999px;
+  background: #f0f0f0;
+  color: #333;
+  text-decoration: none;
+  transition: background 0.15s, color 0.15s;
+}
+.topic-index__chip:hover {
+  background: #2a6e49;
+  color: #fff;
+  text-decoration: none;
+}
+
+/* ── Topic section ─────────────────────────────── */
+.topic-section {
+  margin-bottom: 3em;
+}
+.topic-section__header {
+  display: flex;
+  align-items: baseline;
+  gap: 0.8em;
+  margin-bottom: 0.9em;
+  border-bottom: 2px solid #e5e5e5;
+  padding-bottom: 0.4em;
+}
+.topic-section__title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #111;
+  margin: 0;
+}
+.topic-section__count {
+  font-size: 0.78rem;
+  color: #888;
+}
+.topic-section__explore {
+  margin-left: auto;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #2a6e49;
+  text-decoration: none;
+}
+.topic-section__explore:hover { text-decoration: underline; }
+
+/* ── Mini project cards ────────────────────────── */
+.mini-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1em;
+}
+.mini-card {
+  border: 1px solid #e5e5e5;
+  border-radius: 7px;
+  padding: 1em 1.2em;
+  background: #fff;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+.mini-card:hover {
+  border-color: #2a6e49;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  text-decoration: none;
+  color: inherit;
+}
+.mini-card__status {
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.18em 0.55em;
+  border-radius: 3px;
+  display: inline-block;
+  margin-bottom: 0.5em;
+  align-self: flex-start;
+}
+.status--active   { background: #e6f4ed; color: #2a6e49; }
+.status--complete { background: #f0f0f0; color: #666; }
+.status--seeking-funding { background: #fef3e2; color: #b45309; }
+
+.mini-card__title {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #111;
+  margin: 0 0 0.35em;
+  line-height: 1.35;
+}
+.mini-card__desc {
+  font-size: 0.78rem;
+  color: #555;
+  line-height: 1.6;
+  margin: 0;
+  flex-grow: 1;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+</style>
+
+<a href="/research/" class="back-link">&larr; Back to Research</a>
+
+<p class="topics-intro">Browse our projects by research topic. Click any tag to see all projects in that area, or use the <a href="/research/explore/">explore page</a> to filter across topics, geography, and status at once.</p>
+
+{% assign all_projects = site.data.projects.projects %}
+{% assign topic_labels = site.data.projects.topic_labels %}
+
+<!-- Build a unique sorted list of all topics used across projects -->
+{% assign all_topics = "" | split: "" %}
+{% for project in all_projects %}
+  {% for topic in project.topics %}
+    {% unless all_topics contains topic %}
+      {% assign all_topics = all_topics | push: topic %}
+    {% endunless %}
+  {% endfor %}
+{% endfor %}
+{% assign all_topics = all_topics | sort %}
+
+<!-- Quick-jump chip bar -->
+<div class="topic-index">
+  {% for topic in all_topics %}
+    {% assign label = topic_labels[topic] | default: topic %}
+    <a href="#topic-{{ topic }}" class="topic-index__chip">{{ label }}</a>
+  {% endfor %}
+</div>
+
+<!-- One section per topic -->
+{% for topic in all_topics %}
+  {% assign label = topic_labels[topic] | default: topic %}
+  {% assign topic_projects = all_projects | where_exp: "p", "p.topics contains topic" %}
+
+  <div class="topic-section" id="topic-{{ topic }}">
+    <div class="topic-section__header">
+      <h2 class="topic-section__title">{{ label }}</h2>
+      <span class="topic-section__count">{{ topic_projects.size }} project{% if topic_projects.size != 1 %}s{% endif %}</span>
+      <a href="/research/explore/?topic={{ topic }}" class="topic-section__explore">See all &rarr;</a>
+    </div>
+
+    <div class="mini-cards">
+      {% for project in topic_projects limit: 4 %}
+        <a href="/research/{{ project.id }}/" class="mini-card">
+          <span class="mini-card__status status--{{ project.status }}">
+            {% if project.status == 'active' %}Active
+            {% elsif project.status == 'complete' %}Complete
+            {% elsif project.status == 'seeking-funding' %}Seeking Funding
+            {% endif %}
+          </span>
+          <p class="mini-card__title">{{ project.title }}</p>
+          <p class="mini-card__desc">{{ project.short_description }}</p>
+        </a>
+      {% endfor %}
+    </div>
+  </div>
+{% endfor %}

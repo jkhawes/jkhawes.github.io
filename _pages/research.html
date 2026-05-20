@@ -7,14 +7,95 @@ author_profile: false
 
 {% include base_path %}
 
-<p>The HES Lab studies sustainability, resilience, and justice in coupled natural-human systems. We work at the intersection of built, natural, and social systems — using computational and social-science methods to understand how communities and infrastructures can be made more resilient and environmentally responsible. Our current research spans smart rural communities, critical infrastructure, hazard modeling, circular economy, and food systems.</p>
+<style>
+.research-intro {
+  max-width: 720px;
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: #333;
+  margin-bottom: 2.5em;
+}
 
-<p>If you have questions about our work or are interested in collaboration, please reach out to <a href="mailto:jhawes@uwyo.edu">jhawes@uwyo.edu</a>.</p>
+.research-browse {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5em;
+  margin-bottom: 3em;
+}
 
-<hr style="margin: 2em 0;" />
+.browse-card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 1.6em 1.8em 1.4em;
+  text-decoration: none;
+  color: inherit;
+  background: #fff;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+.browse-card:hover {
+  border-color: #2a6e49;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+  text-decoration: none;
+  color: inherit;
+}
 
-<div class="grid__wrapper">
-  {% for post in site.research %}
-    {% include archive-single.html type="grid" %}
-  {% endfor %}
+.browse-card__icon {
+  font-size: 1.8rem;
+  margin-bottom: 0.6em;
+  line-height: 1;
+}
+
+.browse-card__title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #111;
+  margin: 0 0 0.4em;
+}
+
+.browse-card__desc {
+  font-size: 0.83rem;
+  color: #666;
+  line-height: 1.6;
+  margin: 0;
+  flex-grow: 1;
+}
+
+.browse-card__arrow {
+  margin-top: 1.2em;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #2a6e49;
+  letter-spacing: 0.03em;
+}
+</style>
+
+<p class="research-intro">The HES Lab studies sustainability, resilience, and justice in coupled natural-human systems. We work at the intersection of built, natural, and social systems — using computational and social-science methods to understand how communities and infrastructures can be made more resilient and environmentally responsible. Our current research spans smart rural communities, critical infrastructure, hazard modeling, circular economy, and food systems.</p>
+
+<div class="research-browse">
+
+  <a href="/research/topics/" class="browse-card">
+    <div class="browse-card__icon">&#127776;</div>
+    <p class="browse-card__title">Browse by Topic</p>
+    <p class="browse-card__desc">Explore projects organized by research topic — from circular economy and food systems to critical infrastructure and wildfire.</p>
+    <div class="browse-card__arrow">Browse topics &rarr;</div>
+  </a>
+
+  <a href="/research/geography/" class="browse-card">
+    <div class="browse-card__icon">&#127758;</div>
+    <p class="browse-card__title">Browse by Geography</p>
+    <p class="browse-card__desc">See where our research takes place on an interactive map, from Wyoming and Alaska to Europe and beyond.</p>
+    <div class="browse-card__arrow">Explore the map &rarr;</div>
+  </a>
+
+  <a href="/research/status/" class="browse-card">
+    <div class="browse-card__icon">&#128197;</div>
+    <p class="browse-card__title">Browse by Status &amp; Date</p>
+    <p class="browse-card__desc">View active, completed, and funding-stage projects organized by timeline.</p>
+    <div class="browse-card__arrow">View timeline &rarr;</div>
+  </a>
+
 </div>
+
+<p style="font-size:0.85rem; color:#888;">Questions or collaboration inquiries? Reach out at <a href="mailto:jhawes@uwyo.edu">jhawes@uwyo.edu</a>.</p>

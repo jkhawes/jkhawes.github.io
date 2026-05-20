@@ -1,0 +1,327 @@
+---
+layout: archive
+title: "Research by Geography"
+permalink: /research/geography/
+author_profile: false
+---
+
+{% include base_path %}
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<style>
+.back-link {
+  font-size: 0.82rem;
+  color: #2a6e49;
+  text-decoration: none;
+  display: inline-block;
+  margin-bottom: 1.5em;
+}
+.back-link:hover { text-decoration: underline; }
+
+.geo-intro {
+  font-size: 0.93rem;
+  color: #444;
+  line-height: 1.7;
+  max-width: 680px;
+  margin-bottom: 1.5em;
+}
+
+#research-map {
+  width: 100%;
+  height: 460px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  margin-bottom: 2.5em;
+  z-index: 1;
+  background: #f4f4f0;
+}
+
+.map-hint {
+  font-size: 0.78rem;
+  color: #999;
+  margin-bottom: 0.5em;
+  font-style: italic;
+}
+
+/* ── Popup ────────────────────────────────────── */
+.leaflet-popup-content-wrapper { border-radius: 7px; font-family: inherit; }
+.map-popup__region {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #2a6e49;
+  margin-bottom: 0.6em;
+}
+.map-popup__item {
+  font-size: 0.78rem;
+  margin-bottom: 0.35em;
+  line-height: 1.4;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.4em;
+}
+.map-popup__status {
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.1em 0.4em;
+  border-radius: 3px;
+  flex-shrink: 0;
+  margin-top: 0.15em;
+}
+.map-popup__item a { color: #111; font-weight: 600; text-decoration: none; }
+.map-popup__item a:hover { text-decoration: underline; }
+
+/* ── Region list ──────────────────────────────── */
+.region-list-heading {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #111;
+  margin: 0 0 1.2em;
+  padding-bottom: 0.4em;
+  border-bottom: 2px solid #e5e5e5;
+}
+.region-group {
+  margin-bottom: 2em;
+}
+.region-group__name {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #2a6e49;
+  margin: 0 0 0.5em;
+}
+.region-group__projects {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+.region-project {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6em;
+  font-size: 0.83rem;
+}
+.region-project__status {
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.15em 0.5em;
+  border-radius: 3px;
+  flex-shrink: 0;
+  margin-top: 0.15em;
+}
+.status--active        { background: #e6f4ed; color: #2a6e49; }
+.status--complete      { background: #f0f0f0; color: #666; }
+.status--seeking-funding { background: #fef3e2; color: #b45309; }
+
+.region-project__info { display: flex; flex-direction: column; gap: 0.15em; }
+.region-project__title { font-weight: 600; color: #111; }
+.region-project__places { font-size: 0.76rem; color: #888; }
+.region-project__link {
+  text-decoration: none;
+  color: inherit;
+}
+.region-project__link:hover .region-project__title { color: #2a6e49; text-decoration: underline; }
+
+.no-geo-note {
+  font-size: 0.83rem;
+  color: #999;
+  font-style: italic;
+  margin-top: 1em;
+  padding: 0.8em 1em;
+  background: #fafafa;
+  border-radius: 6px;
+  border: 1px solid #eee;
+}
+</style>
+
+<a href="/research/" class="back-link">&larr; Back to Research</a>
+
+<p class="geo-intro">Click a highlighted region to see what research is taking place there. Projects with no specific study location are listed separately below.</p>
+
+<p class="map-hint">Highlighted regions have active or completed research. Click to explore.</p>
+<div id="research-map"></div>
+
+{% assign all_projects = site.data.projects.projects %}
+
+<script>
+const PROJECT_DATA = {{ all_projects | jsonify }};
+
+// Build region → projects lookup
+const regionMap = {};
+PROJECT_DATA.forEach(p => {
+  const regions = (p.geography && p.geography.regions) ? p.geography.regions : [];
+  regions.forEach(r => {
+    if (!regionMap[r]) regionMap[r] = [];
+    regionMap[r].push(p);
+  });
+});
+
+const STATUS_COLORS = {
+  active:           '#2a6e49',
+  complete:         '#777',
+  'seeking-funding':'#b45309'
+};
+const STATUS_LABELS = {
+  active:           'Active',
+  complete:         'Complete',
+  'seeking-funding':'Seeking Funding'
+};
+
+const ACTIVE_STYLE   = { fillColor: '#2a6e49', fillOpacity: 0.28, color: '#2a6e49', weight: 1.5 };
+const HOVER_STYLE    = { fillColor: '#2a6e49', fillOpacity: 0.5,  color: '#2a6e49', weight: 2 };
+const INACTIVE_STYLE = { fillColor: '#ccc',    fillOpacity: 0.08, color: '#bbb',    weight: 0.4 };
+
+const map = L.map('research-map', { scrollWheelZoom: false }).setView([30, -20], 2);
+
+L.tileLayer('https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png', {
+  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/">CARTO</a>',
+  subdomains: 'abcd',
+  maxZoom: 10
+}).addTo(map);
+
+function makePopup(regionName, projects) {
+  const lines = projects.map(p => {
+    const sc = STATUS_COLORS[p.status] || '#888';
+    const sl = STATUS_LABELS[p.status] || p.status;
+    const places = (p.geography && p.geography.places && p.geography.places.length)
+      ? `<span style="font-size:0.72rem;color:#888;display:block;">${p.geography.places.join(', ')}</span>`
+      : '';
+    return `<div class="map-popup__item">
+      <span class="map-popup__status" style="background:${sc}22;color:${sc}">${sl}</span>
+      <div>
+        <a href="/research/${p.id}/">${p.title}</a>
+        ${places}
+      </div>
+    </div>`;
+  }).join('');
+  return `<div class="map-popup__region">${regionName}</div>${lines}`;
+}
+
+function styleFeature(regionName) {
+  return regionMap[regionName] ? ACTIVE_STYLE : INACTIVE_STYLE;
+}
+
+function onEach(regionName, layer) {
+  if (!regionMap[regionName]) return;
+  layer.on({
+    mouseover: e => { e.target.setStyle(HOVER_STYLE); e.target.bringToFront(); },
+    mouseout:  e => { e.target.setStyle(ACTIVE_STYLE); },
+    click:     e => {
+      layer.bindPopup(makePopup(regionName, regionMap[regionName]), { maxWidth: 280 }).openPopup(e.latlng);
+    }
+  });
+  layer.getElement && layer.getElement() && (layer.getElement().style.cursor = 'pointer');
+}
+
+// Load US states GeoJSON
+fetch('https://raw.githubusercontent.com/PublicaMundi/MappingAPI/master/data/geojson/us-states.json')
+  .then(r => r.json())
+  .then(data => {
+    L.geoJSON(data, {
+      style: f => styleFeature(f.properties.name),
+      onEachFeature: (f, layer) => {
+        layer.options.regionName = f.properties.name;
+        onEach(f.properties.name, layer);
+        if (!regionMap[f.properties.name]) {
+          layer.on('mouseover', e => e.target.setStyle({ fillOpacity: 0.15, color: '#999', weight: 0.6 }));
+          layer.on('mouseout',  e => e.target.setStyle(INACTIVE_STYLE));
+        }
+      }
+    }).addTo(map);
+  })
+  .catch(() => console.warn('Could not load US states GeoJSON'));
+
+// Load world countries GeoJSON (exclude USA — handled by states layer)
+fetch('https://raw.githubusercontent.com/datasets/geo-countries/master/data/countries.geojson')
+  .then(r => r.json())
+  .then(data => {
+    L.geoJSON(data, {
+      filter: f => f.properties.ADMIN !== 'United States of America',
+      style:  f => styleFeature(f.properties.ADMIN),
+      onEachFeature: (f, layer) => {
+        const name = f.properties.ADMIN;
+        onEach(name, layer);
+        if (!regionMap[name]) {
+          layer.on('mouseover', e => e.target.setStyle({ fillOpacity: 0.15, color: '#999', weight: 0.6 }));
+          layer.on('mouseout',  e => e.target.setStyle(INACTIVE_STYLE));
+        }
+      }
+    }).addTo(map);
+  })
+  .catch(() => console.warn('Could not load world countries GeoJSON'));
+</script>
+
+<!-- ── Region list below map ───────────────────────── -->
+<h3 class="region-list-heading">Projects by Location</h3>
+
+{% assign all_regions = "" | split: "" %}
+{% for project in all_projects %}
+  {% if project.geography.regions %}
+    {% for region in project.geography.regions %}
+      {% unless all_regions contains region %}
+        {% assign all_regions = all_regions | push: region %}
+      {% endunless %}
+    {% endfor %}
+  {% endif %}
+{% endfor %}
+{% assign all_regions = all_regions | sort %}
+
+{% for region in all_regions %}
+<div class="region-group">
+  <p class="region-group__name">{{ region }}</p>
+  <ul class="region-group__projects">
+    {% for project in all_projects %}
+      {% if project.geography.regions contains region %}
+        <li class="region-project">
+          <span class="region-project__status status--{{ project.status }}">
+            {% if project.status == 'active' %}Active
+            {% elsif project.status == 'complete' %}Complete
+            {% elsif project.status == 'seeking-funding' %}Seeking Funding
+            {% endif %}
+          </span>
+          <a href="/research/{{ project.id }}/" class="region-project__link">
+            <div class="region-project__info">
+              <span class="region-project__title">{{ project.title }}</span>
+              {% if project.geography.places.size > 0 %}
+                <span class="region-project__places">{{ project.geography.places | join: ", " }}</span>
+              {% endif %}
+            </div>
+          </a>
+        </li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+</div>
+{% endfor %}
+
+{% assign no_geo_projects = all_projects | where_exp: "p", "p.geography.regions.size == 0" %}
+{% if no_geo_projects.size > 0 %}
+<div class="region-group">
+  <p class="region-group__name">No specific study location</p>
+  <ul class="region-group__projects">
+    {% for project in no_geo_projects %}
+      <li class="region-project">
+        <span class="region-project__status status--{{ project.status }}">
+          {% if project.status == 'active' %}Active
+          {% elsif project.status == 'complete' %}Complete
+          {% elsif project.status == 'seeking-funding' %}Seeking Funding
+          {% endif %}
+        </span>
+        <a href="/research/{{ project.id }}/" class="region-project__link">
+          <div class="region-project__info">
+            <span class="region-project__title">{{ project.title }}</span>
+            <span class="region-project__places">Global / methodological</span>
+          </div>
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+</div>
+{% endif %}

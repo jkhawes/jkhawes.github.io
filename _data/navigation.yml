@@ -11,14 +11,16 @@ main:
   - title: "Research"
     url: /research/
     children:
-      - title: "All Research"
+      - title: "Overview"
         url: /research/
-      - title: "Smart Rural Places"
-        url: /research/smart-rural-places/
-      - title: "Community and Infrastructure Resilience"
-        url: /research/infrastructure-resilience/
-      - title: "Social and Material Sustainability"
-        url: /research/circular-economy/
+      - title: "Browse by Topic"
+        url: /research/topics/
+      - title: "Browse by Geography"
+        url: /research/geography/
+      - title: "Browse by Status & Date"
+        url: /research/status/
+      - title: "Explore / Filter"
+        url: /research/explore/
 
 
   - title: "Publications"
