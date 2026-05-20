@@ -45,6 +45,12 @@ author_profile: false
   font-style: italic;
 }
 
+/* ── Leaflet tile fix (Minimal Mistakes sets max-width:100% on all images) */
+.leaflet-container img {
+  max-width: none !important;
+  max-height: none !important;
+}
+
 /* ── Popup ────────────────────────────────────── */
 .leaflet-popup-content-wrapper { border-radius: 7px; font-family: inherit; }
 .map-popup__region {
