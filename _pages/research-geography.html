@@ -241,7 +241,7 @@ author_profile: false
             mouseover: function(e) { e.target.setStyle(HOVER_STYLE); e.target.bringToFront(); },
             mouseout:  function(e) { e.target.setStyle(ACTIVE_STYLE); },
             click: function(e) {
-              layer.bindPopup(makePopup(name, regionMap[name]), { maxWidth: 280 }).openPopup(e.latlng);
+              layer.bindPopup(makePopup(name, regionMap[name]), { maxWidth: 280, maxHeight: 240 }).openPopup(e.latlng);
             }
           });
         } else {
