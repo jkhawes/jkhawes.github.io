@@ -51,6 +51,17 @@ author_profile: false
   box-sizing: content-box !important;
 }
 
+/* ── Leaflet interaction fixes (MM global transition breaks hover; SVG needs pointer-events) */
+.leaflet-container * {
+  -webkit-transition: none !important;
+  transition: none !important;
+}
+.leaflet-interactive {
+  pointer-events: visiblePainted;
+  pointer-events: auto !important;
+  cursor: pointer;
+}
+
 .map-error {
   display: flex;
   align-items: center;
@@ -261,7 +272,7 @@ author_profile: false
         .then(function(data) { applyGeoJSON(data, regionMap, 'name', null); })
         .catch(function(e) { console.warn('Could not load US states GeoJSON', e); });
 
-      fetch('https://raw.githubusercontent.com/datasets/geo-countries/master/data/countries.geojson')
+      fetch('https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson/ne_110m_admin_0_countries.geojson')
         .then(function(r) { return r.json(); })
         .then(function(data) { applyGeoJSON(data, regionMap, 'ADMIN', 'United States of America'); })
         .catch(function(e) { console.warn('Could not load world countries GeoJSON', e); });
