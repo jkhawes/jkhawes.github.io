@@ -241,7 +241,6 @@ author_profile: false
     }).addTo(map);
   }
 
-  // Fetch project data from a pre-built JSON file (avoids inline Liquid injection issues)
   fetch('/assets/data/projects.json')
     .then(function(r) {
       if (!r.ok) throw new Error('HTTP ' + r.status);
@@ -269,7 +268,6 @@ author_profile: false
     })
     .catch(function(e) {
       console.warn('Could not load project data for map overlay:', e);
-      // Base tiles still show; map works, just without highlighted regions
     });
 })();
 </script>
