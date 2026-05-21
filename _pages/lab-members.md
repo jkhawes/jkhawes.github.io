@@ -128,7 +128,7 @@ redirect_from:
 
 <!-- Md. Ismail Hossain -->
 <div class="hes-member-card">
-  <div class="hes-avatar-placeholder" aria-label="Md. Ismail Hossain">IH</div>
+  <img class="hes-member-card__avatar" src="/images/ismail-hossain.jpg" alt="Md. Ismail Hossain">
   <div>
     <div class="hes-member-card__name">Md. Ismail Hossain</div>
     <p class="hes-member-card__title">Graduate Research Assistant (MS), Geospatial Information Science &amp; Technology<br>University of Wyoming &mdash; Laramie, WY</p>
@@ -145,7 +145,7 @@ redirect_from:
 
 <!-- Sandip Pantha -->
 <div class="hes-member-card">
-  <div class="hes-avatar-placeholder" aria-label="Sandip Pantha">SP</div>
+  <img class="hes-member-card__avatar" src="/images/sandip-pantha.jpg" alt="Sandip Pantha">
   <div>
     <div class="hes-member-card__name">Sandip Pantha</div>
     <p class="hes-member-card__title">Graduate Research Assistant (MS), Geographic Information Science &amp; Technology / Environment &amp; Natural Resources<br>University of Wyoming &mdash; Laramie, WY</p>
@@ -161,11 +161,15 @@ redirect_from:
 
 <!-- Nolan Reitz -->
 <div class="hes-member-card">
-  <div class="hes-avatar-placeholder" aria-label="Nolan Reitz">NR</div>
+  <img class="hes-member-card__avatar" src="/images/nolan-reitz.jpg" alt="Nolan Reitz">
   <div>
     <div class="hes-member-card__name">Nolan Reitz</div>
-    <p class="hes-member-card__title">Undergraduate Research Assistant &mdash; BS, Computer Engineering, University of Wyoming (Expected May 2028)<br>University of Wyoming &mdash; Laramie, WY</p>
-    <p class="hes-member-card__bio" style="color:#888; font-style:italic;">Bio coming soon.</p>
+    <p class="hes-member-card__title">School of Computing Undergraduate Research Experience Fellow &mdash; BS, Computer Engineering, University of Wyoming (Expected May 2028)<br>University of Wyoming &mdash; Laramie, WY</p>
+    <p class="hes-member-card__bio">Nolan joined the lab as a School of Computing Undergraduate Research Experience (URE) fellow while working on his BS in Computer Engineering at UW. His fellowship work examined the reproducibility, representativity, and transparency of supervised machine learning models in industrial ecology research &mdash; contributing to a growing conversation about methodological standards at the intersection of ML and sustainability science. His technical interests include the University Rover Challenge, Python, Java, C++, and physical computing. He is interested in future internship opportunities related to robotics, hardware integration, or programming.</p>
+    <div class="hes-member-card__pub">Donati, F., Tu, Q., Ward-Bond, J., Reitz, N., Hiser, B., et al. (2026). A call to ensure reproducibility of machine learning applications in industrial ecology. <em>ResearchSquare</em> [preprint]. <a href="https://doi.org/10.21203/rs.3.rs-9270723/v1" target="_blank">https://doi.org/10.21203/rs.3.rs-9270723/v1</a></div>
+    <div class="hes-member-card__links">
+      <a href="https://www.linkedin.com/in/nolan-reitz-221618383" target="_blank">LinkedIn</a>
+    </div>
   </div>
 </div>
 

@@ -37,9 +37,10 @@ author_profile: false
 .browse-card:hover {
   border-color: #2a6e49;
   box-shadow: 0 3px 12px rgba(0,0,0,0.08);
-  text-decoration: none;
+  text-decoration: none !important;
   color: inherit;
 }
+.browse-card:hover .browse-card__title { text-decoration: underline; }
 
 .browse-card__icon {
   font-size: 1.8rem;

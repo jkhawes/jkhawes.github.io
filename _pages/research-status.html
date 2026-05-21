@@ -99,9 +99,10 @@ author_profile: false
 .status-project:hover {
   border-color: #2a6e49;
   box-shadow: 0 2px 8px rgba(0,0,0,0.07);
-  text-decoration: none;
+  text-decoration: none !important;
   color: inherit;
 }
+.status-project:hover .status-project__title { text-decoration: underline; }
 .status-project__years {
   font-size: 0.78rem;
   font-weight: 700;
