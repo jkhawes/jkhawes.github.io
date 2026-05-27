@@ -167,6 +167,20 @@ a:hover { color: #1b4d34; }
 }
 </style>
 
+<!-- Research card link fix: .archive a {text-decoration:underline} has specificity 0-1-1;
+     these selectors (.archive a.CARD) have 0-2-1 and override it without !important -->
+<style>
+.archive a.browse-card,
+.archive a.theme-card,
+.archive a.status-project { text-decoration: none; }
+.archive a.browse-card:hover,
+.archive a.theme-card:hover,
+.archive a.status-project:hover { text-decoration: none; }
+.archive a.browse-card:hover .browse-card__title,
+.archive a.theme-card:hover .theme-card__title,
+.archive a.status-project:hover .status-project__title { text-decoration: underline; }
+</style>
+
 {% if page.url == '/research/geography/' %}
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>

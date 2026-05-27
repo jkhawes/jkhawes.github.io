@@ -128,7 +128,7 @@ redirect_from:
 
 <!-- Md. Ismail Hossain -->
 <div class="hes-member-card">
-  <img class="hes-member-card__avatar" src="/images/ismail-hossain.jpg" alt="Md. Ismail Hossain">
+  <div class="hes-avatar-placeholder" aria-label="Md. Ismail Hossain">IH</div>
   <div>
     <div class="hes-member-card__name">Md. Ismail Hossain</div>
     <p class="hes-member-card__title">Graduate Research Assistant (MS), Geospatial Information Science &amp; Technology<br>University of Wyoming &mdash; Laramie, WY</p>
@@ -145,7 +145,7 @@ redirect_from:
 
 <!-- Sandip Pantha -->
 <div class="hes-member-card">
-  <img class="hes-member-card__avatar" src="/images/sandip-pantha.jpg" alt="Sandip Pantha">
+  <div class="hes-avatar-placeholder" aria-label="Sandip Pantha">SP</div>
   <div>
     <div class="hes-member-card__name">Sandip Pantha</div>
     <p class="hes-member-card__title">Graduate Research Assistant (MS), Geographic Information Science &amp; Technology / Environment &amp; Natural Resources<br>University of Wyoming &mdash; Laramie, WY</p>
