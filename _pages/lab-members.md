@@ -128,7 +128,7 @@ redirect_from:
 
 <!-- Md. Ismail Hossain -->
 <div class="hes-member-card">
-  <div class="hes-avatar-placeholder" aria-label="Md. Ismail Hossain">IH</div>
+  <img class="hes-member-card__avatar" src="/images/Ismail_Hossain.jpeg" alt="Md. Ismail Hossain">
   <div>
     <div class="hes-member-card__name">Md. Ismail Hossain</div>
     <p class="hes-member-card__title">Graduate Research Assistant (MS), Geospatial Information Science &amp; Technology<br>University of Wyoming &mdash; Laramie, WY</p>
@@ -145,7 +145,7 @@ redirect_from:
 
 <!-- Sandip Pantha -->
 <div class="hes-member-card">
-  <div class="hes-avatar-placeholder" aria-label="Sandip Pantha">SP</div>
+  <img class="hes-member-card__avatar" src="/images/Sandip_Pantha.jpeg" alt="Sandip Pantha">
   <div>
     <div class="hes-member-card__name">Sandip Pantha</div>
     <p class="hes-member-card__title">Graduate Research Assistant (MS), Geographic Information Science &amp; Technology / Environment &amp; Natural Resources<br>University of Wyoming &mdash; Laramie, WY</p>
@@ -161,7 +161,7 @@ redirect_from:
 
 <!-- Nolan Reitz -->
 <div class="hes-member-card">
-  <img class="hes-member-card__avatar" src="/images/nolan-reitz.jpg" alt="Nolan Reitz">
+  <img class="hes-member-card__avatar" src="/images/Nolan_Reitz.jpg" alt="Nolan Reitz">
   <div>
     <div class="hes-member-card__name">Nolan Reitz</div>
     <p class="hes-member-card__title">School of Computing Undergraduate Research Experience Fellow &mdash; BS, Computer Engineering, University of Wyoming (Expected May 2028)<br>University of Wyoming &mdash; Laramie, WY</p>
