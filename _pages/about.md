@@ -190,30 +190,30 @@ a.hes-research-card:hover .hes-research-card__title { color: #2a6e49; }
 <h2>Research Areas</h2>
 </div>
 <div class="hes-research-grid">
-  <a href="/projects/smart-rural-places/" class="hes-research-card">
+  <a href="/research/topics/#community-and-infrastructure-resilience" class="hes-research-card">
+    <div class="hes-research-card__tag">Resilience</div>
+    <div class="hes-research-card__title">Community &amp; Infrastructure Resilience</div>
+    <div class="hes-research-card__desc">How communities and physical systems respond to hazards, supply chain disruption, and climate change</div>
+  </a>
+  <a href="/research/topics/#smart-rural-places" class="hes-research-card">
     <div class="hes-research-card__tag">Smart Communities</div>
     <div class="hes-research-card__title">Smart Rural Places</div>
-    <div class="hes-research-card__desc">Exploring the role of smart systems and AI in rural places and small towns</div>
+    <div class="hes-research-card__desc">Digital tools, AI, and smart systems applied to rural communities and small towns</div>
   </a>
-  <a href="/projects/infrastructure-resilience/" class="hes-research-card">
-    <div class="hes-research-card__tag">Resilience</div>
-    <div class="hes-research-card__title">Infrastructure Resilience</div>
-    <div class="hes-research-card__desc">Resilient and sustainable infrastructure in rural and remote areas</div>
-  </a>
-  <a href="/projects/climes/" class="hes-research-card">
-    <div class="hes-research-card__tag">Hazards &amp; Modeling</div>
-    <div class="hes-research-card__title">CLIMES</div>
-    <div class="hes-research-card__desc">Collaborative modeling of hazard impacts on social-ecological-economic systems</div>
-  </a>
-  <a href="/projects/circular-economy/" class="hes-research-card">
+  <a href="/research/topics/#sustainable-economy-and-environment" class="hes-research-card">
     <div class="hes-research-card__tag">Sustainability</div>
-    <div class="hes-research-card__title">Circular Economy</div>
-    <div class="hes-research-card__desc">Research on circular economy principles and their application to sustainable systems</div>
+    <div class="hes-research-card__title">Sustainable Economy &amp; Environment</div>
+    <div class="hes-research-card__desc">Urban food systems, circular economy, indoor farming, and sustainable land markets</div>
   </a>
-  <a href="/projects/food-systems/" class="hes-research-card">
-    <div class="hes-research-card__tag">Food Security</div>
-    <div class="hes-research-card__title">Food Systems</div>
-    <div class="hes-research-card__desc">Research on sustainable and resilient food systems</div>
+  <a href="/research/topics/#computing-for-sustainability-resilience-and-justice-research" class="hes-research-card">
+    <div class="hes-research-card__tag">Methods</div>
+    <div class="hes-research-card__title">Computing for Sustainability Research</div>
+    <div class="hes-research-card__desc">AI, machine learning, and decision-support tools for environmental and social research</div>
+  </a>
+  <a href="/research/topics/#equitable-communities" class="hes-research-card">
+    <div class="hes-research-card__tag">Justice</div>
+    <div class="hes-research-card__title">Equitable Communities</div>
+    <div class="hes-research-card__desc">Who bears the costs and captures the benefits of environmental change and infrastructure investment</div>
   </a>
 </div>
 

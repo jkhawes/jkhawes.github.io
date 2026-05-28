@@ -192,4 +192,4 @@ redirect_from:
 
 <h2 class="hes-members-heading">Join the Lab</h2>
 
-<p>The lab is actively recruiting a postdoctoral researcher. Interested candidates should send a CV and brief statement of interests (no more than two pages) to Jake at <a href="mailto:jhawes@uwyo.edu">jhawes@uwyo.edu</a>.</p>
+<p>All lab openings will be posted to Jake's LinkedIn. Please feel free to follow him there for regular updates on positions and projects.</p>

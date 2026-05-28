@@ -140,7 +140,7 @@ author_profile: false
   {% assign theme_projects = all_projects | where: "group", theme %}
 
   {% if theme_projects.size > 0 %}
-  <div class="theme-section">
+  <div class="theme-section" id="{{ theme | slugify }}">
     <div class="theme-section__header">
       <h2 class="theme-section__title">{{ theme }}</h2>
       <p class="theme-section__desc">{{ theme_desc }}</p>
