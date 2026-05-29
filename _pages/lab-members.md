@@ -13,11 +13,17 @@ redirect_from:
 
 <style>
 body {
-  background-image: linear-gradient(rgba(255,255,255,0.82), rgba(255,255,255,0.82)), url('/images/MedBowPeak.jpg');
+  background-image: linear-gradient(rgba(255,255,255,0.86), rgba(255,255,255,0.86)), url('/images/MedBowPeak.jpg');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
 }
+.masthead {
+  background: transparent !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
+}
+.greedy-nav { background: transparent !important; }
 
 .hes-member-card {
   display: flex;
