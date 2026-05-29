@@ -12,6 +12,13 @@ redirect_from:
 {% include base_path %}
 
 <style>
+body {
+  background-image: linear-gradient(rgba(255,255,255,0.82), rgba(255,255,255,0.82)), url('/images/MedBowPeak.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
 .hes-member-card {
   display: flex;
   gap: 2em;
