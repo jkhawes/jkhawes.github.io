@@ -180,8 +180,8 @@ a.hes-research-card:hover .hes-research-card__title { color: #2a6e49; }
 
 <!-- About -->
 <div class="hes-section">
-<h2>Welcome to the Hawes Lab</h2>
-<p>The Human-Environmental Systems Research Group studies <strong>sustainability, resilience, and justice</strong> in coupled natural-human systems. We are based at the <a href="https://www.uwyo.edu">University of Wyoming</a>, where Jake Hawes is jointly appointed in the <a href="https://www.uwyo.edu/cosc/">School of Computing</a> and the <a href="https://www.uwyo.edu/haub/">Haub School of Environment and Natural Resources</a>.</p>
+<h2>Welcome to research for communities</h2>
+<p>The Human-Environmental Systems Research Group studies <strong>sustainability, resilience, and justice</strong> in coupled natural-human systems. We are based at the <a href="https://www.uwyo.edu">University of Wyoming</a>, where lab PI Jake Hawes is jointly appointed in the <a href="https://www.uwyo.edu/cosc/">School of Computing</a> and the <a href="https://www.uwyo.edu/haub/">Haub School of Environment and Natural Resources</a>.</p>
 <p>Our work draws on computing, geography, and engineering to understand how built, natural, and social systems interact &mdash; and how thoughtful design and policy can promote more equitable and resilient outcomes. <a href="/lab-members/">Meet the team &rarr;</a></p>
 </div>
 
