@@ -13,7 +13,7 @@ redirect_from:
 
 <style>
 body {
-  background-image: linear-gradient(rgba(255,255,255,0.86), rgba(255,255,255,0.86)), url('/images/MedBowPeak.jpg');
+  background-image: linear-gradient(rgba(255,255,255,0.76), rgba(255,255,255,0.76)), url('/images/MedBowPeak.jpg');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
