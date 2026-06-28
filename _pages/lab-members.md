@@ -102,6 +102,90 @@ body {
   font-size: 2rem;
   letter-spacing: -0.04em;
 }
+/* CV buttons */
+.hes-cv-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3em;
+  padding: 0.22em 0.6em;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-decoration: none !important;
+  transition: background 0.15s;
+}
+.hes-cv-btn--view {
+  background: #2a6e49;
+  color: #fff !important;
+}
+.hes-cv-btn--view:hover { background: #1e5237; }
+.hes-cv-btn--download {
+  background: transparent;
+  color: #2a6e49 !important;
+  border: 1.5px solid #2a6e49;
+}
+.hes-cv-btn--download:hover { background: #edf6f1; }
+/* CV modal */
+.hes-cv-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(0,0,0,0.65);
+  align-items: center;
+  justify-content: center;
+}
+.hes-cv-modal.is-open { display: flex; }
+.hes-cv-modal__box {
+  background: #fff;
+  border-radius: 8px;
+  width: min(92vw, 860px);
+  height: min(92vh, 1100px);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.35);
+}
+.hes-cv-modal__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75em 1.1em;
+  border-bottom: 1px solid #e8e8e8;
+  flex-shrink: 0;
+}
+.hes-cv-modal__title {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #222;
+}
+.hes-cv-modal__actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75em;
+}
+.hes-cv-modal__download {
+  font-size: 0.8rem;
+  color: #2a6e49;
+  text-decoration: none;
+  font-weight: 600;
+}
+.hes-cv-modal__download:hover { text-decoration: underline; }
+.hes-cv-modal__close {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #666;
+  line-height: 1;
+  padding: 0.1em 0.3em;
+}
+.hes-cv-modal__close:hover { color: #222; }
+.hes-cv-modal__iframe {
+  flex: 1;
+  width: 100%;
+  border: none;
+}
 </style>
 
 <h2 class="hes-members-heading">Principal Investigator</h2>
@@ -119,6 +203,8 @@ body {
       {% if site.author.researchgate %}<a href="{{ site.author.researchgate }}" target="_blank">ResearchGate</a>{% endif %}
       {% if site.author.linkedin %}<a href="https://www.linkedin.com/in/{{ site.author.linkedin }}" target="_blank">LinkedIn</a>{% endif %}
       {% if site.author.github %}<a href="https://github.com/{{ site.author.github }}" target="_blank">GitHub</a>{% endif %}
+      <a href="#" class="hes-cv-btn hes-cv-btn--view" data-cv-view="/files/hawes_cv.pdf" data-cv-name="Jake Hawes">&#128196; View CV</a>
+      <a href="/files/hawes_cv.pdf" download class="hes-cv-btn hes-cv-btn--download">&#11015; Download CV</a>
     </div>
   </div>
 </div>
@@ -135,6 +221,10 @@ body {
     <div class="hes-member-card__pub">Lueck, V., Lokman, K., Low, M., &amp; Doyon, A. (2026). The value of values: Rethinking flood adaptation practices. <em>Environmental Science &amp; Policy</em>, 179, 104385.</div>
     <div class="hes-member-card__links">
       <a href="mailto:vlueck@uwyo.edu">&#9993; vlueck@uwyo.edu</a>
+      <!-- CV: upload /files/lueck_cv.pdf then uncomment:
+      <a href="#" class="hes-cv-btn hes-cv-btn--view" data-cv-view="/files/lueck_cv.pdf" data-cv-name="Vanessa Lueck">&#128196; View CV</a>
+      <a href="/files/lueck_cv.pdf" download class="hes-cv-btn hes-cv-btn--download">&#11015; Download CV</a>
+      -->
     </div>
   </div>
 </div>
@@ -152,6 +242,10 @@ body {
       <a href="https://www.linkedin.com/in/ismailtimes/" target="_blank">LinkedIn</a>
       <a href="https://ismailtimes.weebly.com/" target="_blank">Website</a>
       <a href="https://github.com/IsmailTimes" target="_blank">GitHub</a>
+      <!-- CV: upload /files/hossain_cv.pdf then uncomment:
+      <a href="#" class="hes-cv-btn hes-cv-btn--view" data-cv-view="/files/hossain_cv.pdf" data-cv-name="Md. Ismail Hossain">&#128196; View CV</a>
+      <a href="/files/hossain_cv.pdf" download class="hes-cv-btn hes-cv-btn--download">&#11015; Download CV</a>
+      -->
     </div>
   </div>
 </div>
@@ -167,6 +261,10 @@ body {
       <a href="mailto:spantha@uwyo.edu">&#9993; spantha@uwyo.edu</a>
       <a href="https://www.linkedin.com/in/sandip-pantha/" target="_blank">LinkedIn</a>
       <a href="https://orcid.org/0009-0003-2964-2373" target="_blank">ORCID</a>
+      <!-- CV: upload /files/pantha_cv.pdf then uncomment:
+      <a href="#" class="hes-cv-btn hes-cv-btn--view" data-cv-view="/files/pantha_cv.pdf" data-cv-name="Sandip Pantha">&#128196; View CV</a>
+      <a href="/files/pantha_cv.pdf" download class="hes-cv-btn hes-cv-btn--download">&#11015; Download CV</a>
+      -->
     </div>
   </div>
 </div>
@@ -206,3 +304,58 @@ body {
 <h2 class="hes-members-heading">Join the Lab</h2>
 
 <p>All lab openings will be posted to Jake's LinkedIn. Please feel free to follow him there for regular updates on positions and projects.</p>
+
+<!-- CV modal (shared across all member cards) -->
+<div class="hes-cv-modal" id="hes-cv-modal" role="dialog" aria-modal="true" aria-labelledby="hes-cv-modal-title">
+  <div class="hes-cv-modal__box">
+    <div class="hes-cv-modal__header">
+      <span class="hes-cv-modal__title" id="hes-cv-modal-title"></span>
+      <div class="hes-cv-modal__actions">
+        <a class="hes-cv-modal__download" id="hes-cv-modal-dl" href="#" download>&#11015; Download</a>
+        <button class="hes-cv-modal__close" id="hes-cv-modal-close" aria-label="Close CV viewer">&times;</button>
+      </div>
+    </div>
+    <iframe class="hes-cv-modal__iframe" id="hes-cv-modal-iframe" src="" title="CV document"></iframe>
+  </div>
+</div>
+
+<script>
+(function () {
+  var modal   = document.getElementById('hes-cv-modal');
+  var iframe  = document.getElementById('hes-cv-modal-iframe');
+  var titleEl = document.getElementById('hes-cv-modal-title');
+  var dlLink  = document.getElementById('hes-cv-modal-dl');
+  var closeBtn = document.getElementById('hes-cv-modal-close');
+
+  function openModal(url, name) {
+    iframe.src  = url;
+    dlLink.href = url;
+    titleEl.textContent = name + ' — CV';
+    modal.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    modal.classList.remove('is-open');
+    iframe.src = '';
+    document.body.style.overflow = '';
+  }
+
+  document.querySelectorAll('[data-cv-view]').forEach(function (btn) {
+    btn.addEventListener('click', function (e) {
+      e.preventDefault();
+      openModal(this.dataset.cvView, this.dataset.cvName);
+    });
+  });
+
+  closeBtn.addEventListener('click', closeModal);
+
+  modal.addEventListener('click', function (e) {
+    if (e.target === modal) closeModal();
+  });
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && modal.classList.contains('is-open')) closeModal();
+  });
+}());
+</script>
