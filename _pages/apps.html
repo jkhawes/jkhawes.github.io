@@ -1,0 +1,93 @@
+---
+layout: archive
+title: "Apps"
+permalink: /apps/
+author_profile: false
+# Not live yet. At public launch: set this to true, and uncomment the Apps tab in _data/navigation.yml.
+published: false
+---
+
+{% include base_path %}
+
+<style>
+.apps-intro {
+  max-width: 720px;
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: #333;
+  margin-bottom: 2.5em;
+}
+
+.apps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5em;
+  margin-bottom: 3em;
+}
+
+.app-card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 1.6em 1.8em 1.4em;
+  text-decoration: none;
+  color: inherit;
+  background: #fff;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+.app-card:hover {
+  border-color: #2a6e49;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+  text-decoration: none !important;
+  color: inherit;
+}
+.app-card:hover .app-card__title { text-decoration: underline; }
+
+.app-card__meta {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #2a6e49;
+  margin-bottom: 0.5em;
+}
+
+.app-card__title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #111;
+  margin: 0 0 0.4em;
+}
+
+.app-card__desc {
+  font-size: 0.83rem;
+  color: #666;
+  line-height: 1.6;
+  margin: 0;
+  flex-grow: 1;
+}
+
+.app-card__arrow {
+  margin-top: 1.2em;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #2a6e49;
+  letter-spacing: 0.03em;
+}
+</style>
+
+<p class="apps-intro">Interactive tools and data explorers built by the HES Lab to make our research easier to use and explore.</p>
+
+<div class="apps-grid">
+
+  <a href="{{ base_path }}/apps/alaska-timeline/" class="app-card">
+    <div class="app-card__meta">ARCAP &middot; Critical infrastructure</div>
+    <p class="app-card__title">Alaska Critical Infrastructure Timeline</p>
+    <p class="app-card__desc">An interactive timeline of 60 events that shaped Alaska's critical infrastructure from 1741 to 2026, with systems analysis, delay patterns, and links between events.</p>
+    <div class="app-card__arrow">Open the timeline &rarr;</div>
+  </a>
+
+</div>
+
+<p style="font-size:0.85rem; color:#888;">Questions or collaboration inquiries? Reach out at <a href="mailto:jhawes@uwyo.edu">jhawes@uwyo.edu</a>.</p>
